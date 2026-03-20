@@ -914,9 +914,13 @@ gtag('config', 'GA_MEASUREMENT_ID');
 
 <!-- Mobile Menu Overlay -->
 <div class="mobile-menu" id="mobileMenu">
-  <div class="mobile-menu-header">
+  <div class="mobile-menu-header" style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,.1);">
     <span class="nav-brand-dyp" style="color:var(--white);">DYP</span>
-    <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <button class="lang-btn" data-lang="es" id="mobileLangEs2" style="padding:5px 12px;font-size:11px;">ES</button>
+      <button class="lang-btn" data-lang="en" id="mobileLangEn2" style="padding:5px 12px;font-size:11px;">EN</button>
+      <button class="mobile-menu-close" id="mobileMenuClose" style="margin-left:8px;">✕</button>
+    </div>
   </div>
   <nav style="flex:1;display:flex;flex-direction:column;padding:32px 28px;overflow-y:auto;">
     <!-- Section: Navigate -->
@@ -938,10 +942,6 @@ gtag('config', 'GA_MEASUREMENT_ID');
       <button class="mobile-nav-donate" data-action="donate" style="background:#C62828;color:#fff;border:none;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:700;letter-spacing:1px;padding:16px 24px;cursor:pointer;margin-top:8px;width:100%;text-align:center;border-radius:4px;" data-en="❤️ DONATE" data-es="❤️ DONAR">❤️ DONATE</button>
     </div>
   </nav>
-  <div style="padding:20px 28px;border-top:1px solid rgba(255,255,255,.1);display:flex;gap:12px;margin-top:16px;">
-    <button class="lang-btn" data-lang="en" id="mobileLangEn" style="padding:8px 20px;">EN</button>
-    <button class="lang-btn" data-lang="es" id="mobileLangEs" style="padding:8px 20px;">ES</button>
-  </div>
 </div>
 
 <!-- HERO -->
