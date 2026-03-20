@@ -615,8 +615,10 @@ body.lang-en span.es { display: none !important; }
 .nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
 
 /* MOBILE MENU OVERLAY */
-.mobile-menu{position:fixed;inset:0;background:var(--navy-dark);z-index:200;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);}
-.mobile-menu.open{transform:translateX(0);}
+.mobile-menu{position:fixed;inset:0;background:var(--navy-dark);z-index:9999;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);visibility:hidden;}
+.mobile-menu.open{transform:translateX(0);visibility:visible;}
+.mobile-menu .mobile-nav-link{color:rgba(255,255,255,.85)!important;display:block!important;visibility:visible!important;}
+.mobile-menu .mobile-nav-link span{visibility:visible!important;}
 .mobile-menu-header{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,.1);}
 .mobile-menu-close{background:none;border:none;color:rgba(255,255,255,.6);font-size:22px;cursor:pointer;padding:4px 8px;}
 .mobile-menu-nav{flex:1;display:flex;flex-direction:column;padding:32px 24px;gap:4px;overflow-y:auto;}
