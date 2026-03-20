@@ -804,6 +804,22 @@ body.lang-en span.es { display: none !important; }
 
 /* About quote card stronger hover */
 .about-card{transition:all .4s;}.about-card:hover{transform:translateY(-6px);box-shadow:0 16px 50px rgba(11,60,111,.25);}
+
+/* Coaching price card */
+.offer-card-navy{transition:all .4s;}.offer-card-navy:hover{transform:translateY(-6px);box-shadow:0 16px 50px rgba(201,162,39,.2);}
+
+/* Pitch offer items (Mentoría, Alianzas, Financiamiento) */
+.offer-item{transition:all .3s;}.offer-item:hover{transform:translateX(6px);background:rgba(255,255,255,.08)!important;border-color:rgba(201,162,39,.3)!important;}
+.offer-item-gold{transition:all .3s;}.offer-item-gold:hover{background:rgba(201,162,39,.15)!important;border-color:var(--gold)!important;transform:translateX(6px);box-shadow:0 8px 25px rgba(201,162,39,.15);}
+
+/* Coaching section grid hover */
+#coaching > div{transition:all .3s;}
+
+/* Pitch section whole card */
+#pitch > div:last-child{transition:all .3s;}
+
+/* List items inside coaching price card */
+.offer-card-navy li{transition:all .2s;}.offer-card-navy li:hover{transform:translateX(4px);}
 </style>
 </head>
 <body class="lang-en">
@@ -1086,7 +1102,7 @@ body.lang-en span.es { display: none !important; }
       <p style="font-size:15px;line-height:1.9;color:var(--gray);font-weight:300;margin-bottom:32px;" class="es">Un programa intensivo en vivo donde aprendes a automatizar tu negocio con AI — personalizado a tu industria y metas, desde la idea hasta el producto en vivo.</p>
       <a href="coaching.html" class="btn-primary"><span class="en">See Full Program →</span><span class="es">Ver Programa Completo →</span></a>
     </div>
-    <div style="background:var(--navy);padding:40px 36px;position:relative;overflow:hidden;">
+    <div class="offer-card-navy" style="background:var(--navy);padding:40px 36px;position:relative;overflow:hidden;">
       <div style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--red),var(--gold));"></div>
       <div style="font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px;"><span class="en">Starting at</span><span class="es">Desde</span></div>
       <div style="font-family:'Playfair Display',serif;font-size:52px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:4px;">$997</div>
@@ -1119,15 +1135,15 @@ body.lang-en span.es { display: none !important; }
       <a href="pitch.html" class="btn-primary"><span class="en">Submit Your Idea →</span><span class="es">Someter Mi Idea →</span></a>
     </div>
     <div style="display:flex;flex-direction:column;gap:2px;">
-      <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:24px 28px;display:flex;gap:16px;align-items:flex-start;">
+      <div class="offer-item" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:24px 28px;display:flex;gap:16px;align-items:flex-start;">
         <span style="font-size:24px;">🎓</span>
         <div><div style="font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--white);margin-bottom:4px;"><span class="en">Mentorship</span><span class="es">Mentoría</span></div><p style="font-size:12px;color:rgba(255,255,255,.45);" class="en">Connect with experienced Dominican professionals.</p><p style="font-size:12px;color:rgba(255,255,255,.45);" class="es">Conéctate con profesionales dominicanos experimentados.</p></div>
       </div>
-      <div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:24px 28px;display:flex;gap:16px;align-items:flex-start;">
+      <div class="offer-item" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:24px 28px;display:flex;gap:16px;align-items:flex-start;">
         <span style="font-size:24px;">🔗</span>
         <div><div style="font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--white);margin-bottom:4px;"><span class="en">Strategic Alliances</span><span class="es">Alianzas Estratégicas</span></div><p style="font-size:12px;color:rgba(255,255,255,.45);" class="en">Access lawyers, marketers, technologists and leaders.</p><p style="font-size:12px;color:rgba(255,255,255,.45);" class="es">Accede a abogados, marketers, tecnólogos y líderes.</p></div>
       </div>
-      <div style="background:rgba(201,162,39,.08);border:1px solid rgba(201,162,39,.25);padding:24px 28px;display:flex;gap:16px;align-items:flex-start;">
+      <div class="offer-item offer-item-gold" style="background:rgba(201,162,39,.08);border:1px solid rgba(201,162,39,.25);padding:24px 28px;display:flex;gap:16px;align-items:flex-start;">
         <span style="font-size:24px;">💰</span>
         <div><div style="font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--gold);margin-bottom:4px;"><span class="en">Funding</span><span class="es">Financiamiento</span></div><p style="font-size:12px;color:rgba(255,255,255,.45);" class="en">Get in front of DYP investors actively looking to invest.</p><p style="font-size:12px;color:rgba(255,255,255,.45);" class="es">Preséntate ante inversores DYP listos para invertir.</p></div>
       </div>
