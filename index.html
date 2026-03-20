@@ -2365,16 +2365,16 @@ function handleDonate(){
   const mobileMenu   = document.getElementById('mobileMenu');
   const menuClose    = document.getElementById('mobileMenuClose');
 
-  function openMenu(){
+  window.openMenu = function(){
     mobileMenu.classList.add('open');
     hamburger.classList.add('open');
     document.body.style.overflow='hidden';
-  }
-  function closeMenu(){
+  };
+  window.closeMenu = function(){
     mobileMenu.classList.remove('open');
     hamburger.classList.remove('open');
     document.body.style.overflow='';
-  }
+  };
 
   hamburger?.addEventListener('click', openMenu);
   menuClose?.addEventListener('click', closeMenu);
