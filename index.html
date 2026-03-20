@@ -628,6 +628,12 @@ body.lang-en span.es { display: none !important; }
 .mobile-nav-donate{background:var(--red);color:var(--white);border:none;font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;padding:16px 24px;cursor:pointer;margin-top:8px;width:100%;text-align:center;}
 .mobile-menu-footer{padding:24px;display:flex;gap:12px;border-top:1px solid rgba(255,255,255,.1);}
 
+/* FIX: Override global nav styles inside mobile menu — the <nav> inside .mobile-menu
+   was inheriting background:white, height:74px, position:sticky, etc. from the global
+   nav{} rule, making white text invisible on white background and clipping content. */
+.mobile-menu nav{position:static!important;top:auto!important;z-index:auto!important;background:transparent!important;border-bottom:none!important;padding:0!important;display:flex!important;flex-direction:column!important;align-items:stretch!important;justify-content:flex-start!important;height:auto!important;min-height:0!important;max-height:none!important;box-shadow:none!important;overflow:visible!important;}
+.mobile-menu nav div{color:#ffffff!important;visibility:visible!important;opacity:1!important;}
+
 @media(max-width:900px){
   /* General */
   section{padding:60px 20px;}
