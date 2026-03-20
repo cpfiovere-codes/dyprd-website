@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DYP Pitch — Submit Your Idea | Dominican Young Professionals</title>
+<meta name="description" content="DYP Pitch — Connect your idea with mentors, investors and allies from the DYP network. The Dominican Shark Tank.">
+<link rel="canonical" href="https://www.dyprd.org/pitch">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇩🇴</text></svg>">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.dyprd.org/pitch">
+<meta property="og:title" content="DYP Pitch — Submit Your Startup Idea">
+<meta property="og:description" content="Connect your idea with mentors, investors and allies from the DYP network. The Dominican Shark Tank.">
+<meta property="og:image" content="https://www.dyprd.org/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DYP Pitch — Dominican Entrepreneurs">
+<meta name="twitter:description" content="Submit your startup idea and connect with mentors, investors, and allies.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0B3C6F;
+  --navy-dark: #071f3a;
+  --navy-light: #144d8a;
+  --red: #C62828;
+  --gold: #C9A227;
+  --gold-light: #e8be3a;
+  --white: #FFFFFF;
+  --cream: #F8F6F1;
+  --gray: #6b7280;
+  --light-gray: #f1f0ec;
+  --crypto: #F7931A;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Montserrat',sans-serif;background:var(--cream);color:var(--navy-dark);overflow-x:hidden;}
+
+/* LANG BAR */
+.lang-bar{background:var(--navy-dark);padding:8px 40px;display:flex;justify-content:flex-end;gap:12px;align-items:center;}
+.lang-btn{background:none;border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.55);padding:4px 14px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:1.5px;cursor:pointer;transition:all .3s;text-transform:uppercase;}
+.lang-btn.active{background:var(--gold);border-color:var(--gold);color:var(--navy-dark);}
+.lang-btn:hover:not(.active){border-color:var(--gold);color:var(--gold);}
+
+/* NAVBAR */
+nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:3px solid var(--navy);padding:0 40px;display:flex;align-items:center;justify-content:space-between;height:74px;box-shadow:0 2px 20px rgba(11,60,111,0.12);}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none;}
+.nav-logo-text{display:flex;align-items:center;gap:10px;}
+.nav-brand-dyp{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:var(--navy);letter-spacing:4px;line-height:1;}
+.nav-brand-sep{width:1.5px;height:36px;background:rgba(11,60,111,0.2);}
+.nav-brand-words{display:flex;flex-direction:column;justify-content:center;gap:1px;}
+.nav-brand-word{font-size:9px;font-weight:700;letter-spacing:2.5px;color:var(--navy);text-transform:uppercase;line-height:1.5;}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
+.nav-links a{text-decoration:none;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);transition:color .3s;position:relative;padding-bottom:4px;}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--red);transition:width .3s;}
+.nav-links a:hover::after{width:100%;}
+.nav-links a:hover{color:var(--red);}
+.nav-cta{background:var(--navy)!important;color:var(--white)!important;padding:10px 22px!important;border:2px solid var(--navy)!important;transition:all .3s!important;}
+.nav-cta:hover{background:var(--gold)!important;border-color:var(--gold)!important;color:var(--navy-dark)!important;}
+.nav-cta::after{display:none!important;}
+.nav-donate{background:var(--red)!important;color:var(--white)!important;padding:10px 22px!important;border:2px solid var(--red)!important;cursor:pointer!important;font-family:'Montserrat',sans-serif!important;}
+.nav-donate:hover{background:var(--gold)!important;border-color:var(--gold)!important;color:var(--navy-dark)!important;}
+
+/* HERO */
+.hero{min-height:92vh;background:var(--navy-dark);position:relative;display:flex;align-items:center;overflow:hidden;}
+.hero-pattern{position:absolute;inset:0;background-image:repeating-linear-gradient(45deg,transparent,transparent 40px,rgba(255,255,255,.015) 40px,rgba(255,255,255,.015) 41px),repeating-linear-gradient(-45deg,transparent,transparent 40px,rgba(255,255,255,.015) 40px,rgba(255,255,255,.015) 41px);}
+.hero-accent-left{position:absolute;left:0;top:0;bottom:0;width:6px;background:linear-gradient(to bottom,var(--red),var(--gold));}
+.hero-circle{position:absolute;right:-200px;top:50%;transform:translateY(-50%);width:700px;height:700px;border-radius:50%;border:1px solid rgba(201,162,39,.15);pointer-events:none;}
+.hero-circle-2{position:absolute;right:-280px;top:50%;transform:translateY(-50%);width:900px;height:900px;border-radius:50%;border:1px solid rgba(201,162,39,.08);pointer-events:none;}
+.hero-content{position:relative;z-index:2;padding:80px;max-width:780px;}
+.hero-flag{display:flex;align-items:center;gap:10px;margin-bottom:28px;opacity:0;animation:fadeUp .8s .2s forwards;}
+.hero-flag-line{width:40px;height:2px;background:var(--gold);}
+.hero-flag span{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gold);}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(38px,5vw,62px);font-weight:700;color:var(--white);line-height:1.12;margin-bottom:28px;opacity:0;animation:fadeUp .8s .4s forwards;}
+.hero h1 em{font-style:italic;color:var(--gold);}
+.hero-sub{font-size:16px;font-weight:300;color:rgba(255,255,255,.72);line-height:1.8;max-width:580px;margin-bottom:48px;opacity:0;animation:fadeUp .8s .6s forwards;}
+.hero-buttons{display:flex;gap:16px;flex-wrap:wrap;opacity:0;animation:fadeUp .8s .8s forwards;}
+.btn-primary{background:var(--gold);color:var(--navy-dark);padding:16px 34px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all .3s;display:inline-block;cursor:pointer;border:none;font-family:'Montserrat',sans-serif;}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,162,39,.35);}
+.btn-secondary{background:transparent;color:var(--white);padding:14px 32px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;border:1.5px solid rgba(255,255,255,.35);transition:all .3s;display:inline-block;cursor:pointer;font-family:'Montserrat',sans-serif;}
+.btn-secondary:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);}
+.btn-red{background:var(--red);color:var(--white);padding:16px 34px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all .3s;display:inline-block;cursor:pointer;border:none;font-family:'Montserrat',sans-serif;}
+.btn-red:hover{background:#e53935;transform:translateY(-2px);}
+.hero-stats{position:absolute;bottom:0;left:0;right:0;display:flex;border-top:1px solid rgba(255,255,255,.1);opacity:0;animation:fadeUp .8s 1s forwards;}
+.hero-stat{flex:1;padding:28px 40px;border-right:1px solid rgba(255,255,255,.1);text-align:center;}
+.hero-stat:last-child{border-right:none;}
+.hero-stat-num{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--gold);display:block;line-height:1;margin-bottom:6px;}
+.hero-stat-label{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.45);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+
+/* SECTIONS */
+section{padding:100px 80px;}
+.section-label{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-label-line{width:30px;height:2px;background:var(--red);}
+.section-label span{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--red);}
+h2{font-family:'Playfair Display',serif;font-size:clamp(30px,4vw,48px);font-weight:700;color:var(--navy);line-height:1.15;margin-bottom:24px;}
+h2 em{font-style:italic;color:var(--red);}
+
+/* ABOUT */
+.about{background:var(--white);display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+.about-text p{font-size:15px;line-height:1.9;color:#374151;margin-bottom:20px;font-weight:300;}
+.about-text p strong{color:var(--navy);font-weight:600;}
+.about-card{background:var(--navy);padding:50px 44px;position:relative;overflow:hidden;}
+.about-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--red),var(--gold));}
+.about-card-quote{font-family:'Playfair Display',serif;font-size:60px;color:var(--gold);opacity:.3;line-height:1;margin-bottom:-20px;}
+.about-card-text{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:var(--white);line-height:1.7;margin-bottom:30px;}
+.about-card-attr{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gold);}
+.about-corner{position:absolute;bottom:-2px;right:-2px;width:60px;height:60px;background:var(--cream);clip-path:polygon(100% 0,100% 100%,0 100%);}
+
+/* MISSION */
+.mission-section{background:var(--cream);text-align:center;}
+.mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:60px;max-width:900px;margin-left:auto;margin-right:auto;}
+.mission-card{padding:60px 50px;position:relative;}
+.mission-card:first-child{background:var(--navy);}
+.mission-card:last-child{background:var(--navy-dark);}
+.mission-card-label{font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:20px;display:block;}
+.mission-card h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--white);margin-bottom:20px;line-height:1.3;}
+.mission-card p{font-size:14px;line-height:1.9;color:rgba(255,255,255,.72);font-weight:300;}
+.mission-card-icon{font-size:36px;margin-bottom:24px;display:block;}
+
+/* PILLARS */
+.pillars{background:var(--white);}
+.pillars-header{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;margin-bottom:70px;}
+.pillars-header p{font-size:15px;line-height:1.9;color:var(--gray);font-weight:300;}
+.pillars-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.pillar-card{background:var(--cream);padding:44px 36px;transition:all .4s;cursor:default;position:relative;overflow:hidden;}
+.pillar-card::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--gold);transform:scaleX(0);transition:transform .4s;}
+.pillar-card:hover{background:var(--navy);transform:translateY(-4px);box-shadow:0 20px 50px rgba(11,60,111,.2);}
+.pillar-card:hover::before{transform:scaleX(1);}
+.pillar-card:hover .pillar-title{color:var(--white);}
+.pillar-card:hover .pillar-text{color:rgba(255,255,255,.7);}
+.pillar-card:hover .pillar-num{color:rgba(255,255,255,.1);}
+.pillar-icon{font-size:32px;margin-bottom:20px;display:block;}
+.pillar-num{position:absolute;top:20px;right:24px;font-family:'Playfair Display',serif;font-size:64px;font-weight:700;color:rgba(11,60,111,.06);line-height:1;transition:color .4s;}
+.pillar-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--navy);margin-bottom:12px;line-height:1.3;transition:color .4s;}
+.pillar-text{font-size:13px;line-height:1.8;color:var(--gray);font-weight:300;transition:color .4s;}
+
+/* PROGRAMS */
+.programs{background:var(--navy-dark);position:relative;overflow:hidden;}
+.programs::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,39,.06) 0%,transparent 70%);}
+.programs .section-label span{color:var(--gold);}
+.programs .section-label-line{background:var(--gold);}
+.programs h2{color:var(--white);}
+.programs h2 em{color:var(--gold);}
+.programs-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;margin-top:60px;}
+.program-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:36px 28px;transition:all .4s;cursor:default;}
+.program-card:hover{background:rgba(201,162,39,.1);border-color:var(--gold);transform:translateY(-4px);}
+.program-card:hover .program-title{color:var(--gold);}
+.program-icon{font-size:28px;margin-bottom:16px;display:block;}
+.program-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:600;color:var(--white);margin-bottom:10px;line-height:1.4;transition:color .4s;}
+.program-text{font-size:12px;line-height:1.7;color:rgba(255,255,255,.45);font-weight:300;}
+
+/* CRYPTO / WEB3 */
+.crypto-section{background:var(--navy);padding:80px;}
+.crypto-section .section-label span{color:var(--gold);}
+.crypto-section .section-label-line{background:var(--gold);}
+.crypto-section h2{color:var(--white);}
+.crypto-section h2 em{color:var(--gold);}
+.crypto-section p.section-intro{font-size:15px;line-height:1.9;color:rgba(255,255,255,.65);font-weight:300;max-width:650px;margin-bottom:50px;}
+.crypto-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+.crypto-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:36px 28px;text-align:center;transition:all .3s;}
+.crypto-card:hover{background:rgba(247,147,26,.08);border-color:var(--crypto);transform:translateY(-3px);}
+.crypto-card:hover .crypto-name{color:var(--crypto);}
+.crypto-symbol{font-size:36px;display:block;margin-bottom:14px;}
+.crypto-name{font-family:'Playfair Display',serif;font-size:16px;font-weight:600;color:var(--white);margin-bottom:6px;transition:color .3s;}
+.crypto-desc{font-size:11px;color:rgba(255,255,255,.4);line-height:1.6;}
+.token-banner{margin-top:50px;background:rgba(201,162,39,.08);border:1px solid rgba(201,162,39,.25);padding:36px 44px;display:flex;align-items:center;gap:30px;}
+.token-banner-icon{font-size:48px;flex-shrink:0;}
+.token-banner-text h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--gold);margin-bottom:10px;}
+.token-banner-text p{font-size:13px;line-height:1.8;color:rgba(255,255,255,.6);font-weight:300;}
+
+/* FOUNDERS */
+.founders{background:var(--cream);}
+.founders-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:60px;max-width:900px;}
+.founder-card{background:var(--white);padding:50px 44px;border-top:4px solid var(--navy);position:relative;transition:transform .3s,box-shadow .3s;}
+.founder-card:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(11,60,111,.12);}
+.founder-card:last-child{border-top-color:var(--red);}
+.founder-avatar{width:64px;height:64px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:24px;font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--gold);}
+.founder-card:last-child .founder-avatar{background:var(--red);}
+.founder-name{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.founder-title{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin-bottom:20px;display:block;}
+.founder-card:last-child .founder-title{color:var(--navy);}
+.founder-bio{font-size:13.5px;line-height:1.85;color:var(--gray);font-weight:300;border-top:1px solid var(--light-gray);padding-top:20px;}
+
+/* SUPPORT */
+.support{background:var(--white);text-align:center;}
+.support-sub{font-size:16px;color:var(--gray);max-width:600px;margin:0 auto 60px;line-height:1.8;font-weight:300;}
+.support-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:60px;}
+.support-card{background:var(--cream);padding:44px 28px;text-align:center;transition:all .3s;cursor:pointer;text-decoration:none;display:block;color:inherit;}
+.support-card:hover{background:var(--navy);}
+.support-card:hover .support-card-title{color:var(--white);}
+.support-card:hover .support-card-text{color:rgba(255,255,255,.6);}
+.support-card-icon{font-size:36px;display:block;margin-bottom:16px;}
+.support-card-title{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--navy);margin-bottom:10px;transition:color .3s;}
+.support-card-text{font-size:12px;color:var(--gray);line-height:1.7;font-weight:300;transition:color .3s;}
+
+/* CONTACT */
+.contact{background:var(--navy-dark);position:relative;overflow:hidden;}
+.contact::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 80% 50%,rgba(201,162,39,0.07) 0%,transparent 65%),radial-gradient(ellipse 40% 60% at 10% 80%,rgba(198,40,40,0.06) 0%,transparent 60%);}
+.contact::after{content:'DYP';position:absolute;right:-20px;bottom:-60px;font-family:'Playfair Display',serif;font-size:280px;font-weight:900;color:rgba(255,255,255,.02);pointer-events:none;line-height:1;}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;position:relative;z-index:1;}
+.contact .section-label span{color:var(--gold);}
+.contact .section-label-line{background:var(--gold);}
+.contact h2{color:var(--white);}
+.contact-text{font-size:15px;line-height:1.9;color:rgba(255,255,255,.65);font-weight:300;margin-bottom:36px;}
+.contact-info{display:flex;flex-direction:column;gap:16px;margin-top:40px;}
+.contact-info-item{display:flex;align-items:center;gap:14px;font-size:13px;color:rgba(255,255,255,.6);}
+.contact-info-item span:first-child{color:var(--gold);font-size:16px;width:20px;}
+
+/* MEMBERSHIP FORM CARD */
+.contact-form{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(201,162,39,0.25);
+  padding:36px 32px;
+  display:flex;flex-direction:column;gap:14px;
+  position:relative;
+  box-shadow:0 0 60px rgba(201,162,39,0.06), inset 0 1px 0 rgba(201,162,39,0.15);
+}
+.contact-form::before{
+  content:'MEMBERSHIP APPLICATION';
+  position:absolute;top:-11px;left:24px;
+  font-size:9px;font-weight:700;letter-spacing:3px;
+  background:var(--navy-dark);
+  color:var(--gold);
+  padding:0 12px;
+}
+.contact-form input,.contact-form textarea,.contact-form select{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:var(--white);padding:16px 20px;font-family:'Montserrat',sans-serif;font-size:13px;width:100%;outline:none;transition:border-color .3s;}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:rgba(255,255,255,.7);}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{border-color:var(--gold);}
+.contact-form textarea{resize:vertical;min-height:100px;}
+.contact-form select option{background:var(--navy-dark);}
+
+/* Floating label fields */
+.form-field{position:relative;}
+.form-field input,.form-field select{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);color:var(--white);padding:22px 16px 8px;font-family:'Montserrat',sans-serif;font-size:13px;width:100%;outline:none;transition:all .3s;appearance:none;}
+.form-field input:hover,.form-field select:hover{border-color:rgba(201,162,39,0.35);}
+.form-field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23C9A227' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px;cursor:pointer;}
+.form-field select option{background:#071f3a;color:white;}
+.form-field select optgroup{color:rgba(255,255,255,0.4);font-size:11px;font-weight:700;letter-spacing:1px;}
+.form-field label{position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:12px;color:rgba(255,255,255,.9);pointer-events:none;transition:all .2s;font-weight:500;}
+.form-field input:focus ~ label,.form-field input:not(:placeholder-shown) ~ label,.form-field select:focus ~ label,.form-field select:valid ~ label{top:10px;transform:none;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);}
+.form-field input:focus,.form-field select:focus{border-color:var(--gold);background:rgba(201,162,39,0.04);box-shadow:0 0 0 3px rgba(201,162,39,0.08);}
+
+/* Social networks */
+.form-social-wrap{padding:20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.9);}
+.form-social-label{font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.social-networks{display:flex;flex-wrap:wrap;gap:8px;}
+.social-item{display:flex;flex-direction:column;gap:8px;}
+.social-toggle{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:600;color:rgba(255,255,255,.85);cursor:pointer;padding:8px 14px;border:1px solid rgba(255,255,255,.2);transition:all .2s;user-select:none;white-space:nowrap;}
+.social-toggle:hover{border-color:rgba(201,162,39,.5);color:rgba(255,255,255,.8);background:rgba(201,162,39,0.05);}
+.social-item.active .social-toggle{border-color:var(--gold);color:var(--gold);background:rgba(201,162,39,0.08);}
+.social-input{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(201,162,39,0.3);color:var(--white);padding:8px 12px;font-family:'Montserrat',sans-serif;font-size:12px;outline:none;display:none;transition:border-color .2s;}
+.social-item.active .social-input{display:block;}
+.social-input::placeholder{color:rgba(255,255,255,.25);}
+.social-input:focus{border-color:var(--gold);}
+
+/* Tag multi-select */
+.form-tags-wrap{padding:20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);}
+.form-tags-label{font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.tags-grid{display:flex;flex-wrap:wrap;gap:8px;}
+.tag-item{padding:8px 14px;border:1px solid rgba(255,255,255,.2);font-size:11px;font-weight:600;color:rgba(255,255,255,.75);cursor:pointer;transition:all .2s;user-select:none;white-space:nowrap;}
+.tag-item:hover{border-color:rgba(201,162,39,.5);color:rgba(255,255,255,.9);background:rgba(201,162,39,0.05);}
+.tag-item.selected{border-color:var(--gold);color:var(--gold);background:rgba(201,162,39,0.1);}
+
+/* Upload zone */
+.form-upload-wrap{padding:20px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);}
+.form-upload-label{font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+.upload-zone{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:28px 20px;border:1.5px dashed rgba(201,162,39,0.25);cursor:pointer;transition:all .2s;text-align:center;}
+.upload-zone:hover{border-color:var(--gold);background:rgba(201,162,39,0.04);}
+.upload-zone.has-file{border-color:var(--gold);background:rgba(201,162,39,0.06);}
+.upload-icon{font-size:28px;line-height:1;}
+.upload-text{font-size:12px;color:rgba(255,255,255,.85);}
+.upload-text u{color:var(--gold);cursor:pointer;text-decoration:underline;font-weight:600;transition:opacity .2s;}
+.upload-text u:hover{opacity:0.7;}
+.upload-hint{font-size:10px;color:rgba(255,255,255,.2);letter-spacing:1px;}
+.upload-filename{font-size:12px;color:var(--gold);font-weight:600;}
+
+/* FOOTER */
+footer{background:var(--navy-dark);padding:50px 80px 30px;}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:30px;}
+.footer-logo{display:flex;align-items:center;gap:14px;}
+.footer-logo-text{display:flex;align-items:baseline;gap:8px;}
+.footer-brand-dyp{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white);letter-spacing:2px;}
+.footer-sep{width:1px;height:18px;background:rgba(255,255,255,.2);}
+.footer-brand-full{font-size:10px;letter-spacing:1.5px;color:rgba(255,255,255,.4);text-transform:uppercase;}
+.footer-links{display:flex;gap:28px;list-style:none;}
+.footer-links a{font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.4);text-decoration:none;transition:color .3s;}
+.footer-links a:hover{color:var(--gold);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;}
+.footer-copy{font-size:11px;color:rgba(255,255,255,.25);font-weight:300;}
+
+/* ═══════════════════════════════════════════
+   DONATE MODAL
+═══════════════════════════════════════════ */
+.modal-overlay{position:fixed;inset:0;background:rgba(7,31,58,.92);z-index:1000;display:none;align-items:center;justify-content:center;backdrop-filter:blur(6px);}
+.modal-overlay.open{display:flex;}
+.modal{background:var(--white);width:94%;max-width:580px;max-height:92vh;overflow-y:auto;position:relative;animation:modalIn .3s ease;}
+@keyframes modalIn{from{opacity:0;transform:scale(.96) translateY(20px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.modal-header{background:var(--navy);padding:36px 44px 30px;position:relative;}
+.modal-header::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(to right,var(--red),var(--gold));}
+.modal-close{position:absolute;top:16px;right:20px;background:none;border:none;color:rgba(255,255,255,.5);font-size:22px;cursor:pointer;transition:color .2s;line-height:1;}
+.modal-close:hover{color:var(--white);}
+.modal-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.modal-sub{font-size:12px;color:rgba(255,255,255,.55);letter-spacing:1px;}
+.modal-body{padding:36px 44px;}
+.modal-section-title{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gray);margin-bottom:16px;display:block;}
+.amount-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px;}
+.amount-btn{background:var(--cream);border:2px solid transparent;padding:14px 8px;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;color:var(--navy);cursor:pointer;transition:all .2s;text-align:center;}
+.amount-btn:hover,.amount-btn.active{background:var(--navy);color:var(--white);border-color:var(--navy);}
+.custom-amount{width:100%;background:var(--cream);border:2px solid transparent;padding:14px 18px;font-family:'Montserrat',sans-serif;font-size:14px;color:var(--navy);outline:none;margin-bottom:28px;transition:border-color .2s;}
+.custom-amount:focus{border-color:var(--navy);}
+.frequency-row{display:flex;gap:10px;margin-bottom:28px;}
+.freq-btn{flex:1;background:var(--cream);border:2px solid transparent;padding:12px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--gray);cursor:pointer;transition:all .2s;}
+.freq-btn:hover,.freq-btn.active{background:var(--navy);color:var(--white);border-color:var(--navy);}
+.payment-tabs{display:flex;gap:2px;margin-bottom:24px;}
+.pay-tab{flex:1;padding:12px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;border:none;transition:all .2s;background:var(--light-gray);color:var(--gray);}
+.pay-tab.active{background:var(--navy);color:var(--white);}
+.pay-panel{display:none;}
+.pay-panel.active{display:block;}
+.pay-form input{width:100%;background:var(--cream);border:2px solid transparent;padding:14px 18px;font-family:'Montserrat',sans-serif;font-size:13px;color:var(--navy);outline:none;margin-bottom:12px;transition:border-color .2s;}
+.pay-form input:focus{border-color:var(--navy);}
+.pay-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.crypto-options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px;}
+.crypto-opt{background:var(--cream);border:2px solid transparent;padding:16px;cursor:pointer;transition:all .2s;text-align:center;}
+.crypto-opt:hover,.crypto-opt.active{border-color:var(--crypto);background:rgba(247,147,26,.06);}
+.crypto-opt-icon{font-size:24px;display:block;margin-bottom:6px;}
+.crypto-opt-name{font-size:12px;font-weight:700;color:var(--navy);}
+.crypto-address{background:var(--cream);padding:16px 18px;font-size:11px;font-family:monospace;color:var(--navy);border-left:3px solid var(--gold);word-break:break-all;margin-bottom:16px;display:none;}
+.crypto-address.show{display:block;}
+.copy-btn{background:none;border:1px solid var(--navy);padding:8px 16px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;cursor:pointer;color:var(--navy);transition:all .2s;}
+.copy-btn:hover{background:var(--navy);color:var(--white);}
+.donate-submit{width:100%;background:var(--gold);border:none;padding:18px;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--navy-dark);cursor:pointer;transition:all .3s;margin-top:10px;}
+.donate-submit:hover{background:var(--gold-light);box-shadow:0 6px 24px rgba(201,162,39,.4);}
+.modal-secure{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px;font-size:11px;color:var(--gray);}
+.modal-trust-logos{display:flex;align-items:center;justify-content:center;gap:20px;margin-top:16px;padding-top:16px;border-top:1px solid var(--light-gray);}
+.trust-badge{font-size:10px;font-weight:700;letter-spacing:1px;color:var(--gray);text-transform:uppercase;padding:6px 12px;border:1px solid var(--light-gray);}
+
+/* ═══════════════════════════════════════════
+   AI ASSISTANT WIDGET
+═══════════════════════════════════════════ */
+.ai-fab{position:fixed;bottom:30px;right:30px;z-index:500;display:flex;flex-direction:column;align-items:flex-end;gap:12px;}
+.ai-fab-btn{width:62px;height:62px;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--navy-light));border:3px solid var(--gold);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(11,60,111,.4);transition:all .3s;position:relative;}
+.ai-fab-btn:hover{transform:scale(1.08);box-shadow:0 12px 40px rgba(11,60,111,.5);}
+.ai-fab-btn svg{width:28px;height:28px;}
+.ai-pulse{position:absolute;top:-3px;right:-3px;width:14px;height:14px;background:var(--gold);border-radius:50%;border:2px solid var(--white);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.3);opacity:.7}}
+.ai-chat{width:370px;background:var(--white);border-radius:0;box-shadow:0 20px 60px rgba(11,60,111,.25);display:none;flex-direction:column;overflow:hidden;max-height:520px;border-top:3px solid var(--gold);}
+.ai-chat.open{display:flex;}
+.ai-chat-header{background:var(--navy);padding:18px 20px;display:flex;align-items:center;justify-content:space-between;}
+.ai-chat-header-info{display:flex;align-items:center;gap:12px;}
+.ai-avatar-small{width:38px;height:38px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;}
+.ai-chat-name{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--white);}
+.ai-chat-status{font-size:10px;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:5px;}
+.ai-chat-status::before{content:'';width:6px;height:6px;background:#4ade80;border-radius:50%;display:inline-block;}
+.ai-chat-close{background:none;border:none;color:rgba(255,255,255,.5);font-size:18px;cursor:pointer;}
+.ai-chat-close:hover{color:var(--white);}
+.ai-messages{flex:1;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:14px;background:var(--cream);}
+.ai-msg{display:flex;gap:10px;align-items:flex-start;}
+.ai-msg.user{flex-direction:row-reverse;}
+.ai-msg-avatar{width:30px;height:30px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:13px;}
+.ai-msg-avatar.bot{background:var(--navy);}
+.ai-msg-avatar.user{background:var(--gold);color:var(--navy-dark);}
+.ai-msg-bubble{max-width:80%;padding:12px 16px;font-size:13px;line-height:1.6;}
+.ai-msg.bot .ai-msg-bubble{background:var(--white);color:var(--navy-dark);border-left:2px solid var(--gold);}
+.ai-msg.user .ai-msg-bubble{background:var(--navy);color:var(--white);}
+.ai-typing{display:flex;gap:4px;padding:10px 16px;background:var(--white);border-left:2px solid var(--gold);width:fit-content;}
+.ai-typing span{width:6px;height:6px;background:var(--navy);border-radius:50%;animation:typing .8s infinite;}
+.ai-typing span:nth-child(2){animation-delay:.15s;}
+.ai-typing span:nth-child(3){animation-delay:.3s;}
+@keyframes typing{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-6px)}}
+.ai-input-row{padding:14px 16px;background:var(--white);display:flex;gap:10px;border-top:1px solid var(--light-gray);}
+.ai-input{flex:1;border:1px solid var(--light-gray);padding:10px 14px;font-family:'Montserrat',sans-serif;font-size:12px;color:var(--navy-dark);outline:none;transition:border-color .2s;background:var(--cream);}
+.ai-input:focus{border-color:var(--navy);}
+.ai-send{background:var(--navy);border:none;color:var(--white);width:38px;height:38px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0;}
+.ai-send:hover{background:var(--gold);}
+.ai-quick-btns{padding:0 16px 12px;display:flex;flex-wrap:wrap;gap:6px;background:var(--white);}
+.ai-quick{background:var(--cream);border:1px solid var(--light-gray);padding:6px 12px;font-family:'Montserrat',sans-serif;font-size:11px;cursor:pointer;color:var(--navy);transition:all .2s;}
+.ai-quick:hover{background:var(--navy);color:var(--white);border-color:var(--navy);}
+
+/* DOMINICAN FLAG TRICOLOR ACCENT */
+.tricolor-bar{display:flex;height:5px;width:100%;}
+.tricolor-bar span:nth-child(1){flex:1;background:#0B3C6F;}
+.tricolor-bar span:nth-child(2){flex:1;background:#FFFFFF;}
+.tricolor-bar span:nth-child(3){flex:1;background:#C62828;}
+
+.hero-tricolor{position:absolute;bottom:0;left:0;right:0;display:flex;height:4px;z-index:3;}
+.hero-tricolor span:nth-child(1){flex:1;background:#0B3C6F;opacity:.8;}
+.hero-tricolor span:nth-child(2){flex:1;background:#FFFFFF;opacity:.8;}
+.hero-tricolor span:nth-child(3){flex:1;background:#C62828;opacity:.8;}
+/* Language switching */
+.es { display: none !important; }
+.en { display: block !important; }
+span.en { display: inline !important; }
+span.es { display: none !important; }
+
+body.lang-es .es  { display: block !important; }
+body.lang-es .en  { display: none !important; }
+body.lang-es span.es { display: inline !important; }
+body.lang-es span.en { display: none !important; }
+
+body.lang-en .en  { display: block !important; }
+body.lang-en .es  { display: none !important; }
+body.lang-en span.en { display: inline !important; }
+body.lang-en span.es { display: none !important; }
+
+/* RESPONSIVE */
+
+
+/* ═══════════════════════════════════════════
+   DYP COACHING — CURSO
+═══════════════════════════════════════════ */
+.course-section{background:var(--cream);padding:100px 80px;position:relative;overflow:hidden;}
+.course-section::after{content:'DYP';position:absolute;right:-20px;bottom:-60px;font-family:'Playfair Display',serif;font-size:280px;font-weight:900;color:rgba(11,60,111,.04);pointer-events:none;line-height:1;}
+.course-inner{position:relative;z-index:1;}
+.course-top{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-bottom:80px;}
+.course-badge{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:var(--gold);padding:8px 18px;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;}
+.course-section h2{color:var(--navy);}
+.course-section h2 em{font-style:italic;color:var(--red);}
+.course-desc{font-size:15px;line-height:1.9;color:var(--gray);font-weight:300;margin-bottom:28px;}
+.course-desc strong{color:var(--navy);font-weight:600;}
+.course-highlights{display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
+.course-highlight{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--navy);font-weight:500;}
+.course-highlight::before{content:'✓';color:var(--gold);font-weight:700;font-size:14px;flex-shrink:0;}
+/* Consultation banner */
+.consult-banner{background:var(--navy);border-left:4px solid var(--gold);padding:28px 32px;margin-bottom:40px;display:flex;align-items:flex-start;gap:20px;}
+.consult-banner-icon{font-size:32px;flex-shrink:0;}
+.consult-banner-text h4{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--gold);margin-bottom:8px;}
+.consult-banner-text p{font-size:13px;color:rgba(255,255,255,.65);line-height:1.8;font-weight:300;}
+/* Price card */
+.course-price-card{background:var(--navy);padding:44px 36px;position:relative;overflow:hidden;}
+.course-price-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--red),var(--gold));}
+.course-price-label{font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px;}
+.course-price{font-family:'Playfair Display',serif;font-size:62px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:4px;}
+.course-price span{font-size:18px;font-weight:400;}
+.course-price-note{font-size:11px;color:rgba(255,255,255,.35);margin-bottom:6px;font-style:italic;}
+.course-price-sub{font-size:12px;color:rgba(255,255,255,.4);margin-bottom:28px;}
+.course-price-features{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
+.course-price-features li{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.75);}
+.course-price-features li::before{content:'→';color:var(--gold);font-weight:700;flex-shrink:0;}
+.course-price-card .btn-primary{width:100%;text-align:center;display:block;}
+.course-spots{font-size:11px;color:rgba(255,255,255,.3);text-align:center;margin-top:14px;letter-spacing:1px;}
+/* Weeks */
+.course-weeks-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--navy);margin-bottom:40px;}
+.course-weeks-title em{font-style:italic;color:var(--red);}
+.weeks-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-bottom:80px;}
+.week-card{background:var(--white);padding:36px 28px;border-top:3px solid transparent;transition:all .3s;}
+.week-card:hover{border-top-color:var(--gold);transform:translateY(-3px);box-shadow:0 16px 40px rgba(11,60,111,.1);}
+.week-num{font-family:'Playfair Display',serif;font-size:10px;font-weight:700;letter-spacing:3px;color:var(--gold);margin-bottom:12px;display:block;text-transform:uppercase;}
+.week-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--navy);margin-bottom:10px;line-height:1.3;}
+.week-text{font-size:12px;color:var(--gray);line-height:1.8;}
+.week-outcome{font-size:11px;font-weight:600;color:var(--navy);margin-top:14px;padding-top:14px;border-top:1px solid var(--light-gray);}
+.week-outcome::before{content:'🎯 ';}
+/* For who */
+.course-for{background:var(--navy);padding:60px 80px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:2px;}
+.course-for h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--white);margin-bottom:24px;}
+.course-for h3 em{font-style:italic;color:var(--gold);}
+.for-list{list-style:none;display:flex;flex-direction:column;gap:14px;}
+.for-list li{display:flex;align-items:flex-start;gap:12px;font-size:13px;color:rgba(255,255,255,.7);line-height:1.7;}
+.for-list li::before{content:'🇩🇴';flex-shrink:0;}
+/* Instructor */
+.course-instructor{background:var(--navy-dark);padding:60px 80px;display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;}
+.instructor-avatar{width:80px;height:80px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--navy-dark);flex-shrink:0;}
+.instructor-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--white);margin-bottom:4px;}
+.instructor-title{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block;}
+.instructor-bio{font-size:13px;color:rgba(255,255,255,.6);line-height:1.8;font-weight:300;}
+/* CTA */
+.course-cta-banner{background:var(--gold);padding:60px 80px;text-align:center;}
+.course-cta-banner h3{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--navy-dark);margin-bottom:12px;}
+.course-cta-banner p{font-size:15px;color:rgba(7,31,58,.65);margin-bottom:32px;font-weight:300;}
+.btn-navy{background:var(--navy);color:var(--white);padding:18px 44px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all .3s;display:inline-block;cursor:pointer;border:none;font-family:'Montserrat',sans-serif;}
+.btn-navy:hover{background:var(--navy-dark);transform:translateY(-2px);box-shadow:0 8px 30px rgba(11,60,111,.3);}
+/* Apply form */
+.course-apply-wrap{background:rgba(11,60,111,.04);border:1px solid rgba(11,60,111,.12);padding:50px 44px;}
+.course-apply-inner{max-width:620px;margin:0 auto;}
+
+@media(max-width:900px){
+  .course-section{padding:60px 20px;}
+  .course-top{grid-template-columns:1fr;gap:40px;}
+  .weeks-grid{grid-template-columns:1fr;}
+  .course-for{grid-template-columns:1fr;gap:32px;padding:40px 24px;}
+  .course-instructor{grid-template-columns:1fr;text-align:center;padding:40px 24px;}
+  .instructor-avatar{margin:0 auto;}
+  .course-cta-banner{padding:48px 24px;}
+  .course-apply-wrap{padding:32px 20px;}
+  .consult-banner{flex-direction:column;gap:12px;}
+}
+@media(max-width:480px){
+  .weeks-grid{grid-template-columns:1fr;}
+}
+
+/* ═══════════════════════════════════════════
+   DYP PITCH
+═══════════════════════════════════════════ */
+.pitch-section{background:#050f1a;position:relative;overflow:hidden;padding:100px 80px;}
+.pitch-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 80% 50%,rgba(201,162,39,.07) 0%,transparent 65%),radial-gradient(ellipse 40% 50% at 5% 80%,rgba(198,40,40,.05) 0%,transparent 60%);}
+.pitch-section::after{content:'PITCH';position:absolute;right:-30px;top:50%;transform:translateY(-50%);font-family:'Playfair Display',serif;font-size:260px;font-weight:900;color:rgba(255,255,255,.018);pointer-events:none;line-height:1;}
+.pitch-inner{position:relative;z-index:1;}
+.pitch-top{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-bottom:80px;}
+.pitch-section .section-label span{color:var(--gold);}
+.pitch-section .section-label-line{background:var(--gold);}
+.pitch-section h2{color:var(--white);}
+.pitch-desc{font-size:15px;line-height:1.9;color:rgba(255,255,255,.6);font-weight:300;margin-bottom:32px;}
+.pitch-stats{display:flex;gap:0;border:1px solid rgba(201,162,39,.2);}
+.pitch-stat{flex:1;padding:24px 20px;text-align:center;border-right:1px solid rgba(201,162,39,.15);}
+.pitch-stat:last-child{border-right:none;}
+.pitch-stat-num{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--gold);display:block;margin-bottom:4px;}
+.pitch-stat-label{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);}
+
+/* What you get cards */
+.pitch-get-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:80px;}
+.pitch-get-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);padding:36px 28px;transition:all .3s;}
+.pitch-get-card:hover{background:rgba(201,162,39,.07);border-color:rgba(201,162,39,.3);transform:translateY(-3px);}
+.pitch-get-icon{font-size:30px;margin-bottom:16px;display:block;}
+.pitch-get-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--white);margin-bottom:10px;}
+.pitch-get-text{font-size:12px;color:rgba(255,255,255,.45);line-height:1.8;}
+
+/* How it works */
+.pitch-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:80px;position:relative;}
+.pitch-steps::before{content:'';position:absolute;top:28px;left:5%;right:5%;height:1px;background:linear-gradient(to right,transparent,rgba(201,162,39,.3),transparent);z-index:0;}
+.pitch-step{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);padding:32px 24px;text-align:center;position:relative;z-index:1;}
+.pitch-step-num{width:44px;height:44px;border-radius:50%;background:var(--navy-dark);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--gold);margin:0 auto 20px;}
+.pitch-step-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--white);margin-bottom:8px;}
+.pitch-step-text{font-size:11px;color:rgba(255,255,255,.4);line-height:1.7;}
+
+/* Application form */
+.pitch-form-wrap{background:rgba(255,255,255,.03);border:1px solid rgba(201,162,39,.2);padding:50px 44px;position:relative;}
+.pitch-form-wrap::before{content:'SUBMIT YOUR IDEA';position:absolute;top:-11px;left:24px;font-size:9px;font-weight:700;letter-spacing:3px;background:#050f1a;color:var(--gold);padding:0 12px;}
+.pitch-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+.pitch-field{position:relative;}
+.pitch-field input,.pitch-field select,.pitch-field textarea{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:var(--white);padding:22px 16px 8px;font-family:'Montserrat',sans-serif;font-size:13px;width:100%;outline:none;transition:all .3s;appearance:none;resize:none;}
+.pitch-field input:hover,.pitch-field select:hover,.pitch-field textarea:hover{border-color:rgba(201,162,39,.3);}
+.pitch-field input:focus,.pitch-field select:focus,.pitch-field textarea:focus{border-color:var(--gold);background:rgba(201,162,39,.04);box-shadow:0 0 0 3px rgba(201,162,39,.08);}
+.pitch-field label{position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:12px;color:rgba(255,255,255,.5);pointer-events:none;transition:all .2s;font-weight:500;}
+.pitch-field textarea ~ label{top:18px;transform:none;}
+.pitch-field input:focus ~ label,.pitch-field input:not(:placeholder-shown) ~ label,.pitch-field select:focus ~ label,.pitch-field select:valid ~ label,.pitch-field textarea:focus ~ label,.pitch-field textarea:not(:placeholder-shown) ~ label{top:10px;transform:none;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);}
+.pitch-field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23C9A227' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px;cursor:pointer;}
+.pitch-field select option{background:#050f1a;color:white;}
+.pitch-support-tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+.pitch-support-label{font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;}
+.pitch-member-notice{background:rgba(201,162,39,.08);border:1px solid rgba(201,162,39,.2);padding:16px 20px;font-size:12px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:20px;}
+.pitch-member-notice strong{color:var(--gold);}
+.pitch-member-notice a{color:var(--gold);text-decoration:underline;cursor:pointer;}
+
+@media(max-width:900px){
+  .pitch-section{padding:60px 20px;}
+  .pitch-top{grid-template-columns:1fr;gap:40px;}
+  .pitch-get-grid{grid-template-columns:1fr;}
+  .pitch-steps{grid-template-columns:1fr 1fr;}
+  .pitch-steps::before{display:none;}
+  .pitch-form-wrap{padding:32px 20px;}
+  .pitch-form-grid{grid-template-columns:1fr;}
+}
+@media(max-width:480px){
+  .pitch-steps{grid-template-columns:1fr;}
+}
+
+/* HAMBURGER BUTTON */
+.nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;width:40px;height:40px;}
+.nav-hamburger span{display:block;width:24px;height:2px;background:var(--navy);transition:all .3s;transform-origin:center;}
+.nav-hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.nav-hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.nav-hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* MOBILE MENU OVERLAY */
+.mobile-menu{position:fixed;inset:0;background:var(--navy-dark);z-index:200;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);}
+.mobile-menu.open{transform:translateX(0);}
+.mobile-menu-header{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,.1);}
+.mobile-menu-close{background:none;border:none;color:rgba(255,255,255,.6);font-size:22px;cursor:pointer;padding:4px 8px;}
+.mobile-menu-nav{flex:1;display:flex;flex-direction:column;padding:32px 24px;gap:4px;overflow-y:auto;}
+.mobile-nav-link{text-decoration:none;font-size:18px;font-weight:600;letter-spacing:1px;color:rgba(255,255,255,.85);padding:16px 0;border-bottom:1px solid rgba(255,255,255,.07);transition:color .2s;display:block;}
+.mobile-nav-link:hover,.mobile-nav-link:active{color:var(--gold);}
+.mobile-nav-cta{background:var(--gold);color:var(--navy-dark)!important;padding:16px 24px!important;text-align:center;margin-top:16px;font-weight:700!important;border-bottom:none!important;}
+.mobile-nav-donate{background:var(--red);color:var(--white);border:none;font-family:'Montserrat',sans-serif;font-size:16px;font-weight:700;padding:16px 24px;cursor:pointer;margin-top:8px;width:100%;text-align:center;}
+.mobile-menu-footer{padding:24px;display:flex;gap:12px;border-top:1px solid rgba(255,255,255,.1);}
+
+@media(max-width:900px){
+  /* General */
+  section{padding:60px 20px;}
+  .lang-bar{padding:8px 20px;}
+
+  /* Navbar */
+  nav{padding:0 20px;height:64px;}
+  .nav-links{display:none;}
+  .nav-hamburger{display:flex;}
+  .nav-brand-words{display:none;}
+  .nav-brand-sep{display:none;}
+
+  /* Hero */
+  .hero{min-height:100svh;}
+  .hero-content{padding:48px 20px 160px;}
+  .hero h1{font-size:clamp(30px,8vw,48px);}
+  .hero-sub{font-size:14px;}
+  .hero-buttons{flex-direction:column;gap:12px;}
+  .hero-buttons .btn-primary,.hero-buttons .btn-red,.hero-buttons .btn-secondary{width:100%;text-align:center;padding:16px 20px;}
+  .hero-stats{position:relative;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.1);}
+  .hero-stat{min-width:50%;padding:20px 16px;}
+
+  /* About */
+  .about{display:flex;flex-direction:column;gap:32px;}
+  .about-card{padding:32px 24px;}
+
+  /* Mission */
+  .mission-grid{grid-template-columns:1fr;gap:2px;}
+  .mission-card{padding:40px 28px;}
+
+  /* Pillars */
+  .pillars-header{display:flex;flex-direction:column;gap:16px;margin-bottom:40px;}
+  .pillars-grid{grid-template-columns:1fr;}
+  .pillar-card{padding:32px 24px;}
+
+  /* Programs */
+  .programs-grid{grid-template-columns:1fr 1fr;gap:2px;}
+  .program-card{padding:28px 20px;}
+
+  /* Crypto */
+  .crypto-section{padding:60px 20px;}
+  .crypto-grid{grid-template-columns:1fr 1fr;}
+  .token-banner{flex-direction:column;text-align:center;padding:28px 20px;gap:16px;}
+
+  /* Founders */
+  .founders-grid{grid-template-columns:1fr;max-width:100%;}
+  .founder-card{padding:36px 28px;}
+
+  /* Support */
+  .support-grid{grid-template-columns:1fr 1fr;}
+  .support-card{padding:32px 20px;}
+
+  /* Contact */
+  .contact-inner{display:flex;flex-direction:column;gap:40px;}
+  .contact-form{padding:24px 20px;}
+
+  /* Form grids — stack on mobile */
+  .contact-form [style*="grid-template-columns:1fr 1fr"]{display:flex!important;flex-direction:column!important;}
+
+  /* Tags */
+  .tags-grid{gap:6px;}
+  .tag-item{font-size:10px;padding:7px 10px;}
+
+  /* Footer */
+  .footer-inner{flex-direction:column;gap:20px;text-align:center;}
+  .footer-bottom{flex-direction:column;gap:10px;text-align:center;}
+  .footer-links{flex-wrap:wrap;justify-content:center;gap:16px;}
+  footer{padding:40px 20px 24px;}
+
+  /* Modal */
+  .modal{width:96%;max-height:95vh;}
+  .modal-body,.modal-header{padding:24px 20px;}
+  .amount-grid{grid-template-columns:repeat(2,1fr);}
+  .payment-tabs{flex-wrap:wrap;}
+
+  /* AI chat */
+  .ai-chat{width:calc(100vw - 40px);max-width:360px;}
+  .ai-fab{bottom:20px;right:16px;}
+}
+
+@media(max-width:480px){
+  /* Even smaller phones */
+  .hero-stat{min-width:100%;}
+  .programs-grid{grid-template-columns:1fr;}
+  .crypto-grid{grid-template-columns:1fr;}
+  .support-grid{grid-template-columns:1fr;}
+  .pillars-grid{grid-template-columns:1fr;}
+  .hero h1{font-size:clamp(26px,9vw,36px);}
+  .hero-content{padding:40px 16px 140px;}
+  section{padding:48px 16px;}
+  .mission-card{padding:32px 20px;}
+  .contact-form{padding:20px 16px;}
+  .founder-card{padding:28px 20px;}
+  .crypto-section{padding:48px 16px;}
+  .token-banner{padding:24px 16px;}
+  .modal-body,.modal-header{padding:20px 16px;}
+  .frequency-row{flex-wrap:wrap;}
+  .freq-btn{min-width:calc(50% - 5px);}
+}
+</style>
+</head>
+<body class="lang-en">
+
+<!-- BACK BAR -->
+<div style="background:var(--navy-dark);padding:10px 40px;display:flex;align-items:center;gap:16px;">
+  <a href="index.html" style="color:var(--gold);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:flex;align-items:center;gap:8px;">← <span class="en">Back to DYP</span><span class="es">Volver a DYP</span></a>
+  <span style="color:rgba(255,255,255,.2);font-size:11px;">|</span>
+  <span style="color:rgba(255,255,255,.4);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;">DYP Pitch</span>
+  <div style="margin-left:auto;display:flex;gap:8px;">
+    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn" data-lang="es">ES</button>
+  </div>
+</div>
+
+<!-- DYP PITCH -->
+<section class="pitch-section" id="pitch">
+  <div class="pitch-inner">
+
+    <!-- Top: intro + stats -->
+    <div class="pitch-top">
+      <div>
+        <div class="section-label"><div class="section-label-line"></div><span>DYP Pitch</span></div>
+        <h2 class="en">Your idea deserves<br><em>power</em><br>behind it.</h2>
+        <h2 class="es">Tu idea merece el<br><em>poder</em><br>detrás de ella.</h2>
+        <p class="pitch-desc en">DYP Pitch is where Dominican entrepreneurs meet the network they need. Submit your idea and connect with mentors, strategic allies, and investors from the DYP community — people who believe in Dominican talent because they are Dominican talent.</p>
+        <p class="pitch-desc es">DYP Pitch es donde los emprendedores dominicanos conocen la red que necesitan. Somete tu idea y conéctate con mentores, aliados estratégicos e inversores de la comunidad DYP — personas que creen en el talento dominicano porque ellos son talento dominicano.</p>
+      </div>
+      <div>
+        <div class="pitch-stats">
+          <div class="pitch-stat">
+            <span class="pitch-stat-num">🇩🇴</span>
+            <span class="pitch-stat-label"><span class="en">For Dominicans</span><span class="es">Para Dominicanos</span></span>
+          </div>
+          <div class="pitch-stat">
+            <span class="pitch-stat-num">3</span>
+            <span class="pitch-stat-label"><span class="en">Ways to get support</span><span class="es">Formas de apoyo</span></span>
+          </div>
+          <div class="pitch-stat">
+            <span class="pitch-stat-num">∞</span>
+            <span class="pitch-stat-label"><span class="en">Ideas welcome</span><span class="es">Ideas bienvenidas</span></span>
+          </div>
+        </div>
+        <div style="margin-top:2px;background:rgba(201,162,39,.06);border:1px solid rgba(201,162,39,.2);border-top:none;padding:24px 20px;">
+          <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.8;font-weight:300;">
+            <span class="en">DYP Pitch is open to <strong style="color:var(--gold)">DYP members</strong>. Not a member yet? Submit your idea anyway — we'll guide you through joining so your pitch can be reviewed by our network.</span>
+            <span class="es">DYP Pitch es para <strong style="color:var(--gold)">miembros de DYP</strong>. ¿Aún no eres miembro? Somete tu idea de todas formas — te guiaremos para que tu pitch sea revisado por nuestra red.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- What you get -->
+    <div class="section-label" style="margin-bottom:32px;"><div class="section-label-line"></div><span><span class="en">What you get</span><span class="es">Lo que recibes</span></span></div>
+    <div class="pitch-get-grid">
+      <div class="pitch-get-card">
+        <span class="pitch-get-icon">🎓</span>
+        <div class="pitch-get-title"><span class="en">Mentorship</span><span class="es">Mentoría</span></div>
+        <p class="pitch-get-text en">Connect with experienced Dominican professionals who have built companies, navigated industries, and scaled ideas from zero. They've been where you are.</p>
+        <p class="pitch-get-text es">Conéctate con profesionales dominicanos experimentados que han construido empresas, navegado industrias y escalado ideas desde cero. Han estado donde tú estás.</p>
+      </div>
+      <div class="pitch-get-card">
+        <span class="pitch-get-icon">🔗</span>
+        <div class="pitch-get-title"><span class="en">Strategic Alliances</span><span class="es">Alianzas Estratégicas</span></div>
+        <p class="pitch-get-text en">Access the DYP network of lawyers, marketers, technologists, and industry leaders who can become partners, advisors, or co-builders of your vision.</p>
+        <p class="pitch-get-text es">Accede a la red DYP de abogados, marketers, tecnólogos y líderes de industria que pueden ser socios, asesores o co-creadores de tu visión.</p>
+      </div>
+      <div class="pitch-get-card">
+        <span class="pitch-get-icon">💰</span>
+        <div class="pitch-get-title"><span class="en">Funding</span><span class="es">Financiamiento</span></div>
+        <p class="pitch-get-text en">Get in front of DYP investors and funding partners who are actively looking to back Dominican-led ideas with real potential and a strong founder.</p>
+        <p class="pitch-get-text es">Preséntate ante inversores y aliados financieros de DYP que buscan activamente apoyar ideas lideradas por dominicanos con potencial real y un founder sólido.</p>
+      </div>
+    </div>
+
+    <!-- How it works -->
+    <div class="section-label" style="margin-bottom:40px;"><div class="section-label-line"></div><span><span class="en">How it works</span><span class="es">Cómo funciona</span></span></div>
+    <div class="pitch-steps">
+      <div class="pitch-step">
+        <div class="pitch-step-num">1</div>
+        <div class="pitch-step-title"><span class="en">Submit your idea</span><span class="es">Somete tu idea</span></div>
+        <p class="pitch-step-text en">Fill out the form below with your project details. No deck required — just your vision.</p>
+        <p class="pitch-step-text es">Completa el formulario con los detalles de tu proyecto. No necesitas un deck — solo tu visión.</p>
+      </div>
+      <div class="pitch-step">
+        <div class="pitch-step-num">2</div>
+        <div class="pitch-step-title"><span class="en">DYP reviews</span><span class="es">DYP revisa</span></div>
+        <p class="pitch-step-text en">Our team reviews every submission and selects the strongest ideas to present to our network.</p>
+        <p class="pitch-step-text es">Nuestro equipo revisa cada envío y selecciona las mejores ideas para presentarlas a la red.</p>
+      </div>
+      <div class="pitch-step">
+        <div class="pitch-step-num">3</div>
+        <div class="pitch-step-title"><span class="en">Meet the network</span><span class="es">Conoce la red</span></div>
+        <p class="pitch-step-text en">Selected projects are introduced to relevant DYP members — mentors, investors, or allies depending on what you need.</p>
+        <p class="pitch-step-text es">Los proyectos seleccionados son presentados a miembros DYP relevantes — mentores, inversores o aliados según lo que necesites.</p>
+      </div>
+      <div class="pitch-step">
+        <div class="pitch-step-num">4</div>
+        <div class="pitch-step-title"><span class="en">Build together</span><span class="es">Construyan juntos</span></div>
+        <p class="pitch-step-text en">From there, the connections are yours. DYP supports the relationship so your idea becomes reality.</p>
+        <p class="pitch-step-text es">A partir de ahí, las conexiones son tuyas. DYP apoya la relación para que tu idea se convierta en realidad.</p>
+      </div>
+    </div>
+
+    <!-- Application Form -->
+    <div class="pitch-form-wrap">
+      <div class="pitch-member-notice">
+        <strong>🇩🇴 <span class="en">DYP Pitch is for DYP members.</span><span class="es">DYP Pitch es para miembros de DYP.</span></strong><br>
+        <span class="en">Not a member yet? Submit your idea and we will reach out to guide you through joining DYP. <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Join DYP here →</a></span>
+        <span class="es">¿Aún no eres miembro? Somete tu idea y te contactaremos para guiarte en el proceso de unirte a DYP. <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Únete a DYP aquí →</a></span>
+      </div>
+
+      <!-- Name + Email -->
+      <div class="pitch-form-grid">
+        <div class="pitch-field">
+          <input type="text" id="pName" placeholder=" " required>
+          <label><span class="en">Full Name *</span><span class="es">Nombre Completo *</span></label>
+        </div>
+        <div class="pitch-field">
+          <input type="email" id="pEmail" placeholder=" " required>
+          <label>Email *</label>
+        </div>
+      </div>
+
+      <!-- WhatsApp + Country -->
+      <div class="pitch-form-grid">
+        <div class="pitch-field">
+          <input type="tel" id="pWhatsapp" placeholder=" " required>
+          <label>WhatsApp *</label>
+        </div>
+        <div class="pitch-field">
+          <input type="text" id="pCountry" placeholder=" " required>
+          <label><span class="en">Country *</span><span class="es">País *</span></label>
+        </div>
+      </div>
+
+      <!-- Project name + Industry -->
+      <div class="pitch-form-grid">
+        <div class="pitch-field">
+          <input type="text" id="pProject" placeholder=" " required>
+          <label><span class="en">Project / Startup Name *</span><span class="es">Nombre del Proyecto *</span></label>
+        </div>
+        <div class="pitch-field">
+          <select id="pIndustry" required>
+            <option value="" disabled selected></option>
+            <optgroup label="── Technology">
+              <option>Fintech</option>
+              <option>Healthtech</option>
+              <option>Edtech</option>
+              <option>E-commerce</option>
+              <option>SaaS / Software</option>
+              <option>AI / Data</option>
+              <option>Web3 / Crypto</option>
+              <option>Other Tech</option>
+            </optgroup>
+            <optgroup label="── Business">
+              <option>Real Estate</option>
+              <option>Food & Beverage</option>
+              <option>Fashion & Retail</option>
+              <option>Media & Entertainment</option>
+              <option>Consulting</option>
+              <option>Manufacturing</option>
+            </optgroup>
+            <optgroup label="── Social Impact">
+              <option>Education</option>
+              <option>Healthcare</option>
+              <option>Environment</option>
+              <option>Community Development</option>
+              <option>Arts & Culture</option>
+            </optgroup>
+            <optgroup label="── Other">
+              <option>Other</option>
+            </optgroup>
+          </select>
+          <label><span class="en">Industry *</span><span class="es">Industria *</span></label>
+        </div>
+      </div>
+
+      <!-- Stage -->
+      <div class="pitch-field" style="margin-bottom:14px;">
+        <select id="pStage" required>
+          <option value="" disabled selected></option>
+          <option value="idea"><span class="en">Just an idea — I haven't built anything yet</span><span class="es">Solo una idea — aún no he construido nada</span></option>
+          <option value="prototype">Prototype / MVP — Prototipo / MVP</option>
+          <option value="early">Early stage — first customers | Etapa temprana — primeros clientes</option>
+          <option value="growth">Growing — looking to scale | Creciendo — buscando escalar</option>
+        </select>
+        <label><span class="en">Stage of your project *</span><span class="es">Etapa de tu proyecto *</span></label>
+      </div>
+
+      <!-- Description -->
+      <div class="pitch-field" style="margin-bottom:14px;">
+        <textarea id="pDescription" placeholder=" " rows="4" required></textarea>
+        <label><span class="en">Describe your idea *</span><span class="es">Describe tu idea *</span></label>
+      </div>
+
+      <!-- Problem solved -->
+      <div class="pitch-field" style="margin-bottom:20px;">
+        <textarea id="pProblem" placeholder=" " rows="3"></textarea>
+        <label><span class="en">What problem does it solve?</span><span class="es">¿Qué problema resuelve?</span></label>
+      </div>
+
+      <!-- What support -->
+      <div style="margin-bottom:20px;">
+        <div class="pitch-support-label"><span class="en">What kind of support are you looking for?</span><span class="es">¿Qué tipo de apoyo buscas?</span></div>
+        <div class="pitch-support-tags" id="pitchSupportTags">
+          <div class="tag-item" data-val="Mentorship">🎓 <span class="en">Mentorship</span><span class="es">Mentoría</span></div>
+          <div class="tag-item" data-val="Funding">💰 <span class="en">Funding</span><span class="es">Inversión</span></div>
+          <div class="tag-item" data-val="Strategic Alliances">🔗 <span class="en">Strategic Alliances</span><span class="es">Alianzas</span></div>
+          <div class="tag-item" data-val="Legal / Accounting">⚖️ <span class="en">Legal / Accounting</span><span class="es">Legal / Contabilidad</span></div>
+          <div class="tag-item" data-val="Marketing">📣 Marketing</div>
+          <div class="tag-item" data-val="Technology">💻 <span class="en">Technology</span><span class="es">Tecnología</span></div>
+          <div class="tag-item" data-val="Co-founder">🤝 <span class="en">Co-founder</span><span class="es">Co-fundador</span></div>
+        </div>
+      </div>
+
+      <!-- DYP Member? -->
+      <div class="pitch-field" style="margin-bottom:20px;">
+        <select id="pMember" required>
+          <option value="" disabled selected></option>
+          <option value="yes"><span class="en">Yes, I am a DYP member</span><span class="es">Sí, soy miembro de DYP</span></option>
+          <option value="no"><span class="en">No, but I want to join</span><span class="es">No, pero quiero unirme</span></option>
+          <option value="applied"><span class="en">I just applied</span><span class="es">Acabo de aplicar</span></option>
+        </select>
+        <label><span class="en">Are you a DYP member? *</span><span class="es">¿Eres miembro de DYP? *</span></label>
+      </div>
+
+      <button class="btn-primary" style="width:100%;text-align:center;" id="pitchSubmitBtn">
+        <span class="en">🚀 Submit My Pitch</span>
+        <span class="es">🚀 Someter Mi Pitch</span>
+      </button>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- TRICOLOR -->
+<div class="tricolor-bar"><span></span><span></span><span></span></div>
+
+<!-- FOOTER SIMPLE -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <div class="footer-logo-text">
+        <span class="footer-brand-dyp">DYP</span>
+        <div class="footer-sep"></div>
+        <span class="footer-brand-full">Dominican Young Professionals</span>
+      </div>
+    </div>
+    <ul class="footer-links">
+      <li><a href="index.html"><span class="en">Home</span><span class="es">Inicio</span></a></li>
+      <li><a href="index.html#contact"><span class="en">Become a Member</span><span class="es">Hazte Miembro</span></a></li>
+      <li><a href="coaching.html">DYP Coaching</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy en">© 2026 Dominican Young Professionals. All rights reserved.</p>
+    <p class="footer-copy es">© 2026 Dominican Young Professionals. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script>
+const WEBHOOK = window.DYP_WEBHOOK || 'https://script.google.com/macros/s/AKfycbzQ43kKgqUMWnRaTJ46AX_dvDy-UhMENs9tdxFGq41d5Fdtgr4_9fjmG3KDq8MkcLuUkg/exec';
+
+function setLang(lang){
+  document.body.className = 'lang-' + lang;
+  document.querySelectorAll('.lang-btn').forEach(b=>{ b.classList.toggle('active', b.dataset.lang===lang); });
+  try{ localStorage.setItem('dyp-lang', lang); }catch(e){}
+}
+document.querySelectorAll('[data-lang]').forEach(btn=>{ btn.addEventListener('click',()=>setLang(btn.dataset.lang)); });
+
+// Tag toggle
+document.querySelectorAll('.tag-item, .pitch-support-tags .tag-item').forEach(tag=>{
+  tag.addEventListener('click',()=>tag.classList.toggle('selected'));
+});
+
+// Pitch submit
+const pitchBtn = document.getElementById('pitchSubmitBtn');
+if(pitchBtn){
+  pitchBtn.addEventListener('click', async ()=>{
+    const name        = document.getElementById('pName')?.value.trim();
+    const email       = document.getElementById('pEmail')?.value.trim();
+    const whatsapp    = document.getElementById('pWhatsapp')?.value.trim();
+    const country     = document.getElementById('pCountry')?.value.trim();
+    const project     = document.getElementById('pProject')?.value.trim();
+    const industry    = document.getElementById('pIndustry')?.value;
+    const stage       = document.getElementById('pStage')?.value;
+    const description = document.getElementById('pDescription')?.value.trim();
+    const member      = document.getElementById('pMember')?.value;
+    if(!name||!email||!whatsapp||!country||!project||!industry||!stage||!description||!member){
+      alert(document.body.classList.contains('lang-es') ? 'Por favor completa todos los campos obligatorios (*).' : 'Please fill in all required fields (*).'); return;
+    }
+    const support = Array.from(document.querySelectorAll('#pitchSupportTags .tag-item.selected')).map(t=>t.dataset.val).join(', ');
+    const problem = document.getElementById('pProblem')?.value.trim() || '';
+    const orig = pitchBtn.innerHTML;
+    pitchBtn.innerHTML = '<span>⏳ Enviando...</span>'; pitchBtn.style.opacity='0.7'; pitchBtn.disabled=true;
+    const params = new URLSearchParams({ formType:'pitch', firstName:name, lastName:'', whatsapp, email, occupation:'DYP Pitch Applicant', jobTitle:project, company:industry, country, city:stage, languages:support, canHelp:description, lookingFor:problem, linkedin:member });
+    fetch(WEBHOOK + '?' + params.toString(), { method:'GET', mode:'no-cors' });
+    pitchBtn.innerHTML = '<span>✓ ' + (document.body.classList.contains('lang-es') ? '¡Pitch enviado! Te contactaremos pronto.' : 'Pitch Submitted! We will be in touch.') + '</span>';
+    pitchBtn.style.background = '#16a34a'; pitchBtn.style.opacity = '1';
+    setTimeout(()=>{ ['pName','pEmail','pWhatsapp','pCountry','pProject','pDescription','pProblem'].forEach(id=>{ const el=document.getElementById(id); if(el) el.value=''; }); ['pIndustry','pStage','pMember'].forEach(id=>{ const el=document.getElementById(id); if(el) el.selectedIndex=0; }); document.querySelectorAll('#pitchSupportTags .tag-item').forEach(t=>t.classList.remove('selected')); pitchBtn.innerHTML=orig; pitchBtn.style.background=''; pitchBtn.disabled=false; }, 3000);
+  });
+}
+
+// Scroll reveal
+const obs = new IntersectionObserver(entries=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; } }); },{threshold:.1});
+document.querySelectorAll('.pitch-get-card,.pitch-step').forEach(el=>{ el.style.opacity='0'; el.style.transform='translateY(20px)'; el.style.transition='opacity .6s ease,transform .6s ease'; obs.observe(el); });
+
+let saved='en'; try{ saved=localStorage.getItem('dyp-lang')||'en'; }catch(e){} setLang(saved);
+</script>
+</body>
+</html>
