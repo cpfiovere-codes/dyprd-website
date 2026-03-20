@@ -13,7 +13,6 @@
 <meta name="author" content="Dominican Young Professionals – DYP">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 <meta name="theme-color" content="#0B3C6F">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇩🇴</text></svg>">
 <link rel="canonical" href="https://www.dyprd.org/">
 
 <!-- Open Graph / Facebook -->
@@ -458,89 +457,6 @@ body.lang-en span.es { display: none !important; }
 
 /* RESPONSIVE */
 
-
-/* ═══════════════════════════════════════════
-   DYP COACHING — CURSO
-═══════════════════════════════════════════ */
-.course-section{background:var(--cream);padding:100px 80px;position:relative;overflow:hidden;}
-.course-section::after{content:'DYP';position:absolute;right:-20px;bottom:-60px;font-family:'Playfair Display',serif;font-size:280px;font-weight:900;color:rgba(11,60,111,.04);pointer-events:none;line-height:1;}
-.course-inner{position:relative;z-index:1;}
-.course-top{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-bottom:80px;}
-.course-badge{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:var(--gold);padding:8px 18px;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;}
-.course-section h2{color:var(--navy);}
-.course-section h2 em{font-style:italic;color:var(--red);}
-.course-desc{font-size:15px;line-height:1.9;color:var(--gray);font-weight:300;margin-bottom:28px;}
-.course-desc strong{color:var(--navy);font-weight:600;}
-.course-highlights{display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
-.course-highlight{display:flex;align-items:center;gap:12px;font-size:13px;color:var(--navy);font-weight:500;}
-.course-highlight::before{content:'✓';color:var(--gold);font-weight:700;font-size:14px;flex-shrink:0;}
-/* Consultation banner */
-.consult-banner{background:var(--navy);border-left:4px solid var(--gold);padding:28px 32px;margin-bottom:40px;display:flex;align-items:flex-start;gap:20px;}
-.consult-banner-icon{font-size:32px;flex-shrink:0;}
-.consult-banner-text h4{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--gold);margin-bottom:8px;}
-.consult-banner-text p{font-size:13px;color:rgba(255,255,255,.65);line-height:1.8;font-weight:300;}
-/* Price card */
-.course-price-card{background:var(--navy);padding:44px 36px;position:relative;overflow:hidden;}
-.course-price-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--red),var(--gold));}
-.course-price-label{font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px;}
-.course-price{font-family:'Playfair Display',serif;font-size:62px;font-weight:700;color:var(--gold);line-height:1;margin-bottom:4px;}
-.course-price span{font-size:18px;font-weight:400;}
-.course-price-note{font-size:11px;color:rgba(255,255,255,.35);margin-bottom:6px;font-style:italic;}
-.course-price-sub{font-size:12px;color:rgba(255,255,255,.4);margin-bottom:28px;}
-.course-price-features{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
-.course-price-features li{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.75);}
-.course-price-features li::before{content:'→';color:var(--gold);font-weight:700;flex-shrink:0;}
-.course-price-card .btn-primary{width:100%;text-align:center;display:block;}
-.course-spots{font-size:11px;color:rgba(255,255,255,.3);text-align:center;margin-top:14px;letter-spacing:1px;}
-/* Weeks */
-.course-weeks-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--navy);margin-bottom:40px;}
-.course-weeks-title em{font-style:italic;color:var(--red);}
-.weeks-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;margin-bottom:80px;}
-.week-card{background:var(--white);padding:36px 28px;border-top:3px solid transparent;transition:all .3s;}
-.week-card:hover{border-top-color:var(--gold);transform:translateY(-3px);box-shadow:0 16px 40px rgba(11,60,111,.1);}
-.week-num{font-family:'Playfair Display',serif;font-size:10px;font-weight:700;letter-spacing:3px;color:var(--gold);margin-bottom:12px;display:block;text-transform:uppercase;}
-.week-title{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--navy);margin-bottom:10px;line-height:1.3;}
-.week-text{font-size:12px;color:var(--gray);line-height:1.8;}
-.week-outcome{font-size:11px;font-weight:600;color:var(--navy);margin-top:14px;padding-top:14px;border-top:1px solid var(--light-gray);}
-.week-outcome::before{content:'🎯 ';}
-/* For who */
-.course-for{background:var(--navy);padding:60px 80px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-bottom:2px;}
-.course-for h3{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--white);margin-bottom:24px;}
-.course-for h3 em{font-style:italic;color:var(--gold);}
-.for-list{list-style:none;display:flex;flex-direction:column;gap:14px;}
-.for-list li{display:flex;align-items:flex-start;gap:12px;font-size:13px;color:rgba(255,255,255,.7);line-height:1.7;}
-.for-list li::before{content:'🇩🇴';flex-shrink:0;}
-/* Instructor */
-.course-instructor{background:var(--navy-dark);padding:60px 80px;display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center;}
-.instructor-avatar{width:80px;height:80px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:var(--navy-dark);flex-shrink:0;}
-.instructor-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--white);margin-bottom:4px;}
-.instructor-title{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block;}
-.instructor-bio{font-size:13px;color:rgba(255,255,255,.6);line-height:1.8;font-weight:300;}
-/* CTA */
-.course-cta-banner{background:var(--gold);padding:60px 80px;text-align:center;}
-.course-cta-banner h3{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:var(--navy-dark);margin-bottom:12px;}
-.course-cta-banner p{font-size:15px;color:rgba(7,31,58,.65);margin-bottom:32px;font-weight:300;}
-.btn-navy{background:var(--navy);color:var(--white);padding:18px 44px;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;text-decoration:none;transition:all .3s;display:inline-block;cursor:pointer;border:none;font-family:'Montserrat',sans-serif;}
-.btn-navy:hover{background:var(--navy-dark);transform:translateY(-2px);box-shadow:0 8px 30px rgba(11,60,111,.3);}
-/* Apply form */
-.course-apply-wrap{background:rgba(11,60,111,.04);border:1px solid rgba(11,60,111,.12);padding:50px 44px;}
-.course-apply-inner{max-width:620px;margin:0 auto;}
-
-@media(max-width:900px){
-  .course-section{padding:60px 20px;}
-  .course-top{grid-template-columns:1fr;gap:40px;}
-  .weeks-grid{grid-template-columns:1fr;}
-  .course-for{grid-template-columns:1fr;gap:32px;padding:40px 24px;}
-  .course-instructor{grid-template-columns:1fr;text-align:center;padding:40px 24px;}
-  .instructor-avatar{margin:0 auto;}
-  .course-cta-banner{padding:48px 24px;}
-  .course-apply-wrap{padding:32px 20px;}
-  .consult-banner{flex-direction:column;gap:12px;}
-}
-@media(max-width:480px){
-  .weeks-grid{grid-template-columns:1fr;}
-}
-
 /* ═══════════════════════════════════════════
    DYP PITCH
 ═══════════════════════════════════════════ */
@@ -725,111 +641,7 @@ body.lang-en span.es { display: none !important; }
   .frequency-row{flex-wrap:wrap;}
   .freq-btn{min-width:calc(50% - 5px);}
 }
-
-/* ═══ HOVER EFFECTS ═══ */
-.founder-card{transition:all .3s;}.founder-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(11,60,111,.15);}
-.founder-avatar{transition:all .3s;}.founder-avatar:hover{transform:scale(1.08);box-shadow:0 0 20px rgba(201,162,39,.4);}
-.pillar-card{transition:all .3s;}.pillar-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(11,60,111,.12);}
-.pillar-card:hover .pillar-num{color:rgba(201,162,39,.15)!important;}
-.pillar-icon{transition:transform .3s;}.pillar-card:hover .pillar-icon{transform:scale(1.15);}
-.program-card{transition:all .3s;}.program-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(11,60,111,.12);}
-.mission-card{transition:all .3s;cursor:default;}.mission-card:hover{transform:translateY(-8px);box-shadow:0 16px 50px rgba(11,60,111,.18);border-color:var(--gold)!important;}
-.crypto-card{transition:all .3s;}.crypto-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(201,162,39,.15);border-color:var(--gold)!important;}
-.support-card{transition:all .3s;}.support-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(11,60,111,.12);}
-.btn-primary{transition:all .3s;}.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(201,162,39,.4);}
-.btn-secondary{transition:all .3s;}.btn-secondary:hover{transform:translateY(-3px);}
-.btn-red{transition:all .3s;}.btn-red:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(198,40,40,.35);}
-.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--gold)!important;box-shadow:0 0 0 3px rgba(201,162,39,.15);}
-.tag{transition:all .2s;}.tag:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(11,60,111,.1);}
-.footer-links a{transition:all .2s;}.footer-links a:hover{color:var(--gold)!important;}
-.social-icon{transition:all .3s;}.social-icon:hover{transform:translateY(-3px) scale(1.1);}
-.amount-btn{transition:all .2s;}.amount-btn:hover{transform:translateY(-2px);box-shadow:0 4px 15px rgba(11,60,111,.15);border-color:var(--gold)!important;}
-.freq-btn{transition:all .2s;}.freq-btn:hover{transform:translateY(-2px);}
-.pay-tab{transition:all .2s;}.pay-tab:hover{background:rgba(11,60,111,.08);}
-.ai-fab-btn{transition:all .3s;}.ai-fab-btn:hover{transform:scale(1.1);box-shadow:0 8px 30px rgba(201,162,39,.4);}
-.chat-quick-btn{transition:all .2s;}.chat-quick-btn:hover{transform:translateY(-2px);background:var(--gold)!important;color:var(--navy-dark)!important;}
-.hero-stat{transition:all .3s;}.hero-stat:hover{background:rgba(255,255,255,.03);}
-.hero-stat:hover .hero-stat-num{color:var(--gold-light);}
-.nav-cta{transition:all .3s;}.nav-donate{transition:all .3s;}
-
-/* About card quote block */
-.about-card{transition:all .3s;}.about-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(11,60,111,.2);}
-
-/* Contact info items */
-.contact-info-item{transition:all .2s;}.contact-info-item:hover{transform:translateX(4px);color:var(--gold);}
-
-/* Social network toggles in form */
-.social-item{transition:all .2s;cursor:pointer;}.social-item:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(11,60,111,.08);}
-
-/* Upload zone */
-.upload-zone{transition:all .3s;cursor:pointer;}.upload-zone:hover{border-color:var(--gold)!important;background:rgba(201,162,39,.03);}
-
-/* Token banner */
-.token-banner{transition:all .3s;}.token-banner:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(201,162,39,.2);}
-
-/* Crypto options */
-.crypto-opt{transition:all .2s;}.crypto-opt:hover{transform:translateY(-2px);border-color:var(--gold)!important;}
-
-/* Copy buttons */
-.copy-btn{transition:all .2s;}.copy-btn:hover{transform:scale(1.05);box-shadow:0 4px 12px rgba(201,162,39,.2);}
-
-/* Trust badges */
-.trust-badge{transition:all .2s;}.trust-badge:hover{transform:translateY(-2px);}
-
-/* Nav links hover enhancement */
-.nav-links a{transition:all .3s;}
-.nav-hamburger{transition:all .2s;}.nav-hamburger:hover{opacity:.7;}
-
-/* Section labels */
-.section-label{transition:all .3s;}.section-label:hover .section-label-line{width:50px;}
-.section-label-line{transition:width .3s;}
-
-/* AI chat elements */
-.ai-chat-close{transition:all .2s;}.ai-chat-close:hover{transform:scale(1.1);color:var(--gold)!important;}
-.ai-send{transition:all .2s;}.ai-send:hover{transform:scale(1.08);box-shadow:0 4px 12px rgba(201,162,39,.3);}
-.ai-quick-btns button,.ai-quick{transition:all .2s;}.ai-quick-btns button:hover,.ai-quick:hover{transform:translateY(-2px);background:var(--gold)!important;color:var(--navy-dark)!important;}
-
-/* Tricolor bar subtle pulse */
-.tricolor-bar{transition:all .3s;}
-
-/* Donate modal close */
-.donate-close{transition:all .2s;}.donate-close:hover{transform:scale(1.1);color:var(--red);}
-
-/* Payment panel inputs */
-.pay-row input{transition:all .2s;}.pay-row input:focus{border-color:var(--gold)!important;box-shadow:0 0 0 3px rgba(201,162,39,.12);}
-
-/* Mission card icon grows on hover */
-.mission-card-icon{transition:all .3s;}.mission-card:hover .mission-card-icon{transform:scale(1.2);}
-.mission-card-label{transition:all .3s;}.mission-card:hover .mission-card-label{color:var(--gold)!important;}
-
-/* About quote card stronger hover */
-.about-card{transition:all .4s;}.about-card:hover{transform:translateY(-6px);box-shadow:0 16px 50px rgba(11,60,111,.25);}
-
-/* Coaching price card — subtle like founder cards */
-.offer-card-navy{transition:all .3s;}.offer-card-navy:hover{transform:translateY(-3px);box-shadow:0 8px 30px rgba(201,162,39,.12);}
-
-/* Pitch offer items (Mentoría, Alianzas, Financiamiento) */
-.offer-item{transition:all .3s;}.offer-item:hover{transform:translateX(6px);background:rgba(255,255,255,.08)!important;border-color:rgba(201,162,39,.3)!important;}
-.offer-item-gold{transition:all .3s;}.offer-item-gold:hover{background:rgba(201,162,39,.15)!important;border-color:var(--gold)!important;transform:translateX(6px);box-shadow:0 8px 25px rgba(201,162,39,.15);}
-
-/* Coaching section grid hover */
-#coaching > div{transition:all .3s;}
-
-/* Pitch section whole card */
-#pitch > div:last-child{transition:all .3s;}
-
-/* List items inside coaching price card */
-.offer-card-navy li{transition:all .2s;}.offer-card-navy li:hover{transform:translateX(4px);}
 </style>
-
-<!-- Google Analytics — Replace GA_MEASUREMENT_ID with your real ID from analytics.google.com -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'GA_MEASUREMENT_ID');
-</script>
 </head>
 <body class="lang-en">
 
@@ -888,9 +700,8 @@ gtag('config', 'GA_MEASUREMENT_ID');
     <li><a href="#pillars" class="nav-mobile-link"><span class="en">Pillars</span><span class="es">Pilares</span></a></li>
     <li><a href="#programs" class="nav-mobile-link"><span class="en">Programs</span><span class="es">Programas</span></a></li>
     <li><a href="#pitch" class="nav-mobile-link"><span class="en">DYP Pitch</span><span class="es">DYP Pitch</span></a></li>
-    <li><a href="#coaching" class="nav-mobile-link"><span class="en">DYP Coaching</span><span class="es">DYP Coaching</span></a></li>
     <li><a href="#contact" class="nav-cta nav-mobile-link"><span class="en">Join DYP</span><span class="es">Únete</span></a></li>
-    <li><button class="nav-donate" data-action="donate"><span class="en">Donate</span><span class="es">Donar</span></button></li>
+    <li><button class="nav-links a nav-donate" data-action="donate"><span class="en">Donate</span><span class="es">Donar</span></button></li>
   </ul>
   <!-- Hamburger button (mobile only) -->
   <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
@@ -910,7 +721,6 @@ gtag('config', 'GA_MEASUREMENT_ID');
     <a href="#programs" class="mobile-nav-link"><span class="en">Programs</span><span class="es">Programas</span></a>
     <a href="#founders" class="mobile-nav-link"><span class="en">Founders</span><span class="es">Fundadores</span></a>
     <a href="#pitch" class="mobile-nav-link"><span class="en">DYP Pitch</span><span class="es">DYP Pitch</span></a>
-    <a href="#coaching" class="mobile-nav-link"><span class="en">DYP Coaching</span><span class="es">DYP Coaching</span></a>
     <a href="#support" class="mobile-nav-link"><span class="en">Get Involved</span><span class="es">Involúcrate</span></a>
     <a href="#contact" class="mobile-nav-link mobile-nav-cta"><span class="en">Join DYP</span><span class="es">Únete a DYP</span></a>
     <button class="mobile-nav-donate" data-action="donate"><span class="en">❤️ Donate</span><span class="es">❤️ Donar</span></button>
@@ -1002,8 +812,8 @@ gtag('config', 'GA_MEASUREMENT_ID');
   <div class="pillars-header">
     <div>
       <div class="section-label"><div class="section-label-line"></div><span><span class="en">Our Pillars</span><span class="es">Nuestros Pilares</span></span></div>
-      <h2 class="en">Built on seven <em>foundations.</em></h2>
-      <h2 class="es">Construidos sobre siete <em>pilares.</em></h2>
+      <h2 class="en">Built on five <em>foundations.</em></h2>
+      <h2 class="es">Construidos sobre cinco <em>pilares.</em></h2>
     </div>
     <p class="en">Every initiative at DYP is anchored in these seven areas — because real change requires structure, vision, and commitment to the community.</p>
     <p class="es">Cada iniciativa de DYP está anclada en estas siete áreas — porque el cambio real requiere estructura, visión y compromiso con la comunidad.</p>
@@ -1015,7 +825,7 @@ gtag('config', 'GA_MEASUREMENT_ID');
     <div class="pillar-card"><span class="pillar-num">04</span><span class="pillar-icon">📊</span><div class="pillar-title"><span class="en">Research & Data</span><span class="es">Investigación & Datos</span></div><p class="pillar-text en">Studying the real landscape of our community to design effective, evidence-based solutions.</p><p class="pillar-text es">Estudiamos la realidad de nuestra comunidad para diseñar soluciones efectivas basadas en evidencia.</p></div>
     <div class="pillar-card"><span class="pillar-num">05</span><span class="pillar-icon">👩‍💼</span><div class="pillar-title">DYP Women</div><p class="pillar-text en">A dedicated platform for equity, leadership and visibility of Dominican women — at home and abroad.</p><p class="pillar-text es">Una plataforma dedicada a la equidad, liderazgo y visibilidad de la mujer dominicana — aquí y allá.</p></div>
     <div class="pillar-card"><span class="pillar-num">06</span><span class="pillar-icon">🌍</span><div class="pillar-title"><span class="en">International Chapters</span><span class="es">Chapters Internacionales</span></div><p class="pillar-text en">Expanding our network with ambassadors and chapters across cities and countries worldwide.</p><p class="pillar-text es">Expandimos nuestra red con embajadores y capítulos en ciudades y países de todo el mundo.</p></div>
-    <div class="pillar-card" onclick="document.getElementById('pitch').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;background:var(--navy-dark);border:1px solid rgba(201,162,39,.25);"><span class="pillar-num" style="color:rgba(201,162,39,.15);">07</span><span class="pillar-icon">🚀</span><div class="pillar-title" style="color:var(--gold);">DYP Pitch</div><p class="pillar-text en" style="color:rgba(255,255,255,.55);">The Dominican Shark Tank — connect your idea with mentors, allies and investors from the DYP network.</p><p class="pillar-text es" style="color:rgba(255,255,255,.55);">El Shark Tank dominicano — conecta tu idea con mentores, aliados e inversores de la red DYP.</p></div>
+    <div class="pillar-card" onclick="document.getElementById('pitch').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;background:var(--navy-dark);border:1px solid rgba(201,162,39,.25);"><span class="pillar-num" style="color:rgba(201,162,39,.15);">06</span><span class="pillar-icon">🚀</span><div class="pillar-title" style="color:var(--gold);">DYP Pitch</div><p class="pillar-text en" style="color:rgba(255,255,255,.55);">The Dominican Shark Tank — connect your idea with mentors, allies and investors from the DYP network.</p><p class="pillar-text es" style="color:rgba(255,255,255,.55);">El Shark Tank dominicano — conecta tu idea con mentores, aliados e inversores de la red DYP.</p></div>
   </div>
 </section>
 
@@ -1085,88 +895,227 @@ gtag('config', 'GA_MEASUREMENT_ID');
   </div>
 </section>
 
-<!-- WHAT WE OFFER — Section header -->
-<section style="background:var(--white);padding:100px 80px 40px;text-align:center;" id="services">
-  <div style="max-width:900px;margin:0 auto;">
-    <div style="display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:20px;">
-      <div style="width:30px;height:2px;background:var(--gold);"></div>
-      <span style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);"><span class="en">What We Offer</span><span class="es">Lo Que Ofrecemos</span></span>
-      <div style="width:30px;height:2px;background:var(--gold);"></div>
+
+<!-- DYP PITCH -->
+<section class="pitch-section" id="pitch">
+  <div class="pitch-inner">
+
+    <!-- Top: intro + stats -->
+    <div class="pitch-top">
+      <div>
+        <div class="section-label"><div class="section-label-line"></div><span>DYP Pitch</span></div>
+        <h2 class="en">Your idea deserves<br><em>power</em><br>behind it.</h2>
+        <h2 class="es">Tu idea merece el<br><em>poder</em><br>detrás de ella.</h2>
+        <p class="pitch-desc en">DYP Pitch is where Dominican entrepreneurs meet the network they need. Submit your idea and connect with mentors, strategic allies, and investors from the DYP community — people who believe in Dominican talent because they are Dominican talent.</p>
+        <p class="pitch-desc es">DYP Pitch es donde los emprendedores dominicanos conocen la red que necesitan. Somete tu idea y conéctate con mentores, aliados estratégicos e inversores de la comunidad DYP — personas que creen en el talento dominicano porque ellos son talento dominicano.</p>
+      </div>
+      <div>
+        <div class="pitch-stats">
+          <div class="pitch-stat">
+            <span class="pitch-stat-num">🇩🇴</span>
+            <span class="pitch-stat-label"><span class="en">For Dominicans</span><span class="es">Para Dominicanos</span></span>
+          </div>
+          <div class="pitch-stat">
+            <span class="pitch-stat-num">3</span>
+            <span class="pitch-stat-label"><span class="en">Ways to get support</span><span class="es">Formas de apoyo</span></span>
+          </div>
+          <div class="pitch-stat">
+            <span class="pitch-stat-num">∞</span>
+            <span class="pitch-stat-label"><span class="en">Ideas welcome</span><span class="es">Ideas bienvenidas</span></span>
+          </div>
+        </div>
+        <div style="margin-top:2px;background:rgba(201,162,39,.06);border:1px solid rgba(201,162,39,.2);border-top:none;padding:24px 20px;">
+          <p style="font-size:13px;color:rgba(255,255,255,.6);line-height:1.8;font-weight:300;">
+            <span class="en">DYP Pitch is open to <strong style="color:var(--gold)">DYP members</strong>. Not a member yet? Submit your idea anyway — we'll guide you through joining so your pitch can be reviewed by our network.</span>
+            <span class="es">DYP Pitch es para <strong style="color:var(--gold)">miembros de DYP</strong>. ¿Aún no eres miembro? Somete tu idea de todas formas — te guiaremos para que tu pitch sea revisado por nuestra red.</span>
+          </p>
+        </div>
+      </div>
     </div>
-    <h2 class="en">Programs built to <em>transform.</em></h2>
-    <h2 class="es">Programas diseñados para <em>transformar.</em></h2>
-    <p style="font-size:15px;line-height:1.9;color:var(--gray);font-weight:300;max-width:600px;margin:0 auto;" class="en">From AI-powered coaching to connecting entrepreneurs with investors — DYP creates pathways for Dominican professionals to thrive.</p>
-    <p style="font-size:15px;line-height:1.9;color:var(--gray);font-weight:300;max-width:600px;margin:0 auto;" class="es">Desde coaching potenciado por IA hasta conectar emprendedores con inversores — DYP crea caminos para que los profesionales dominicanos prosperen.</p>
+
+    <!-- What you get -->
+    <div class="section-label" style="margin-bottom:32px;"><div class="section-label-line"></div><span><span class="en">What you get</span><span class="es">Lo que recibes</span></span></div>
+    <div class="pitch-get-grid">
+      <div class="pitch-get-card">
+        <span class="pitch-get-icon">🎓</span>
+        <div class="pitch-get-title"><span class="en">Mentorship</span><span class="es">Mentoría</span></div>
+        <p class="pitch-get-text en">Connect with experienced Dominican professionals who have built companies, navigated industries, and scaled ideas from zero. They've been where you are.</p>
+        <p class="pitch-get-text es">Conéctate con profesionales dominicanos experimentados que han construido empresas, navegado industrias y escalado ideas desde cero. Han estado donde tú estás.</p>
+      </div>
+      <div class="pitch-get-card">
+        <span class="pitch-get-icon">🔗</span>
+        <div class="pitch-get-title"><span class="en">Strategic Alliances</span><span class="es">Alianzas Estratégicas</span></div>
+        <p class="pitch-get-text en">Access the DYP network of lawyers, marketers, technologists, and industry leaders who can become partners, advisors, or co-builders of your vision.</p>
+        <p class="pitch-get-text es">Accede a la red DYP de abogados, marketers, tecnólogos y líderes de industria que pueden ser socios, asesores o co-creadores de tu visión.</p>
+      </div>
+      <div class="pitch-get-card">
+        <span class="pitch-get-icon">💰</span>
+        <div class="pitch-get-title"><span class="en">Funding</span><span class="es">Financiamiento</span></div>
+        <p class="pitch-get-text en">Get in front of DYP investors and funding partners who are actively looking to back Dominican-led ideas with real potential and a strong founder.</p>
+        <p class="pitch-get-text es">Preséntate ante inversores y aliados financieros de DYP que buscan activamente apoyar ideas lideradas por dominicanos con potencial real y un founder sólido.</p>
+      </div>
+    </div>
+
+    <!-- How it works -->
+    <div class="section-label" style="margin-bottom:40px;"><div class="section-label-line"></div><span><span class="en">How it works</span><span class="es">Cómo funciona</span></span></div>
+    <div class="pitch-steps">
+      <div class="pitch-step">
+        <div class="pitch-step-num">1</div>
+        <div class="pitch-step-title"><span class="en">Submit your idea</span><span class="es">Somete tu idea</span></div>
+        <p class="pitch-step-text en">Fill out the form below with your project details. No deck required — just your vision.</p>
+        <p class="pitch-step-text es">Completa el formulario con los detalles de tu proyecto. No necesitas un deck — solo tu visión.</p>
+      </div>
+      <div class="pitch-step">
+        <div class="pitch-step-num">2</div>
+        <div class="pitch-step-title"><span class="en">DYP reviews</span><span class="es">DYP revisa</span></div>
+        <p class="pitch-step-text en">Our team reviews every submission and selects the strongest ideas to present to our network.</p>
+        <p class="pitch-step-text es">Nuestro equipo revisa cada envío y selecciona las mejores ideas para presentarlas a la red.</p>
+      </div>
+      <div class="pitch-step">
+        <div class="pitch-step-num">3</div>
+        <div class="pitch-step-title"><span class="en">Meet the network</span><span class="es">Conoce la red</span></div>
+        <p class="pitch-step-text en">Selected projects are introduced to relevant DYP members — mentors, investors, or allies depending on what you need.</p>
+        <p class="pitch-step-text es">Los proyectos seleccionados son presentados a miembros DYP relevantes — mentores, inversores o aliados según lo que necesites.</p>
+      </div>
+      <div class="pitch-step">
+        <div class="pitch-step-num">4</div>
+        <div class="pitch-step-title"><span class="en">Build together</span><span class="es">Construyan juntos</span></div>
+        <p class="pitch-step-text en">From there, the connections are yours. DYP supports the relationship so your idea becomes reality.</p>
+        <p class="pitch-step-text es">A partir de ahí, las conexiones son tuyas. DYP apoya la relación para que tu idea se convierta en realidad.</p>
+      </div>
+    </div>
+
+    <!-- Application Form -->
+    <div class="pitch-form-wrap">
+      <div class="pitch-member-notice">
+        <strong>🇩🇴 <span class="en">DYP Pitch is for DYP members.</span><span class="es">DYP Pitch es para miembros de DYP.</span></strong><br>
+        <span class="en">Not a member yet? Submit your idea and we will reach out to guide you through joining DYP. <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Join DYP here →</a></span>
+        <span class="es">¿Aún no eres miembro? Somete tu idea y te contactaremos para guiarte en el proceso de unirte a DYP. <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Únete a DYP aquí →</a></span>
+      </div>
+
+      <!-- Name + Email -->
+      <div class="pitch-form-grid">
+        <div class="pitch-field">
+          <input type="text" id="pName" placeholder=" " required>
+          <label><span class="en">Full Name *</span><span class="es">Nombre Completo *</span></label>
+        </div>
+        <div class="pitch-field">
+          <input type="email" id="pEmail" placeholder=" " required>
+          <label>Email *</label>
+        </div>
+      </div>
+
+      <!-- WhatsApp + Country -->
+      <div class="pitch-form-grid">
+        <div class="pitch-field">
+          <input type="tel" id="pWhatsapp" placeholder=" " required>
+          <label>WhatsApp *</label>
+        </div>
+        <div class="pitch-field">
+          <input type="text" id="pCountry" placeholder=" " required>
+          <label><span class="en">Country *</span><span class="es">País *</span></label>
+        </div>
+      </div>
+
+      <!-- Project name + Industry -->
+      <div class="pitch-form-grid">
+        <div class="pitch-field">
+          <input type="text" id="pProject" placeholder=" " required>
+          <label><span class="en">Project / Startup Name *</span><span class="es">Nombre del Proyecto *</span></label>
+        </div>
+        <div class="pitch-field">
+          <select id="pIndustry" required>
+            <option value="" disabled selected></option>
+            <optgroup label="── Technology">
+              <option>Fintech</option>
+              <option>Healthtech</option>
+              <option>Edtech</option>
+              <option>E-commerce</option>
+              <option>SaaS / Software</option>
+              <option>AI / Data</option>
+              <option>Web3 / Crypto</option>
+              <option>Other Tech</option>
+            </optgroup>
+            <optgroup label="── Business">
+              <option>Real Estate</option>
+              <option>Food & Beverage</option>
+              <option>Fashion & Retail</option>
+              <option>Media & Entertainment</option>
+              <option>Consulting</option>
+              <option>Manufacturing</option>
+            </optgroup>
+            <optgroup label="── Social Impact">
+              <option>Education</option>
+              <option>Healthcare</option>
+              <option>Environment</option>
+              <option>Community Development</option>
+              <option>Arts & Culture</option>
+            </optgroup>
+            <optgroup label="── Other">
+              <option>Other</option>
+            </optgroup>
+          </select>
+          <label><span class="en">Industry *</span><span class="es">Industria *</span></label>
+        </div>
+      </div>
+
+      <!-- Stage -->
+      <div class="pitch-field" style="margin-bottom:14px;">
+        <select id="pStage" required>
+          <option value="" disabled selected></option>
+          <option value="idea"><span class="en">Just an idea — I haven't built anything yet</span><span class="es">Solo una idea — aún no he construido nada</span></option>
+          <option value="prototype">Prototype / MVP</option>
+          <option value="early">Early stage — first customers</option>
+          <option value="growth">Growing — looking to scale</option>
+        </select>
+        <label><span class="en">Stage of your project *</span><span class="es">Etapa de tu proyecto *</span></label>
+      </div>
+
+      <!-- Description -->
+      <div class="pitch-field" style="margin-bottom:14px;">
+        <textarea id="pDescription" placeholder=" " rows="4" required></textarea>
+        <label><span class="en">Describe your idea *</span><span class="es">Describe tu idea *</span></label>
+      </div>
+
+      <!-- Problem solved -->
+      <div class="pitch-field" style="margin-bottom:20px;">
+        <textarea id="pProblem" placeholder=" " rows="3"></textarea>
+        <label><span class="en">What problem does it solve?</span><span class="es">¿Qué problema resuelve?</span></label>
+      </div>
+
+      <!-- What support -->
+      <div style="margin-bottom:20px;">
+        <div class="pitch-support-label"><span class="en">What kind of support are you looking for?</span><span class="es">¿Qué tipo de apoyo buscas?</span></div>
+        <div class="pitch-support-tags" id="pitchSupportTags">
+          <div class="tag-item" data-val="Mentorship">🎓 <span class="en">Mentorship</span><span class="es">Mentoría</span></div>
+          <div class="tag-item" data-val="Funding">💰 <span class="en">Funding</span><span class="es">Inversión</span></div>
+          <div class="tag-item" data-val="Strategic Alliances">🔗 <span class="en">Strategic Alliances</span><span class="es">Alianzas</span></div>
+          <div class="tag-item" data-val="Legal / Accounting">⚖️ <span class="en">Legal / Accounting</span><span class="es">Legal / Contabilidad</span></div>
+          <div class="tag-item" data-val="Marketing">📣 Marketing</div>
+          <div class="tag-item" data-val="Technology">💻 <span class="en">Technology</span><span class="es">Tecnología</span></div>
+          <div class="tag-item" data-val="Co-founder">🤝 <span class="en">Co-founder</span><span class="es">Co-fundador</span></div>
+        </div>
+      </div>
+
+      <!-- DYP Member? -->
+      <div class="pitch-field" style="margin-bottom:20px;">
+        <select id="pMember" required>
+          <option value="" disabled selected></option>
+          <option value="yes"><span class="en">Yes, I am a DYP member</span><span class="es">Sí, soy miembro de DYP</span></option>
+          <option value="no"><span class="en">No, but I want to join</span><span class="es">No, pero quiero unirme</span></option>
+          <option value="applied"><span class="en">I just applied</span><span class="es">Acabo de aplicar</span></option>
+        </select>
+        <label><span class="en">Are you a DYP member? *</span><span class="es">¿Eres miembro de DYP? *</span></label>
+      </div>
+
+      <button class="btn-primary" style="width:100%;text-align:center;" id="pitchSubmitBtn">
+        <span class="en">🚀 Submit My Pitch</span>
+        <span class="es">🚀 Someter Mi Pitch</span>
+      </button>
+    </div>
+
   </div>
 </section>
-
-<!-- DYP COACHING — CARD -->
-<section style="background:var(--white);padding:40px 80px 80px;" id="coaching">
-  <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;">
-    <div>
-      <div class="section-label"><div class="section-label-line"></div><span>DYP Coaching</span></div>
-      <h2 class="en">Your business on <em>autopilot</em> with AI.</h2>
-      <h2 class="es">Tu negocio en <em>piloto automático</em> con AI.</h2>
-      <p style="font-size:15px;line-height:1.9;color:var(--gray);font-weight:300;margin-bottom:32px;" class="en">A live intensive program where you learn to automate your business with AI — customized to your industry and goals, from idea to live product.</p>
-      <p style="font-size:15px;line-height:1.9;color:var(--gray);font-weight:300;margin-bottom:32px;" class="es">Un programa intensivo en vivo donde aprendes a automatizar tu negocio con AI — personalizado a tu industria y metas, desde la idea hasta el producto en vivo.</p>
-      <a href="coaching.html" class="btn-primary"><span class="en">See Full Program →</span><span class="es">Ver Programa Completo →</span></a>
-    </div>
-    <div class="offer-card-navy" style="background:var(--navy);padding:40px 36px;position:relative;overflow:hidden;">
-      <div style="position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--red),var(--gold));"></div>
-      <div style="display:inline-block;padding:4px 12px;background:rgba(198,40,40,.15);border:1px solid rgba(198,40,40,.3);border-radius:4px;margin-bottom:12px;">
-        <span style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);" class="en">Limited enrollment · Introductory price</span>
-        <span style="font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);" class="es">Cupo limitado · Precio introductorio</span>
-      </div>
-      <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:4px;">
-        <div style="font-family:'Playfair Display',serif;font-size:52px;font-weight:700;color:var(--gold);line-height:1;">$997</div>
-        <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:rgba(255,255,255,.25);text-decoration:line-through;line-height:1;">$1,497</div>
-      </div>
-      <div style="font-size:11px;color:rgba(255,255,255,.35);margin-bottom:24px;"><span class="en">Includes free strategy consultation · Price increases when enrollment closes</span><span class="es">Incluye consulta estratégica gratuita · El precio aumenta cuando se cierre la inscripción</span></div>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:28px;">
-        <li style="font-size:13px;color:rgba(255,255,255,.7);display:flex;gap:8px;"><span style="color:var(--gold);">→</span><span class="en">4 weeks · Live sessions via Google Meet</span><span class="es">4 semanas · Sesiones en vivo por Google Meet</span></li>
-        <li style="font-size:13px;color:rgba(255,255,255,.7);display:flex;gap:8px;"><span style="color:var(--gold);">→</span><span class="en">Google Meet · Claude Desktop</span><span class="es">Google Meet · Claude Desktop</span></li>
-        <li style="font-size:13px;color:rgba(255,255,255,.7);display:flex;gap:8px;"><span style="color:var(--gold);">→</span><span class="en">For idea-starters and business owners</span><span class="es">Para emprendedores y dueños de negocio</span></li>
-        <li style="font-size:13px;color:rgba(255,255,255,.7);display:flex;gap:8px;"><span style="color:var(--gold);">→</span><span class="en">Graduate with your AI Agent running</span><span class="es">Te gradúas con tu AI Agent corriendo</span></li>
-      </ul>
-      <!-- Can add onclick tracking later when GA4 is configured -->
-      <a href="https://calendly.com/carlospolonia/30min" target="_blank" class="btn-primary" style="width:100%;text-align:center;display:block;">
-        <span class="en">📅 Book Free Consultation</span>
-        <span class="es">📅 Agendar Consulta Gratuita</span>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<!-- DYP PITCH — CARD -->
-<section style="background:var(--navy-dark);padding:80px;position:relative;overflow:hidden;" id="pitch">
-  <div style="position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 80% 50%,rgba(201,162,39,.07) 0%,transparent 70%);"></div>
-  <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1;">
-    <div>
-      <div class="section-label"><div class="section-label-line" style="background:var(--gold);"></div><span style="color:var(--gold);">DYP Pitch</span></div>
-      <h2 style="color:var(--white);" class="en">Your idea deserves <em>power</em> behind it.</h2>
-      <h2 style="color:var(--white);" class="es">Tu idea merece el <em>poder</em> detrás de ella.</h2>
-      <p style="font-size:15px;line-height:1.9;color:rgba(255,255,255,.6);font-weight:300;margin-bottom:32px;" class="en">Connect your idea with mentors, strategic allies and investors from the DYP network. The Dominican Shark Tank.</p>
-      <p style="font-size:15px;line-height:1.9;color:rgba(255,255,255,.6);font-weight:300;margin-bottom:32px;" class="es">Conecta tu idea con mentores, aliados estratégicos e inversores de la red DYP. El Shark Tank dominicano.</p>
-      <a href="pitch.html" class="btn-primary"><span class="en">Submit Your Idea →</span><span class="es">Someter Mi Idea →</span></a>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:2px;">
-      <div class="offer-item" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:24px 28px;display:flex;gap:16px;align-items:flex-start;">
-        <span style="font-size:24px;">🎓</span>
-        <div><div style="font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--white);margin-bottom:4px;"><span class="en">Mentorship</span><span class="es">Mentoría</span></div><p style="font-size:12px;color:rgba(255,255,255,.45);" class="en">Connect with experienced Dominican professionals.</p><p style="font-size:12px;color:rgba(255,255,255,.45);" class="es">Conéctate con profesionales dominicanos experimentados.</p></div>
-      </div>
-      <div class="offer-item" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:24px 28px;display:flex;gap:16px;align-items:flex-start;">
-        <span style="font-size:24px;">🔗</span>
-        <div><div style="font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--white);margin-bottom:4px;"><span class="en">Strategic Alliances</span><span class="es">Alianzas Estratégicas</span></div><p style="font-size:12px;color:rgba(255,255,255,.45);" class="en">Access lawyers, marketers, technologists and leaders.</p><p style="font-size:12px;color:rgba(255,255,255,.45);" class="es">Accede a abogados, marketers, tecnólogos y líderes.</p></div>
-      </div>
-      <div class="offer-item offer-item-gold" style="background:rgba(201,162,39,.08);border:1px solid rgba(201,162,39,.25);padding:24px 28px;display:flex;gap:16px;align-items:flex-start;">
-        <span style="font-size:24px;">💰</span>
-        <div><div style="font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--gold);margin-bottom:4px;"><span class="en">Funding</span><span class="es">Financiamiento</span></div><p style="font-size:12px;color:rgba(255,255,255,.45);" class="en">Get in front of DYP investors actively looking to invest.</p><p style="font-size:12px;color:rgba(255,255,255,.45);" class="es">Preséntate ante inversores DYP listos para invertir.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 
 <!-- SUPPORT -->
 <section class="support" id="support">
@@ -1548,7 +1497,7 @@ gtag('config', 'GA_MEASUREMENT_ID');
     </div>
   </div>
   <div class="footer-bottom">
-    <p class="footer-copy">© 2026 Dominican Young Professionals (DYP). <span class="en">All rights reserved. A nonprofit organization committed to Dominican leadership and progress worldwide.</span><span class="es">Todos los derechos reservados. Una organización sin fines de lucro comprometida con el liderazgo y el avance dominicano en el mundo.</span></p>
+    <p class="footer-copy">© 2025 Dominican Young Professionals (DYP). <span class="en">All rights reserved. A nonprofit organization committed to Dominican leadership and progress worldwide.</span><span class="es">Todos los derechos reservados. Una organización sin fines de lucro comprometida con el liderazgo y el avance dominicano en el mundo.</span></p>
     <span style="font-size:22px;">🇩🇴</span>
   </div>
 </footer>
@@ -1591,13 +1540,13 @@ gtag('config', 'GA_MEASUREMENT_ID');
       <!-- CARD PANEL -->
       <div class="pay-panel active" id="panel-card">
         <div class="pay-form">
-          <input type="text" placeholder="Name on card / Nombre en tarjeta" maxlength="60" autocomplete="cc-name">
-          <input type="text" placeholder="Card number / Número de tarjeta" maxlength="19" data-format="card" autocomplete="cc-number">
+          <input type="text" placeholder="Name on card / Nombre en tarjeta" maxlength="60">
+          <input type="text" placeholder="Card number / Número de tarjeta" maxlength="19" data-format="card">
           <div class="pay-row">
-            <input type="text" placeholder="MM/YY" maxlength="5" data-format="expiry" autocomplete="cc-exp">
-            <input type="password" placeholder="CVV" maxlength="4" autocomplete="cc-csc">
+            <input type="text" placeholder="MM/YY" maxlength="5" data-format="expiry">
+            <input type="text" placeholder="CVV" maxlength="4" type="password">
           </div>
-          <input type="email" placeholder="Email for receipt / Email para recibo" autocomplete="email">
+          <input type="email" placeholder="Email for receipt / Email para recibo">
         </div>
         <p style="font-size:11px;color:var(--gray);line-height:1.6;margin-bottom:12px;"><span class="en">🔒 Your payment is processed securely. DYP never stores your card information.</span><span class="es">🔒 Tu pago se procesa de forma segura. DYP nunca almacena datos de tu tarjeta.</span></p>
       </div>
@@ -1692,14 +1641,6 @@ gtag('config', 'GA_MEASUREMENT_ID');
 /* ══════════════════════════════════════════
    DYP — All JS via addEventListener (no onclick)
 ══════════════════════════════════════════ */
-
-// Scroll to top on page load/refresh
-window.addEventListener('load', () => {
-  window.scrollTo(0, 0);
-  if (window.location.hash) {
-    history.replaceState(null, '', window.location.pathname);
-  }
-});
 
 function sanitize(str){
   const d=document.createElement('div');
@@ -2020,7 +1961,6 @@ function handleDonate(){
 
       // Build payload
       const payload = {
-        formType   : 'membership',
         firstName, lastName, whatsapp, email, occupation,
         jobTitle   : document.getElementById('mJobTitle')?.value.trim()  || '',
         company    : document.getElementById('mCompany')?.value.trim()   || '',
@@ -2072,7 +2012,6 @@ function handleDonate(){
           } else {
             // Sin CV — GET simple
             const params = new URLSearchParams({
-              formType   : 'membership',
               firstName  : payload.firstName,
               lastName   : payload.lastName,
               whatsapp   : payload.whatsapp,
@@ -2101,8 +2040,6 @@ function handleDonate(){
           }
         }
         // Success
-        // Track form submission in GA4
-        if(typeof gtag === 'function') gtag('event', 'form_submit', { event_category: 'engagement', event_label: 'membership' });
         btn.innerHTML = '<span>✓ ' + (document.body.classList.contains('lang-es') ? '¡Solicitud enviada!' : 'Application Sent!') + '</span>';
         btn.style.background = '#16a34a';
         btn.style.opacity = '1';
@@ -2191,62 +2128,6 @@ function handleDonate(){
   });
 
 
-
-  /* ── Course Apply Form ── */
-  const courseBtn = document.getElementById('courseApplyBtn');
-  if(courseBtn){
-    courseBtn.addEventListener('click', ()=>{
-      const name     = document.getElementById('cName')?.value.trim();
-      const email    = document.getElementById('cEmail')?.value.trim();
-      const whatsapp = document.getElementById('cWhatsapp')?.value.trim();
-      const profile  = document.getElementById('cProfile')?.value;
-      const business = document.getElementById('cBusiness')?.value.trim() || '';
-
-      if(!name||!email||!whatsapp||!profile){
-        const msg = document.body.classList.contains('lang-es')
-          ? 'Por favor completa todos los campos obligatorios (*).'
-          : 'Please fill in all required fields (*).';
-        alert(msg); return;
-      }
-
-      const WEBHOOK = window.DYP_WEBHOOK || 'https://script.google.com/macros/s/AKfycbzQ43kKgqUMWnRaTJ46AX_dvDy-UhMENs9tdxFGq41d5Fdtgr4_9fjmG3KDq8MkcLuUkg/exec';
-      const orig = courseBtn.innerHTML;
-      courseBtn.innerHTML = '<span>⏳ Enviando...</span>';
-      courseBtn.style.opacity = '0.7';
-      courseBtn.disabled = true;
-
-      const params = new URLSearchParams({
-        formType  : 'course-consultation',
-        firstName : name,
-        lastName  : '',
-        whatsapp,
-        email,
-        occupation: profile,
-        jobTitle  : 'DYP Coaching — Tu negocio en piloto automático con AI',
-        company   : business,
-        country   : 'United States',
-      });
-      fetch(WEBHOOK + '?' + params.toString(), { method:'GET', mode:'no-cors' });
-
-      // Track form submission in GA4
-      if(typeof gtag === 'function') gtag('event', 'form_submit', { event_category: 'engagement', event_label: 'course_consultation' });
-      courseBtn.innerHTML = '<span>✓ ' + (document.body.classList.contains('lang-es') ? '¡Recibido! Te contactamos en 24 horas.' : 'Received! We will contact you within 24 hours.') + '</span>';
-      courseBtn.style.background = '#16a34a';
-      courseBtn.style.opacity = '1';
-
-      setTimeout(()=>{
-        ['cName','cEmail','cWhatsapp','cBusiness'].forEach(id=>{
-          const el=document.getElementById(id); if(el) el.value='';
-        });
-        const p = document.getElementById('cProfile');
-        if(p) p.selectedIndex = 0;
-        courseBtn.innerHTML = orig;
-        courseBtn.style.background = '';
-        courseBtn.disabled = false;
-      }, 4000);
-    });
-  }
-
   /* ── DYP Pitch Form Submit ── */
   const pitchBtn = document.getElementById('pitchSubmitBtn');
   if(pitchBtn){
@@ -2298,8 +2179,6 @@ function handleDonate(){
         });
         fetch(PITCH_WEBHOOK + '?' + params.toString(), { method:'GET', mode:'no-cors' });
 
-        // Track form submission in GA4
-        if(typeof gtag === 'function') gtag('event', 'form_submit', { event_category: 'engagement', event_label: 'pitch' });
         pitchBtn.innerHTML = '<span>✓ ' + (document.body.classList.contains('lang-es') ? '¡Pitch enviado! Te contactaremos pronto.' : 'Pitch Submitted! We will be in touch.') + '</span>';
         pitchBtn.style.background = '#16a34a';
         pitchBtn.style.opacity = '1';
@@ -2351,7 +2230,7 @@ function handleDonate(){
 
   // Mobile donate button
   document.querySelectorAll('.mobile-nav-donate').forEach(btn=>{
-    btn.addEventListener('click', openDonate);
+    btn.addEventListener('click', handleDonate);
   });
 
   // Escape key closes menu

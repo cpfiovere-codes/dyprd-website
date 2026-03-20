@@ -671,56 +671,80 @@ body.lang-en span.es { display: none !important; }
   .freq-btn{min-width:calc(50% - 5px);}
 }
 
-/* ═══ HOVER EFFECTS ═══ */
-.pitch-stat{transition:all .3s;}.pitch-stat:hover{transform:translateY(-4px);box-shadow:0 8px 25px rgba(11,60,111,.12);}
-.pitch-get-card{transition:all .3s;}.pitch-get-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(201,162,39,.15);border-color:var(--gold)!important;}
-.pitch-step{transition:all .3s;}.pitch-step:hover{transform:translateY(-4px);box-shadow:0 8px 25px rgba(11,60,111,.12);}
-.pitch-tag{transition:all .2s;cursor:pointer;}.pitch-tag:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(11,60,111,.1);}
-.btn-primary{transition:all .3s;}.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(201,162,39,.4);}
-.btn-secondary{transition:all .3s;}.btn-secondary:hover{transform:translateY(-3px);}
-input:focus,select:focus,textarea:focus{border-color:var(--gold)!important;box-shadow:0 0 0 3px rgba(201,162,39,.15)!important;outline:none;}
-.nav-cta{transition:all .3s;}.nav-donate{transition:all .3s;}
-.footer-links a{transition:all .2s;}.footer-links a:hover{color:var(--gold)!important;}
-.social-icon{transition:all .3s;}.social-icon:hover{transform:translateY(-3px) scale(1.1);}
-.hero-stat{transition:all .3s;}.hero-stat:hover{background:rgba(255,255,255,.03);}
+/* ===== ENHANCED HOVER EFFECTS ===== */
 
-/* Pitch step numbers glow */
-.pitch-step-num{transition:all .3s;}.pitch-step:hover .pitch-step-num{transform:scale(1.1);box-shadow:0 0 15px rgba(201,162,39,.3);}
+/* Pitch stat cards hover */
+.pitch-stat{transition:all .3s;}
+.pitch-stat:hover{transform:translateY(-4px);box-shadow:0 8px 25px rgba(11,60,111,.12);}
 
-/* Pitch get card icons */
-.pitch-get-icon{transition:all .3s;}.pitch-get-card:hover .pitch-get-icon{transform:scale(1.15);}
+/* Pitch get cards (what you get) - enhanced */
+.pitch-get-card{transition:all .3s;}
+.pitch-get-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(201,162,39,.15);border-color:var(--gold) !important;}
 
-/* Member notice */
-.pitch-member-notice{transition:all .3s;}.pitch-member-notice:hover{transform:translateY(-2px);box-shadow:0 4px 15px rgba(11,60,111,.1);}
+/* Pitch steps (how it works) hover */
+.pitch-step{transition:all .3s;}
+.pitch-step:hover{transform:translateY(-4px);box-shadow:0 8px 25px rgba(11,60,111,.12);}
 
-/* Form fields */
-.pitch-field{transition:all .2s;}.pitch-field:hover{transform:translateY(-1px);}
+/* Pillar cards - enhanced */
+.pillar-card{transition:all .3s;}
+.pillar-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(11,60,111,.12);border-color:var(--gold) !important;}
+.pillar-card:hover .pillar-icon{transform:scale(1.15);}
+.pillar-icon{transition:transform .3s;}
 
-/* Tag items */
-.tag-item{transition:all .2s;cursor:pointer;}.tag-item:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(11,60,111,.1);}
+/* Program cards - enhanced */
+.program-card{transition:all .3s;}
+.program-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(11,60,111,.12);}
 
-/* Section labels */
-.section-label{transition:all .3s;}.section-label:hover .section-label-line{width:50px;}
-.section-label-line{transition:width .3s;}
+/* Crypto cards - enhanced */
+.crypto-card{transition:all .3s;}
+.crypto-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(201,162,39,.15);border-color:var(--gold) !important;}
 
-/* Back link */
-a[href="index.html"]{transition:all .2s;}a[href="index.html"]:hover{color:var(--gold)!important;}
+/* Support cards - enhanced */
+.support-card{transition:all .3s;}
+.support-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(11,60,111,.12);}
 
-/* Nav hamburger */
-.nav-hamburger{transition:all .2s;}.nav-hamburger:hover{opacity:.7;}
+/* Mission cards hover */
+.mission-card{transition:all .3s;}
+.mission-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(11,60,111,.1);}
 
-/* Steps connector line pulse on hover */
-.pitch-steps::before{transition:all .5s;}
+/* Founder cards - enhanced */
+.founder-card{transition:all .3s;}
+.founder-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(11,60,111,.15);}
+
+/* Form inputs focus glow */
+input:focus,select:focus,textarea:focus{border-color:var(--gold) !important;box-shadow:0 0 0 3px rgba(201,162,39,.15) !important;outline:none;}
+
+/* Buttons - enhanced lift & glow */
+.btn-primary{transition:all .3s;}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(201,162,39,.4);}
+
+/* Back link hover */
+.back-link{transition:all .2s;}
+.back-link a:hover{color:var(--gold) !important;}
+
+/* Nav links color transition */
+.nav-links a{transition:all .3s;}
+
+/* Footer links - enhanced */
+.footer-links a{transition:all .2s;}
+.footer-links a:hover{color:var(--gold) !important;}
+
+/* Tag items - enhanced */
+.tag-item{transition:all .2s;}
+.tag-item:hover{transform:translateY(-2px);box-shadow:0 4px 12px rgba(11,60,111,.1);}
+
+/* AI chat fab - enhanced */
+.ai-fab-btn{transition:all .3s;}
+.ai-fab-btn:hover{transform:scale(1.1);box-shadow:0 8px 30px rgba(201,162,39,.4);}
+
+/* AI quick suggestion buttons - enhanced */
+.ai-quick{transition:all .2s;}
+.ai-quick:hover{transform:translateY(-2px);background:var(--gold) !important;color:var(--navy-dark) !important;}
+
+/* Hero stats hover */
+.hero-stat{transition:all .3s;}
+.hero-stat:hover{background:rgba(255,255,255,.03);}
 </style>
-
-<!-- Google Analytics — Replace GA_MEASUREMENT_ID with your real ID from analytics.google.com -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'GA_MEASUREMENT_ID');
-</script>
 </head>
 <body class="lang-en">
 
@@ -828,8 +852,8 @@ gtag('config', 'GA_MEASUREMENT_ID');
     <div class="pitch-form-wrap">
       <div class="pitch-member-notice">
         <strong>🇩🇴 <span class="en">DYP Pitch is for DYP members.</span><span class="es">DYP Pitch es para miembros de DYP.</span></strong><br>
-        <span class="en">Not a member yet? Submit your idea and we will reach out to guide you through joining DYP. <a href="index.html#contact">Join DYP here →</a></span>
-        <span class="es">¿Aún no eres miembro? Somete tu idea y te contactaremos para guiarte en el proceso de unirte a DYP. <a href="index.html#contact">Únete a DYP aquí →</a></span>
+        <span class="en">Not a member yet? Submit your idea and we will reach out to guide you through joining DYP. <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Join DYP here →</a></span>
+        <span class="es">¿Aún no eres miembro? Somete tu idea y te contactaremos para guiarte en el proceso de unirte a DYP. <a onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Únete a DYP aquí →</a></span>
       </div>
 
       <!-- Name + Email -->
@@ -983,9 +1007,6 @@ gtag('config', 'GA_MEASUREMENT_ID');
 </footer>
 
 <script>
-// Scroll to top on page load/refresh
-window.addEventListener('load', () => { window.scrollTo(0, 0); });
-
 const WEBHOOK = window.DYP_WEBHOOK || 'https://script.google.com/macros/s/AKfycbzQ43kKgqUMWnRaTJ46AX_dvDy-UhMENs9tdxFGq41d5Fdtgr4_9fjmG3KDq8MkcLuUkg/exec';
 
 function setLang(lang){
@@ -1022,8 +1043,6 @@ if(pitchBtn){
     pitchBtn.innerHTML = '<span>⏳ Enviando...</span>'; pitchBtn.style.opacity='0.7'; pitchBtn.disabled=true;
     const params = new URLSearchParams({ formType:'pitch', firstName:name, lastName:'', whatsapp, email, occupation:'DYP Pitch Applicant', jobTitle:project, company:industry, country, city:stage, languages:support, canHelp:description, lookingFor:problem, linkedin:member });
     fetch(WEBHOOK + '?' + params.toString(), { method:'GET', mode:'no-cors' });
-    // Track form submission in GA4
-    if(typeof gtag === 'function') gtag('event', 'form_submit', { event_category: 'engagement', event_label: 'pitch' });
     pitchBtn.innerHTML = '<span>✓ ' + (document.body.classList.contains('lang-es') ? '¡Pitch enviado! Te contactaremos pronto.' : 'Pitch Submitted! We will be in touch.') + '</span>';
     pitchBtn.style.background = '#16a34a'; pitchBtn.style.opacity = '1';
     setTimeout(()=>{ ['pName','pEmail','pWhatsapp','pCountry','pProject','pDescription','pProblem'].forEach(id=>{ const el=document.getElementById(id); if(el) el.value=''; }); ['pIndustry','pStage','pMember'].forEach(id=>{ const el=document.getElementById(id); if(el) el.selectedIndex=0; }); document.querySelectorAll('#pitchSupportTags .tag-item').forEach(t=>t.classList.remove('selected')); pitchBtn.innerHTML=orig; pitchBtn.style.background=''; pitchBtn.disabled=false; }, 3000);
@@ -1035,63 +1054,6 @@ const obs = new IntersectionObserver(entries=>{ entries.forEach(e=>{ if(e.isInte
 document.querySelectorAll('.pitch-get-card,.pitch-step').forEach(el=>{ el.style.opacity='0'; el.style.transform='translateY(20px)'; el.style.transition='opacity .6s ease,transform .6s ease'; obs.observe(el); });
 
 let saved='en'; try{ saved=localStorage.getItem('dyp-lang')||'en'; }catch(e){} setLang(saved);
-
-// ═══ AI CHATBOT ═══
-let chatOpen=false,chatHistory=[];
-function sanitize(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
-function sanitizeInput(t){return t.replace(/[<>]/g,'').trim().substring(0,500);}
-function toggleChat(){chatOpen=!chatOpen;document.getElementById('aiChat').classList.toggle('open',chatOpen);if(chatOpen)document.getElementById('aiInput').focus();}
-function addMsg(role,text){const msgs=document.getElementById('aiMessages');const div=document.createElement('div');div.className='ai-msg '+role;const av=document.createElement('div');av.className='ai-msg-avatar '+role;av.textContent=role==='bot'?'🛡️':'👤';const bub=document.createElement('div');bub.className='ai-msg-bubble';bub.innerHTML=sanitize(text).replace(/\n/g,'<br>');div.appendChild(av);div.appendChild(bub);msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;}
-function addTyping(){const msgs=document.getElementById('aiMessages');const div=document.createElement('div');div.className='ai-msg bot';div.id='typing-indicator';div.innerHTML='<div class="ai-msg-avatar bot">🛡️</div><div class="ai-typing"><span></span><span></span><span></span></div>';msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;}
-function removeTyping(){const t=document.getElementById('typing-indicator');if(t)t.remove();}
-function getFallbackReply(msg){const m=msg.toLowerCase();const isEs=/[áéíóúñ¿¡]/.test(msg)||/\b(como|qué|quien|hola|gracias|quiero|puedo)\b/.test(m);if(/pitch|idea|startup|submit|someter/.test(m))return isEs?'DYP Pitch conecta tu idea con mentores, aliados estratégicos e inversores de nuestra red. No necesitas un deck — solo tu idea. ¿Listo para someter tu proyecto?':'DYP Pitch connects your idea with mentors, strategic allies, and investors from our network. No deck needed — just your idea. Ready to submit?';if(/mentor|mentoria/.test(m))return isEs?'A través de DYP Pitch, te conectamos con profesionales experimentados que te guían en tu camino emprendedor. Mentoría personalizada para tu industria.':'Through DYP Pitch, we connect you with experienced professionals who guide your entrepreneurial journey. Personalized mentorship for your industry.';if(/fund|financ|inver|invest/.test(m))return isEs?'DYP Pitch te pone frente a inversores activos de la red DYP que buscan proyectos dominicanos para apoyar. Sin intermediarios.':'DYP Pitch puts you in front of active DYP investors looking for Dominican projects to support. No middlemen.';if(/hola|hello|hi|hey/.test(m))return isEs?'¡Hola! Soy el asistente AI de DYP Pitch — el Shark Tank dominicano. ¿Tienes una idea o startup? Te ayudo a entender cómo funciona.':'Hello! I\'m the DYP Pitch AI assistant — the Dominican Shark Tank. Have an idea or startup? I\'ll help you understand how it works.';return isEs?'DYP Pitch es donde los emprendedores dominicanos conocen la red que necesitan. Mentoría, alianzas y financiamiento. ¿Qué te gustaría saber?':'DYP Pitch is where Dominican entrepreneurs meet the network they need. Mentorship, alliances, and funding. What would you like to know?';}
-async function sendAI(){const input=document.getElementById('aiInput');const raw=input.value.trim();if(!raw)return;const msg=sanitizeInput(raw);input.value='';document.getElementById('quickBtns').style.display='none';chatHistory.push({role:'user',content:msg});addMsg('user',msg);addTyping();try{const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':window.ANTHROPIC_KEY||'','anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:500,system:'You are the DYP Pitch AI assistant. Help visitors learn about submitting startup ideas to the DYP network for mentorship, alliances, and funding. Be warm, bilingual, concise.',messages:chatHistory})});const data=await res.json();removeTyping();let reply=(data.content&&data.content[0]&&data.content[0].text)?data.content[0].text:getFallbackReply(msg);chatHistory.push({role:'assistant',content:reply});if(chatHistory.length>20)chatHistory=chatHistory.slice(-20);addMsg('bot',reply);}catch(e){removeTyping();const reply=getFallbackReply(msg);chatHistory.push({role:'assistant',content:reply});addMsg('bot',reply);}}
-
-</script>
-
-<!-- AI CHATBOT WIDGET -->
-<div class="ai-fab">
-  <div class="ai-chat" id="aiChat">
-    <div class="ai-chat-header">
-      <div class="ai-chat-header-info">
-        <div class="ai-avatar-small">🛡️</div>
-        <div>
-          <div class="ai-chat-name">DYP Assistant</div>
-          <div class="ai-chat-status"><span class="en">Online · Here to help</span><span class="es">En línea · Aquí para ayudar</span></div>
-        </div>
-      </div>
-      <button class="ai-chat-close" data-action="toggle-chat">✕</button>
-    </div>
-    <div class="ai-messages" id="aiMessages">
-      <div class="ai-msg bot">
-        <div class="ai-msg-avatar bot">🛡️</div>
-        <div class="ai-msg-bubble en">Hello! I'm the DYP Pitch assistant. Ask me about submitting your idea, mentorship, alliances, or funding.</div>
-        <div class="ai-msg-bubble es">¡Hola! Soy el asistente de DYP Pitch. Pregúntame sobre cómo someter tu idea, mentoría, alianzas o financiamiento.</div>
-      </div>
-    </div>
-    <div class="ai-quick-btns" id="quickBtns">
-      <button class="ai-quick" data-action="quick-ask"><span class="en">How to submit?</span><span class="es">¿Cómo someter?</span></button>
-      <button class="ai-quick" data-action="quick-ask"><span class="en">Mentorship</span><span class="es">Mentoría</span></button>
-      <button class="ai-quick" data-action="quick-ask"><span class="en">Funding</span><span class="es">Financiamiento</span></button>
-    </div>
-    <div class="ai-input-row">
-      <input class="ai-input" id="aiInput" placeholder="Ask anything... / Pregunta algo...">
-      <button class="ai-send" data-action="send-ai">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-      </button>
-    </div>
-  </div>
-  <button class="ai-fab-btn" data-action="toggle-chat" title="DYP AI Assistant">
-    <div class="ai-pulse"></div>
-    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A227" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
-  </button>
-</div>
-<script>
-// Wire chatbot events AFTER HTML is loaded
-document.querySelectorAll('[data-action="toggle-chat"]').forEach(btn=>{btn.addEventListener('click',toggleChat);});
-document.querySelectorAll('[data-action="send-ai"]').forEach(btn=>{btn.addEventListener('click',sendAI);});
-document.querySelectorAll('[data-action="quick-ask"]').forEach(btn=>{btn.addEventListener('click',()=>{document.getElementById('aiInput').value=btn.textContent.trim();sendAI();});});
-document.getElementById('aiInput')?.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();sendAI();}});
 </script>
 </body>
 </html>

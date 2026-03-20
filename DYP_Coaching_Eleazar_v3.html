@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DYP Coaching — Para Eleazar</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Montserrat',sans-serif;background:#F8F6F1;color:#071f3a;line-height:1.7;}
+
+.cover{background:#071f3a;padding:60px 50px;position:relative;overflow:hidden;}
+.cover::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 80% at 90% 50%,rgba(201,162,39,.1) 0%,transparent 70%);}
+.cover-accent{position:absolute;left:0;top:0;bottom:0;width:5px;background:linear-gradient(to bottom,#C62828,#C9A227);}
+.cover-content{position:relative;z-index:1;}
+.cover-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(201,162,39,.15);border:1px solid rgba(201,162,39,.3);color:#C9A227;padding:5px 14px;font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px;}
+.cover h1{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,46px);font-weight:900;color:#fff;line-height:1.1;margin-bottom:12px;}
+.cover h1 em{font-style:italic;color:#C9A227;}
+.cover-sub{font-size:13px;color:rgba(255,255,255,.5);font-weight:300;}
+
+.page{max-width:800px;margin:0 auto;padding:60px 40px;}
+.block{margin-bottom:48px;}
+.sec-label{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+.sec-line{width:22px;height:2px;background:#C62828;}
+.sec-label span{font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#C62828;}
+h2{font-family:'Playfair Display',serif;font-size:clamp(20px,3vw,28px);font-weight:700;color:#0B3C6F;line-height:1.2;margin-bottom:14px;}
+h2 em{font-style:italic;color:#C62828;}
+.body-text{font-size:13px;color:#374151;line-height:1.9;font-weight:300;margin-bottom:12px;}
+.body-text strong{color:#071f3a;font-weight:600;}
+
+.callout{background:#0B3C6F;border-left:4px solid #C9A227;padding:20px 24px;margin:20px 0;}
+.callout p{font-size:13px;color:rgba(255,255,255,.75);line-height:1.8;}
+.callout strong{color:#C9A227;}
+.callout.light{background:rgba(201,162,39,.08);border-color:#C9A227;}
+.callout.light p{color:#374151;}
+.callout.light strong{color:#0B3C6F;}
+
+/* Instructor */
+.instructor-card{background:#fff;display:grid;grid-template-columns:auto 1fr;gap:24px;padding:28px;border-top:3px solid #C9A227;margin:20px 0;}
+.inst-avatar{width:60px;height:60px;border-radius:50%;background:#0B3C6F;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#C9A227;flex-shrink:0;}
+.inst-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#0B3C6F;margin-bottom:3px;}
+.inst-title{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C62828;margin-bottom:10px;display:block;}
+.inst-bio{font-size:12px;color:#6b7280;line-height:1.8;}
+
+/* Modules */
+.modules{display:flex;flex-direction:column;gap:2px;margin:20px 0;}
+.module{background:#fff;display:grid;grid-template-columns:56px 1fr;gap:0;overflow:hidden;}
+.module-num{background:#0B3C6F;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#C9A227;padding:20px;}
+.module-body{padding:20px 24px;}
+.module-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:#0B3C6F;margin-bottom:4px;}
+.module-text{font-size:12px;color:#6b7280;line-height:1.7;}
+.module-tag{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C9A227;margin-top:6px;display:block;}
+
+/* Format */
+.format-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:20px 0;}
+.format-card{background:#fff;padding:22px 18px;text-align:center;border-top:2px solid transparent;}
+.format-card:hover{border-top-color:#C9A227;}
+.format-icon{font-size:24px;margin-bottom:8px;display:block;}
+.format-label{font-size:11px;font-weight:700;color:#0B3C6F;margin-bottom:3px;}
+.format-val{font-size:12px;color:#6b7280;}
+
+/* Cost */
+.cost-row{display:grid;grid-template-columns:1fr auto;padding:12px 0;border-bottom:1px solid rgba(11,60,111,.08);font-size:13px;}
+.cost-row:first-child{border-top:1px solid rgba(11,60,111,.08);}
+.cost-label{color:#374151;font-weight:300;}
+.cost-val{font-weight:700;color:#0B3C6F;}
+.cost-total{display:grid;grid-template-columns:1fr auto;padding:16px 20px;background:#071f3a;font-size:13px;font-weight:700;margin-top:4px;}
+.cost-total div{color:#fff;}
+.cost-total .cost-val{color:#C9A227;}
+
+/* Price */
+.price-row{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin:20px 0;}
+.price-opt{background:#fff;padding:28px 24px;text-align:center;border-top:3px solid transparent;}
+.price-opt.rec{background:#0B3C6F;border-top-color:#C9A227;}
+.rec-tag{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C9A227;display:block;margin-bottom:8px;}
+.price-opt h4{font-size:11px;font-weight:700;color:#0B3C6F;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;}
+.price-opt.rec h4{color:rgba(255,255,255,.5);}
+.price-big{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;color:#0B3C6F;line-height:1;}
+.price-opt.rec .price-big{color:#C9A227;}
+.price-note{font-size:11px;color:#6b7280;margin-top:10px;line-height:1.7;}
+.price-opt.rec .price-note{color:rgba(255,255,255,.4);}
+
+/* Pay */
+.pay-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:16px 0;}
+.pay-card{background:#fff;padding:20px;text-align:center;border:1px solid rgba(11,60,111,.07);}
+.pay-icon{font-size:22px;margin-bottom:6px;display:block;}
+.pay-name{font-size:11px;font-weight:700;color:#0B3C6F;margin-bottom:2px;}
+.pay-desc{font-size:10px;color:#6b7280;}
+
+/* Next steps */
+.steps{display:flex;flex-direction:column;gap:10px;margin:16px 0;}
+.step-item{display:flex;gap:12px;font-size:13px;color:#374151;align-items:flex-start;}
+.step-item::before{content:'→';color:#C9A227;font-weight:700;flex-shrink:0;}
+.step-item strong{color:#071f3a;}
+
+.footer{background:#071f3a;padding:24px 40px;text-align:center;}
+.footer p{font-size:10px;color:rgba(255,255,255,.2);letter-spacing:1px;}
+
+@media(max-width:580px){
+  .cover{padding:40px 20px;}
+  .page{padding:40px 20px;}
+  .format-grid,.price-row,.pay-row{grid-template-columns:1fr;}
+  .instructor-card{grid-template-columns:1fr;text-align:center;}
+  .inst-avatar{margin:0 auto;}
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-accent"></div>
+  <div class="cover-content">
+    <div class="cover-tag">🎯 DYP Coaching — Briefing para Eleazar</div>
+    <h1>El curso que<br><em>DYP Coaching</em><br>va a lanzar</h1>
+    <p class="cover-sub">Carlos Polonia · Co-Founder DYP · Marzo 2026</p>
+  </div>
+</div>
+
+<div class="page">
+
+  <!-- INSTRUCTOR STRIP -->
+  <div style="background:#0B3C6F;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;margin-bottom:48px;border-left:4px solid #C9A227;">
+    <span style="font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#fff;">Carlos Polonia</span>
+    <span style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#C9A227;">Co-Founder DYP · Instructor Principal</span>
+  </div>
+
+  <!-- EL CURSO -->
+  <div class="block">
+    <div class="sec-label"><div class="sec-line"></div><span>El Producto</span></div>
+    <h2>El <em>curso</em></h2>
+    <p class="body-text">Un programa intensivo en vivo donde Carlos trabaja con dos tipos de clientes muy distintos — y el curso se personaliza según cuál sea.</p>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px;margin:20px 0;">
+      <div style="background:#fff;padding:28px 24px;border-top:3px solid #0B3C6F;">
+        <div style="font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#0B3C6F;margin-bottom:10px;">Perfil A</div>
+        <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#0B3C6F;margin-bottom:10px;">Tiene una idea</div>
+        <p style="font-size:12px;color:#6b7280;line-height:1.8;">Quiere construir algo desde cero. No tiene negocio todavía. Necesita el proceso completo — desde la idea, el branding, el MVP, hasta el producto live con AI.</p>
+        <div style="font-size:10px;font-weight:700;color:#C9A227;margin-top:12px;letter-spacing:1px;">→ Le vendes visión y construcción</div>
+      </div>
+      <div style="background:#0B3C6F;padding:28px 24px;border-top:3px solid #C9A227;">
+        <div style="font-size:9px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:10px;">Perfil B</div>
+        <div style="font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:#C9A227;margin-bottom:10px;">Ya tiene un negocio</div>
+        <p style="font-size:12px;color:rgba(255,255,255,.6);line-height:1.8;">Ya opera, ya tiene clientes y procesos. Busca automatizar lo que tiene, resolver cuellos de botella y ahorrar tiempo — sin necesariamente aprender todo.</p>
+        <div style="font-size:10px;font-weight:700;color:#C9A227;margin-top:12px;letter-spacing:1px;">→ Le vendes tiempo, dinero y eficiencia</div>
+      </div>
+    </div>
+
+    <p class="body-text">Antes de pagar, el cliente hace una <strong>consulta gratuita de 45 minutos</strong> con Carlos. Ahí se identifica el perfil, se entiende el negocio y se personaliza el programa. Si encaja — entra. Si no — Carlos lo orienta honestamente.</p>
+
+    <div class="format-grid">
+      <div class="format-card">
+        <span class="format-icon">📅</span>
+        <div class="format-label">Duración</div>
+        <div class="format-val">3 semanas<br>2 sesiones/semana</div>
+      </div>
+      <div class="format-card">
+        <span class="format-icon">⏱</span>
+        <div class="format-label">Por sesión</div>
+        <div class="format-val">2 horas<br>Google Meet</div>
+      </div>
+      <div class="format-card">
+        <span class="format-icon">🖥</span>
+        <div class="format-label">Herramienta</div>
+        <div class="format-val">Claude Desktop<br>siempre activo</div>
+      </div>
+    </div>
+
+    <div class="callout light">
+      <p><strong>Nota:</strong> El horario lo define Carlos — el cliente elige entre las ventanas disponibles. Los mejores horarios para dominicanos en EE.UU.: Sábados 10am–12pm EST · Miércoles o Jueves 7–9pm EST.</p>
+    </div>
+  </div>
+
+  <!-- MÓDULOS -->
+  <div class="block">
+    <div class="sec-label"><div class="sec-line"></div><span>El Contenido</span></div>
+    <h2>Los 6 <em>módulos</em></h2>
+    <div class="modules">
+      <div class="module">
+        <div class="module-num">1</div>
+        <div class="module-body">
+          <div class="module-title">Cómo pensar y hablarle a la AI</div>
+          <p class="module-text">La mentalidad correcta. Cómo formular ideas. Cómo hacer las preguntas que dan resultados. El prompting como habilidad central.</p>
+          <span class="module-tag">Semana 1 · Sesión 1</span>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module-num">2</div>
+        <div class="module-body">
+          <div class="module-title">El Plan — flujos y estructura</div>
+          <p class="module-text">Cómo mapear el negocio en papel antes de construir. Flujos, sistemas, qué hace cada parte. Preparar todo para entrar al MVP con claridad total.</p>
+          <span class="module-tag">Semana 1 · Sesión 2</span>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module-num">3</div>
+        <div class="module-body">
+          <div class="module-title">Branding e identidad con AI</div>
+          <p class="module-text">Nombre, mensaje, tono, visual, brandbook básico — todo construido con AI en horas. Sin esto el MVP no tiene identidad.</p>
+          <span class="module-tag">Semana 2 · Sesión 3</span>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module-num">4</div>
+        <div class="module-body">
+          <div class="module-title">El MVP — construir la primera versión</div>
+          <p class="module-text">La primera versión real del producto. Solo lo esencial. Lo mínimo que funciona y demuestra la idea. Con Claude como co-constructor.</p>
+          <span class="module-tag">Semana 2 · Sesión 4</span>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module-num">5</div>
+        <div class="module-body">
+          <div class="module-title">Hacerlo real — el stack técnico</div>
+          <p class="module-text">Claude Desktop + OpenClaw. GitHub, Vercel, Supabase, APIs, seguridad. De la computadora al mundo. Todo lo que se necesita para publicar en vivo.</p>
+          <span class="module-tag">Semana 3 · Sesión 5</span>
+        </div>
+      </div>
+      <div class="module">
+        <div class="module-num">6</div>
+        <div class="module-body">
+          <div class="module-title">Live, automatizado y corriendo</div>
+          <p class="module-text">Integraciones especiales según el proyecto — voz con ElevenLabs, pagos, formularios, agentes AI. El cliente se gradúa con su producto en vivo y funcionando.</p>
+          <span class="module-tag">Semana 3 · Sesión 6</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COSTOS -->
+  <div class="block">
+    <div class="sec-label"><div class="sec-line"></div><span>Los Números</span></div>
+    <h2>Costos y <em>precio</em></h2>
+    <div class="cost-row"><div class="cost-label">Plataformas fijas — Claude, ElevenLabs, etc.</div><div class="cost-val">$160–$310/mes</div></div>
+    <div class="cost-row"><div class="cost-label">Consumo variable por cliente — APIs, tokens, builds</div><div class="cost-val">~$200/cliente</div></div>
+    <div class="cost-row"><div class="cost-label">Google Meet, Sheets, Drive</div><div class="cost-val">$0</div></div>
+    <div class="cost-total"><div>Mínimo a recuperar por cliente</div><div class="cost-val">$200 + overhead</div></div>
+
+    <div style="margin-top:20px;">
+      <div class="price-row">
+        <div class="price-opt">
+          <h4>Precio de lanzamiento</h4>
+          <div class="price-big">$997</div>
+          <p class="price-note">Para los primeros 5 clientes. Genera urgencia, llena la primera cohorte y crea los casos de éxito que justifican el precio real.</p>
+        </div>
+        <div class="price-opt rec">
+          <span class="rec-tag">✓ Precio real</span>
+          <h4>Después de los primeros 5</h4>
+          <div class="price-big">$1,497</div>
+          <p class="price-note">Con 2 clientes/mes el negocio es rentable después de plataformas. Refleja el valor real del programa.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- COBRO -->
+  <div class="block">
+    <div class="sec-label"><div class="sec-line"></div><span>Métodos de Pago</span></div>
+    <h2>Cómo <em>cobrar</em></h2>
+    <div class="pay-row">
+      <div class="pay-card"><span class="pay-icon">💳</span><div class="pay-name">PayPal</div><p class="pay-desc">Transferencia en dólares. Inmediato. El más simple para empezar.</p></div>
+      <div class="pay-card"><span class="pay-icon">₿</span><div class="pay-name">Crypto</div><p class="pay-desc">BTC, USDT, USDC. Ya configurado en dyprd.org.</p></div>
+      <div class="pay-card"><span class="pay-icon">🇩🇴</span><div class="pay-name">Transferencia RD</div><p class="pay-desc">Pesos a cuenta dominicana. Para clientes en RD.</p></div>
+    </div>
+  </div>
+
+  <!-- PRÓXIMOS PASOS -->
+  <div class="block">
+    <div class="sec-label"><div class="sec-line"></div><span>Próximos Pasos</span></div>
+    <h2>Para <em>arrancar</em></h2>
+    <div class="steps">
+      <div class="step-item"><strong>Confirmar los 2 clientes listos</strong> — agendar sus consultas gratuitas con Carlos</div>
+      <div class="step-item"><strong>Activar el formulario del curso en dyprd.org</strong> — ya está construido, solo hay que publicarlo</div>
+      <div class="step-item"><strong>Configurar PayPal de DYP</strong> — para recibir el primer pago</div>
+      <div class="step-item"><strong>Activar el asistente AI del sitio</strong> — API Key de Anthropic para que atienda consultas 24/7</div>
+      <div class="step-item"><strong>Carlos prepara el material del Módulo 1</strong> — con apoyo de Claude, sesión por sesión</div>
+    </div>
+
+    <div class="callout">
+      <p><strong>Para Eleazar:</strong> Los primeros 2 clientes no necesitan que el curso esté perfecto — necesitan que Carlos esté presente, preparado para la consulta inicial y la primera sesión. El resto se construye con cada cohorte. <strong>El momento de lanzar es ahora.</strong></p>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <p>🇩🇴 Dominican Young Professionals · dyprd.org · Documento Interno · Marzo 2026</p>
+</div>
+
+</body>
+</html>

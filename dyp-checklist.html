@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DYP — Estado del Proyecto</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#f8f5ee;font-family:'Montserrat',sans-serif;color:#0B3C6F;min-height:100vh;}
+.page{max-width:700px;margin:0 auto;padding:60px 40px 80px;}
+.header{border-bottom:3px solid #C9A227;padding-bottom:28px;margin-bottom:48px;display:flex;justify-content:space-between;align-items:flex-end;}
+.eyebrow{font-size:9px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:#C62828;margin-bottom:8px;}
+.title{font-family:'Playfair Display',serif;font-size:34px;font-weight:900;line-height:1.1;color:#0B3C6F;}
+.date{font-size:10px;font-weight:600;letter-spacing:2px;color:#9ca3af;text-transform:uppercase;}
+.domain{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#C9A227;margin-top:4px;}
+.progress-label{display:flex;justify-content:space-between;margin-bottom:10px;}
+.progress-text{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#9ca3af;}
+.progress-pct{font-size:10px;font-weight:700;letter-spacing:2px;color:#C9A227;}
+.progress-wrap{background:#e5e0d5;height:6px;margin-bottom:48px;}
+.progress-bar{height:100%;background:linear-gradient(90deg,#0B3C6F,#C9A227);width:47%;}
+.section{margin-bottom:40px;}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:20px;}
+.section-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+.section-title{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;}
+.section-count{margin-left:auto;font-size:10px;font-weight:700;color:#9ca3af;letter-spacing:1px;}
+.items{display:flex;flex-direction:column;gap:2px;}
+.item{display:flex;align-items:flex-start;gap:16px;padding:16px 20px;background:white;}
+.item.done{border-left:3px solid #16a34a;}
+.item.p1{border-left:3px solid #C62828;}
+.item.p2{border-left:3px solid #0B3C6F;}
+.item.p3{border-left:3px solid #e5e0d5;}
+.check{width:22px;height:22px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;margin-top:1px;}
+.check.done{background:#16a34a;color:white;}
+.check.p1{background:#fff5f5;color:#C62828;border:1.5px solid #C62828;font-size:9px;font-weight:700;}
+.check.p2{background:#eff6ff;color:#0B3C6F;border:1.5px solid #0B3C6F;font-size:9px;font-weight:700;}
+.check.p3{background:#f0ede4;color:#9ca3af;border:1.5px solid #d1cdc4;font-size:9px;}
+.check.waiting{background:#fffbeb;color:#C9A227;border:1.5px solid #C9A227;font-size:12px;}
+.item-body{flex:1;}
+.item-title{font-size:13px;font-weight:600;color:#0B3C6F;margin-bottom:3px;line-height:1.3;}
+.item.done .item-title{color:#6b7280;}
+.item-desc{font-size:11px;color:#9ca3af;line-height:1.6;}
+.item-tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:2px 8px;margin-top:6px;border-radius:1px;margin-right:4px;}
+.tag-free{background:#f0fdf4;color:#16a34a;}
+.tag-cost{background:#fffbeb;color:#92400e;}
+.tag-waiting{background:#fff7ed;color:#c2410c;}
+.tag-key{background:#eff6ff;color:#1d4ed8;}
+.tag-power{background:#0B3C6F;color:#C9A227;}
+.footer{margin-top:56px;padding-top:24px;border-top:1px solid #e5e0d5;display:flex;justify-content:space-between;align-items:center;}
+.footer-note{font-size:11px;color:#9ca3af;}
+.footer-brand{font-family:'Playfair Display',serif;font-size:20px;font-weight:900;color:#0B3C6F;letter-spacing:3px;}
+@media(max-width:500px){.page{padding:40px 20px;}.header{flex-direction:column;gap:16px;align-items:flex-start;}}
+@media print{body{background:white;}.page{padding:40px;}}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="header">
+    <div>
+      <div class="eyebrow">Reporte Ejecutivo · DYP</div>
+      <div class="title">Estado del<br>Proyecto Digital</div>
+    </div>
+    <div style="text-align:right;">
+      <div class="date">Marzo 2025</div>
+      <div class="domain">dyprd.org</div>
+    </div>
+  </div>
+
+  <div class="progress-label">
+    <span class="progress-text">Progreso general</span>
+    <span class="progress-pct">47% completado</span>
+  </div>
+  <div class="progress-wrap"><div class="progress-bar"></div></div>
+
+  <!-- DONE -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-dot" style="background:#16a34a;"></div>
+      <div class="section-title" style="color:#16a34a;">Completado</div>
+      <div class="section-count">9 hechos</div>
+    </div>
+    <div class="items">
+      <div class="item done"><div class="check done">✓</div><div class="item-body"><div class="item-title">Identidad de marca definida</div><div class="item-desc">Colores, tipografía, paleta institucional y voz de DYP.</div></div></div>
+      <div class="item done"><div class="check done">✓</div><div class="item-body"><div class="item-title">Logo / Escudo diseñado</div><div class="item-desc">Escudo con bandera dominicana, birrete, laurel, estrella y bordes dorados.</div></div></div>
+      <div class="item done"><div class="check done">✓</div><div class="item-body"><div class="item-title">Brand Book completo</div><div class="item-desc">Guía de identidad visual — logo, colores, tipografía, voz y usos correctos.</div></div></div>
+      <div class="item done"><div class="check done">✓</div><div class="item-body"><div class="item-title">Sitio web construido — bilingüe EN/ES</div><div class="item-desc">Misión, pilares, programas, fundadores, donaciones y contacto.</div></div></div>
+      <div class="item done"><div class="check done">✓</div><div class="item-body"><div class="item-title">Modal de donaciones integrado</div><div class="item-desc">Tarjeta, PayPal y crypto (BTC, ETH, USDC, USDT) — en modo demo.</div></div></div>
+      <div class="item done"><div class="check done">✓</div><div class="item-body"><div class="item-title">AI Guardian — avatar activo</div><div class="item-desc">Chat bilingüe con respuestas sobre DYP. Modo básico activo, IA real pendiente.</div></div></div>
+      <div class="item done"><div class="check done">✓</div><div class="item-body"><div class="item-title">Dominio registrado — dyprd.org</div><div class="item-desc">Adquirido y activo.</div><span class="item-tag tag-cost">~$13/año</span></div></div>
+      <div class="item done"><div class="check done">✓</div><div class="item-body"><div class="item-title">Sitio publicado en Vercel</div><div class="item-desc">Hosting gratuito. Se actualiza solo cada vez que se sube un cambio.</div><span class="item-tag tag-free">Gratis</span></div></div>
+      <div class="item done"><div class="check done">✓</div><div class="item-body"><div class="item-title">dyprd.org live y conectado</div><div class="item-desc">El sitio ya es accesible desde www.dyprd.org.</div></div></div>
+    </div>
+  </div>
+
+  <!-- PRIORITY 1 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-dot" style="background:#C62828;"></div>
+      <div class="section-title" style="color:#C62828;">Prioridad 1 — Hacer ahora</div>
+      <div class="section-count">3 pendientes</div>
+    </div>
+    <div class="items">
+      <div class="item p1">
+        <div class="check p1">1</div>
+        <div class="item-body">
+          <div class="item-title">Nueva integrante del equipo</div>
+          <div class="item-desc">En espera de nombre, título y bio confirmados por Eleazar. Se agrega al sitio en minutos.</div>
+          <span class="item-tag tag-waiting">Esperando info</span>
+        </div>
+      </div>
+      <div class="item p1">
+        <div class="check p1">2</div>
+        <div class="item-body">
+          <div class="item-title">Email profesional</div>
+          <div class="item-desc">contacto@dyprd.org · eleazar@dyprd.org · carlos@dyprd.org via Zoho Mail.</div>
+          <span class="item-tag tag-free">Gratis</span>
+        </div>
+      </div>
+      <div class="item p1">
+        <div class="check p1">3</div>
+        <div class="item-body">
+          <div class="item-title">Odoo — instalar el sistema central</div>
+          <div class="item-desc">Base de todo. CRM, miembros, contabilidad y email marketing. Todo parte desde aquí.</div>
+          <span class="item-tag tag-free">Community gratis</span><span class="item-tag tag-cost">Cloud $20/mes</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIORITY 2 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-dot" style="background:#0B3C6F;"></div>
+      <div class="section-title" style="color:#0B3C6F;">Prioridad 2 — Con Odoo instalado</div>
+      <div class="section-count">4 pendientes</div>
+    </div>
+    <div class="items">
+      <div class="item p2">
+        <div class="check p2">4</div>
+        <div class="item-body">
+          <div class="item-title">AI Guardian — conectar IA real + Odoo</div>
+          <div class="item-desc">API Key de Anthropic + proxy en Vercel + conexión a Odoo. El avatar pasa a ser un agente ejecutivo: registra contactos, consulta donaciones, gestiona miembros y responde cualquier pregunta — todo en tiempo real, 24/7.</div>
+          <span class="item-tag tag-power">El paso más poderoso</span><span class="item-tag tag-cost">~$10–20/mes</span>
+        </div>
+      </div>
+      <div class="item p2">
+        <div class="check p2">5</div>
+        <div class="item-body">
+          <div class="item-title">Stripe Nonprofit — pagos reales con tarjeta</div>
+          <div class="item-desc">Conectado al modal de donaciones del sitio y registrado automáticamente en Odoo contabilidad. Requiere EIN de DYP.</div>
+          <span class="item-tag tag-key">Requiere EIN</span><span class="item-tag tag-cost">2.2% por transacción</span>
+        </div>
+      </div>
+      <div class="item p2">
+        <div class="check p2">6</div>
+        <div class="item-body">
+          <div class="item-title">PayPal Giving Fund</div>
+          <div class="item-desc">Donaciones sin comisión para 501(c)(3). Conectado al sitio y a Odoo.</div>
+          <span class="item-tag tag-free">0% comisión</span>
+        </div>
+      </div>
+      <div class="item p2">
+        <div class="check p2">7</div>
+        <div class="item-body">
+          <div class="item-title">Wallets crypto reales</div>
+          <div class="item-desc">Reemplazar direcciones demo por wallets oficiales de DYP (BTC, ETH, USDC, USDT).</div>
+          <span class="item-tag tag-free">Gratis</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIORITY 3 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-dot" style="background:#C9A227;"></div>
+      <div class="section-title" style="color:#C9A227;">Prioridad 3 — Siguiente fase</div>
+      <div class="section-count">4 pendientes</div>
+    </div>
+    <div class="items">
+      <div class="item p3">
+        <div class="check p3">8</div>
+        <div class="item-body">
+          <div class="item-title">Google for Nonprofits</div>
+          <div class="item-desc">Google Workspace gratis — Gmail, Drive, Meet para todo el equipo.</div>
+          <span class="item-tag tag-free">Gratis</span>
+        </div>
+      </div>
+      <div class="item p3">
+        <div class="check p3">9</div>
+        <div class="item-body">
+          <div class="item-title">Redes sociales como organización</div>
+          <div class="item-desc">LinkedIn · Instagram · X — perfiles oficiales de DYP activos y conectados al sitio.</div>
+          <span class="item-tag tag-free">Gratis</span>
+        </div>
+      </div>
+      <div class="item p3">
+        <div class="check p3">10</div>
+        <div class="item-body">
+          <div class="item-title">Newsletter — Odoo Email Marketing</div>
+          <div class="item-desc">Formulario del sitio conectado a Odoo. Comunicaciones automáticas a miembros y donantes.</div>
+          <span class="item-tag tag-free">Incluido en Odoo</span>
+        </div>
+      </div>
+      <div class="item p3">
+        <div class="check p3">11</div>
+        <div class="item-body">
+          <div class="item-title">Logo profesional — versión final</div>
+          <div class="item-desc">Exportar a Figma o Illustrator. Formatos: SVG, PNG, PDF para uso institucional.</div>
+          <span class="item-tag tag-cost">$50–200</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-note">Preparado por Carlos Polonia · Co-Founder & Executive Director</div>
+    <div class="footer-brand">DYP</div>
+  </div>
+
+</div>
+</body>
+</html>

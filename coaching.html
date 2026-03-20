@@ -718,6 +718,15 @@ input:focus,select:focus,textarea:focus{border-color:var(--gold)!important;box-s
 /* Back link in top bar */
 a[href="index.html"]{transition:all .2s;}a[href="index.html"]:hover{color:var(--gold)!important;}
 </style>
+
+<!-- Google Analytics — Replace GA_MEASUREMENT_ID with your real ID from analytics.google.com -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'GA_MEASUREMENT_ID');
+</script>
 </head>
 <body class="lang-en">
 
@@ -792,7 +801,7 @@ a[href="index.html"]{transition:all .2s;}a[href="index.html"]:hover{color:var(--
         <div class="course-price-label"><span class="en">Program Investment</span><span class="es">Inversión del Programa</span></div>
         <div style="display:flex;align-items:baseline;gap:14px;justify-content:center;">
           <div class="course-price"><span>$</span>997</div>
-          <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:rgba(11,60,111,.2);text-decoration:line-through;">$1,497</div>
+          <div style="font-family:'Playfair Display',serif;font-size:28px;font-weight:700;color:rgba(255,255,255,.25);text-decoration:line-through;">$1,497</div>
         </div>
         <p class="course-price-note"><span class="en">Includes free strategy consultation · Price increases when enrollment closes</span><span class="es">Incluye consulta estratégica gratuita · El precio aumenta cuando se cierre la inscripción</span></p>
         <div class="course-price-sub"><span class="en">One-time payment · 4 weeks · Live via Google Meet</span><span class="es">Pago único · 4 semanas · En vivo por Google Meet</span></div>
@@ -805,6 +814,7 @@ a[href="index.html"]{transition:all .2s;}a[href="index.html"]:hover{color:var(--
           <li><span class="en">Access to DYP professional community</span><span class="es">Acceso a la comunidad profesional DYP</span></li>
           <li><span class="en">Certificate of completion</span><span class="es">Certificado de completación</span></li>
         </ul>
+        <!-- Can add onclick tracking later when GA4 is configured -->
         <a href="https://calendly.com/carlospolonia/30min" target="_blank" class="btn-primary">
           <span class="en">📅 Book My Free Consultation</span>
           <span class="es">📅 Reservar Mi Consulta Gratuita</span>
@@ -885,11 +895,11 @@ a[href="index.html"]{transition:all .2s;}a[href="index.html"]:hover{color:var(--
 
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
         <div class="form-field" style="background:white;">
-          <input type="text" id="cName" placeholder=" " style="background:white;border-color:rgba(11,60,111,.2);color:var(--navy-dark);" required>
+          <input type="text" id="cName" placeholder=" " style="background:white;border-color:rgba(11,60,111,.2);color:var(--navy-dark);" autocomplete="name" required>
           <label style="color:var(--gray);"><span class="en">Full Name *</span><span class="es">Nombre Completo *</span></label>
         </div>
         <div class="form-field">
-          <input type="email" id="cEmail" placeholder=" " style="background:white;border-color:rgba(11,60,111,.2);color:var(--navy-dark);" required>
+          <input type="email" id="cEmail" placeholder=" " style="background:white;border-color:rgba(11,60,111,.2);color:var(--navy-dark);" autocomplete="email" required>
           <label style="color:var(--gray);">Email *</label>
         </div>
       </div>
@@ -934,6 +944,7 @@ a[href="index.html"]{transition:all .2s;}a[href="index.html"]:hover{color:var(--
   <h3 class="es">Tu negocio merece trabajar para ti.</h3>
   <p class="en">4 weeks. Live sessions. Real results. Built for Dominican professionals.</p>
   <p class="es">4 semanas. Sesiones en vivo. Resultados reales. Hecho para profesionales dominicanos.</p>
+  <!-- Can add onclick tracking later when GA4 is configured -->
   <a href="https://calendly.com/carlospolonia/30min" target="_blank" class="btn-navy">
     <span class="en">📅 Book My Free Consultation</span>
     <span class="es">📅 Agendar Mi Consulta Gratuita</span>
@@ -1001,6 +1012,8 @@ if(courseBtn){
     courseBtn.disabled = true;
     const params = new URLSearchParams({ formType:'course-consultation', firstName:name, lastName:'', whatsapp, email, occupation:profile, jobTitle:'DYP Coaching — Tu negocio en piloto automático con AI', company:business, country:'United States' });
     fetch(WEBHOOK + '?' + params.toString(), { method:'GET', mode:'no-cors' });
+    // Track form submission in GA4
+    if(typeof gtag === 'function') gtag('event', 'form_submit', { event_category: 'engagement', event_label: 'course_consultation' });
     courseBtn.innerHTML = '<span>✓ ' + (document.body.classList.contains('lang-es') ? '¡Recibido! Te contactamos en 24 horas.' : 'Received! We will contact you within 24 hours.') + '</span>';
     courseBtn.style.background = '#16a34a';
     courseBtn.style.opacity = '1';

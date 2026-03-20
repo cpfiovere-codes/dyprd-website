@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DYP — Brand Book 2025</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0B3C6F;
+  --navy-dark: #071f3a;
+  --red: #C62828;
+  --gold: #C9A227;
+  --gold-light: #e8bf4a;
+  --cream: #f8f5ee;
+  --white: #ffffff;
+  --gray: #6b7280;
+  --light: #f0ede4;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--cream);
+  color: var(--navy);
+  overflow-x: hidden;
+}
+
+/* ── COVER ── */
+.cover {
+  height: 100vh;
+  min-height: 700px;
+  background: var(--navy-dark);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.cover-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 60% at 80% 50%, rgba(201,162,39,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 80% at 15% 60%, rgba(198,40,40,0.06) 0%, transparent 60%);
+}
+.cover-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201,162,39,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,162,39,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.cover-tricolor {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 5px;
+  display: flex;
+}
+.cover-tricolor span:nth-child(1) { flex: 1; background: var(--navy); }
+.cover-tricolor span:nth-child(2) { flex: 1; background: var(--white); }
+.cover-tricolor span:nth-child(3) { flex: 1; background: var(--red); }
+
+.cover-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  animation: fadeUp .8s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.cover-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.8;
+}
+.cover-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(52px, 8vw, 96px);
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: -1px;
+  line-height: 1;
+}
+.cover-title em {
+  font-style: italic;
+  color: var(--gold);
+}
+.cover-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 2px;
+}
+.cover-year {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  color: rgba(255,255,255,0.25);
+  text-transform: uppercase;
+  margin-top: 16px;
+}
+.cover-divider {
+  width: 1px;
+  height: 40px;
+  background: var(--gold);
+  opacity: 0.4;
+  margin: 0 auto;
+}
+
+/* ── SECTIONS ── */
+section { padding: 100px 60px; max-width: 1100px; margin: 0 auto; }
+section.full { max-width: 100%; padding: 0; }
+section.dark { background: var(--navy-dark); max-width: 100%; padding: 100px 60px; }
+section.dark-inner { max-width: 1100px; margin: 0 auto; }
+
+.section-tag {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-tag::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--gold);
+}
+.section-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 900;
+  line-height: 1.05;
+  margin-bottom: 20px;
+}
+.section-heading em { font-style: italic; color: var(--gold); }
+.section-intro {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--gray);
+  max-width: 560px;
+}
+.dark .section-heading { color: var(--white); }
+.dark .section-intro { color: rgba(255,255,255,0.5); }
+.dark .section-tag { color: var(--gold); }
+
+/* ── NAV ── */
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(7,31,58,0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(201,162,39,0.15);
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  height: 52px;
+}
+.nav-logo-sm {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 3px;
+  margin-right: auto;
+}
+.nav-link {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  transition: color .2s;
+  white-space: nowrap;
+}
+.nav-link:hover { color: var(--gold); }
+
+/* ── LOGO SECTION ── */
+.logo-showcase {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-top: 60px;
+}
+.logo-tile {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  min-height: 300px;
+}
+.logo-tile.light { background: var(--white); }
+.logo-tile.cream { background: var(--light); }
+.logo-tile.navy { background: var(--navy); }
+.logo-tile.dark-bg { background: var(--navy-dark); }
+.logo-tile.gold-bg { background: var(--gold); }
+.logo-tile.red-bg { background: var(--red); }
+.logo-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.4;
+}
+.logo-tile.light .logo-label,
+.logo-tile.cream .logo-label { color: var(--navy); }
+.logo-tile.navy .logo-label,
+.logo-tile.dark-bg .logo-label { color: rgba(255,255,255,0.4); }
+.logo-tile.gold-bg .logo-label { color: rgba(7,31,58,0.5); }
+.logo-tile.red-bg .logo-label { color: rgba(255,255,255,0.5); }
+
+/* Full lockup */
+.logo-lockup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.lockup-text {}
+.lockup-dyp {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  letter-spacing: 4px;
+  line-height: 1;
+}
+.lockup-sep {
+  width: 1.5px;
+  background: currentColor;
+  opacity: 0.25;
+  align-self: stretch;
+  margin: 2px 0;
+}
+.lockup-words {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.lockup-word {
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.5;
+}
+
+/* ── COLOR SECTION ── */
+.colors-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+.color-card {
+  border-radius: 2px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+.color-swatch {
+  height: 160px;
+  position: relative;
+}
+.color-swatch::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.1));
+}
+.color-info {
+  background: var(--white);
+  padding: 20px;
+}
+.color-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.color-role {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 12px;
+}
+.color-values {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.color-val {
+  font-family: 'Courier New', monospace;
+  font-size: 11px;
+  color: var(--gray);
+}
+.color-val span {
+  font-weight: 700;
+  color: var(--navy);
+  margin-right: 6px;
+}
+
+/* ── TYPOGRAPHY SECTION ── */
+.type-specimens {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.type-row {
+  background: var(--white);
+  padding: 48px 56px;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.type-meta {}
+.type-family {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.type-role {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.type-usage {
+  font-size: 11px;
+  color: var(--gray);
+  line-height: 1.5;
+}
+.type-sample-1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 900;
+  line-height: 1;
+  color: var(--navy);
+}
+.type-sample-2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 4vw, 52px);
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1.1;
+  color: var(--navy);
+}
+.type-sample-3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--gray);
+  max-width: 500px;
+}
+.type-scale {
+  margin-top: 40px;
+  background: var(--light);
+  padding: 48px 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.scale-row {
+  display: flex;
+  align-items: baseline;
+  gap: 24px;
+  border-bottom: 1px solid rgba(11,60,111,0.08);
+  padding-bottom: 20px;
+}
+.scale-row:last-child { border-bottom: none; padding-bottom: 0; }
+.scale-label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  min-width: 80px;
+}
+.scale-sample { color: var(--navy); }
+
+/* ── VOICE SECTION ── */
+.voice-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-top: 60px;
+}
+.voice-card {
+  background: var(--white);
+  padding: 48px;
+}
+.voice-card.dark-card { background: var(--navy); }
+.voice-icon {
+  font-size: 32px;
+  margin-bottom: 20px;
+  display: block;
+}
+.voice-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--navy);
+}
+.voice-card.dark-card .voice-title { color: var(--white); }
+.voice-desc {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--gray);
+  margin-bottom: 20px;
+}
+.voice-card.dark-card .voice-desc { color: rgba(255,255,255,0.5); }
+.voice-examples { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.voice-examples li {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  font-style: italic;
+  color: var(--navy);
+  padding-left: 16px;
+  border-left: 2px solid var(--gold);
+}
+.voice-card.dark-card .voice-examples li { color: rgba(255,255,255,0.7); }
+
+/* ── DO / DON'T ── */
+.rules-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 60px;
+}
+.rules-col {}
+.rules-heading {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.rules-heading.do { color: #16a34a; }
+.rules-heading.dont { color: var(--red); }
+.rule-item {
+  padding: 20px 24px;
+  margin-bottom: 12px;
+  border-radius: 2px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--navy);
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.rule-item.do { background: #f0fdf4; border-left: 3px solid #16a34a; }
+.rule-item.dont { background: #fff5f5; border-left: 3px solid var(--red); }
+.rule-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+
+/* ── APPLICATIONS ── */
+.apps-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px;
+  margin-top: 60px;
+}
+.app-card {
+  background: var(--navy-dark);
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 280px;
+}
+.app-card.light-card { background: var(--white); }
+.app-card.gold-card { background: var(--gold); }
+.app-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: rgba(255,255,255,0.08);
+  line-height: 1;
+}
+.app-card.light-card .app-num { color: rgba(11,60,111,0.08); }
+.app-card.gold-card .app-num { color: rgba(7,31,58,0.1); }
+.app-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--white);
+  margin-top: auto;
+}
+.app-card.light-card .app-title { color: var(--navy); }
+.app-card.gold-card .app-title { color: var(--navy-dark); }
+.app-desc {
+  font-size: 12px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.45);
+}
+.app-card.light-card .app-desc { color: var(--gray); }
+.app-card.gold-card .app-desc { color: rgba(7,31,58,0.6); }
+
+/* ── BACK COVER ── */
+.back-cover {
+  background: var(--navy-dark);
+  padding: 100px 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.back-cover-bg {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 80% at 50% 50%, rgba(201,162,39,0.05) 0%, transparent 70%);
+}
+.back-quote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 4vw, 48px);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.4;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  position: relative;
+  z-index: 1;
+}
+.back-quote em { color: var(--gold); font-style: normal; }
+.back-attr {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  section { padding: 80px 32px; }
+  .sticky-nav { padding: 0 24px; gap: 16px; }
+  .nav-link:nth-child(n+4) { display: none; }
+  .logo-showcase { grid-template-columns: 1fr; }
+  .colors-grid { grid-template-columns: 1fr 1fr; }
+  .type-row { grid-template-columns: 1fr; gap: 20px; }
+  .voice-grid { grid-template-columns: 1fr; }
+  .rules-grid { grid-template-columns: 1fr; }
+  .apps-grid { grid-template-columns: 1fr; }
+  .back-cover { padding: 80px 32px; }
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-bg"></div>
+  <div class="cover-grid"></div>
+  <div class="cover-content">
+    <div class="cover-eyebrow">Brand Identity Guidelines</div>
+    <svg width="80" height="94" viewBox="0 0 120 140" fill="none" style="filter:drop-shadow(0 8px 32px rgba(201,162,39,0.3))">
+      <path d="M60 4 L12 22 L12 72 Q12 93 60 71 Z" fill="#0B3C6F"/>
+      <path d="M60 4 L108 22 L108 72 Q108 93 60 71 Z" fill="#C62828"/>
+      <path d="M12 72 Q12 112 60 134 L60 71 Z" fill="#C62828"/>
+      <path d="M108 72 Q108 112 60 134 L60 71 Z" fill="#0B3C6F"/>
+      <rect x="55" y="4" width="10" height="130" fill="white" opacity="0.92"/>
+      <rect x="12" y="66" width="96" height="10" fill="white" opacity="0.92"/>
+      <path d="M60 10 L103 26 L103 72 Q103 108 60 128 Q17 108 17 72 L17 26 Z" fill="none" stroke="#C9A227" stroke-width="1.8" opacity="0.7"/>
+      <path d="M60 4 L108 22 L108 72 Q108 112 60 134 Q12 112 12 72 L12 22 Z" fill="none" stroke="#C9A227" stroke-width="2.5"/>
+      <ellipse cx="60" cy="60" rx="16" ry="5" fill="white" opacity="0.2"/>
+      <rect x="44" y="60" width="32" height="11" fill="white" opacity="0.15"/>
+      <ellipse cx="60" cy="71" rx="16" ry="5" fill="white" opacity="0.25"/>
+      <polygon points="60,44 86,56 60,68 34,56" fill="#C9A227"/>
+      <rect x="56" y="40" width="8" height="5" rx="1" fill="#C9A227"/>
+      <polygon points="60,14 62.4,21 70,21 64,25.5 66.3,33 60,28.5 53.7,33 56,25.5 50,21 57.6,21" fill="white" stroke="#C9A227" stroke-width="0.8"/>
+      <path d="M55,118 Q44,108 34,95 Q26,84 23,72" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+      <path d="M52,115 Q46,110 44,104 Q48,105 52,110 Z" fill="white" opacity="0.85"/>
+      <path d="M47,108 Q40,102 38,95 Q43,97 47,103 Z" fill="white" opacity="0.85"/>
+      <path d="M40,100 Q34,93 33,86 Q38,89 41,95 Z" fill="white" opacity="0.8"/>
+      <path d="M65,118 Q76,108 86,95 Q94,84 97,72" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+      <path d="M68,115 Q74,110 76,104 Q72,105 68,110 Z" fill="white" opacity="0.85"/>
+      <path d="M73,108 Q80,102 82,95 Q77,97 73,103 Z" fill="white" opacity="0.85"/>
+      <path d="M80,100 Q86,93 87,86 Q82,89 79,95 Z" fill="white" opacity="0.8"/>
+      <path d="M47,122 Q60,127 73,122" stroke="#C9A227" stroke-width="2" fill="none" stroke-linecap="round" opacity="0.9"/>
+      <circle cx="60" cy="124" r="3" fill="#C9A227" opacity="0.9"/>
+    </svg>
+    <div class="cover-title">DYP<br><em>Brand</em> Book</div>
+    <div class="cover-divider"></div>
+    <div class="cover-subtitle">Dominican Young Professionals</div>
+    <div class="cover-year">Version 1.0 &nbsp;·&nbsp; 2025 &nbsp;·&nbsp; New York</div>
+  </div>
+  <div class="cover-tricolor"><span></span><span></span><span></span></div>
+</div>
+
+<!-- NAV -->
+<nav class="sticky-nav">
+  <div class="nav-logo-sm">DYP</div>
+  <a href="#intro" class="nav-link">Intro</a>
+  <a href="#logo" class="nav-link">Logo</a>
+  <a href="#colors" class="nav-link">Colors</a>
+  <a href="#typography" class="nav-link">Type</a>
+  <a href="#voice" class="nav-link">Voice</a>
+  <a href="#usage" class="nav-link">Usage</a>
+  <a href="#applications" class="nav-link">Applications</a>
+</nav>
+
+<!-- INTRO -->
+<div id="intro">
+<section>
+  <div class="section-tag">01 — Introduction</div>
+  <h2 class="section-heading">Who we are.<br>Why it <em>matters</em>.</h2>
+  <p class="section-intro">DYP is the global reference network for Dominican professional leadership. Our brand communicates institutional authority, cultural pride, and the ambition of a generation ready to lead at every level — from Washington Heights to the United Nations.</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-top:60px;">
+    <div style="background:var(--white);padding:40px 36px;border-top:3px solid var(--gold);">
+      <div style="font-family:'Playfair Display',serif;font-size:48px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:12px;">M</div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--navy);margin-bottom:10px;">Mission</div>
+      <p style="font-size:13px;line-height:1.8;color:var(--gray);">Empower Dominican professionals in the diaspora through leadership formation, institutional representation, and community action.</p>
+    </div>
+    <div style="background:var(--white);padding:40px 36px;border-top:3px solid var(--red);">
+      <div style="font-family:'Playfair Display',serif;font-size:48px;font-weight:900;color:var(--red);line-height:1;margin-bottom:12px;">V</div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--navy);margin-bottom:10px;">Vision</div>
+      <p style="font-size:13px;line-height:1.8;color:var(--gray);">Be the global reference network for Dominican leadership — connecting talent, elevating voices, and building institutions that last.</p>
+    </div>
+    <div style="background:var(--navy);padding:40px 36px;border-top:3px solid var(--gold);">
+      <div style="font-family:'Playfair Display',serif;font-size:48px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:12px;">P</div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:10px;">Promise</div>
+      <p style="font-size:13px;line-height:1.8;color:rgba(255,255,255,0.5);">Every Dominican professional deserves a seat at the table. DYP builds the table.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- LOGO -->
+<div id="logo" style="background:var(--light);">
+<section>
+  <div class="section-tag">02 — Logo & Shield</div>
+  <h2 class="section-heading">The <em>Shield</em>.</h2>
+  <p class="section-intro">The DYP shield is built on the Dominican flag — four quadrants, a white cross, and a gold border. The mortarboard represents education and achievement. The laurel, excellence. The star, aspiration.</p>
+</section>
+
+<div class="logo-showcase">
+  <!-- Light background -->
+  <div class="logo-tile light">
+    <div class="logo-lockup">
+      <svg width="60" height="70" viewBox="0 0 120 140" fill="none">
+        <path d="M60 4 L12 22 L12 72 Q12 93 60 71 Z" fill="#0B3C6F"/>
+        <path d="M60 4 L108 22 L108 72 Q108 93 60 71 Z" fill="#C62828"/>
+        <path d="M12 72 Q12 112 60 134 L60 71 Z" fill="#C62828"/>
+        <path d="M108 72 Q108 112 60 134 L60 71 Z" fill="#0B3C6F"/>
+        <rect x="55" y="4" width="10" height="130" fill="white" opacity="0.92"/>
+        <rect x="12" y="66" width="96" height="10" fill="white" opacity="0.92"/>
+        <path d="M60 4 L108 22 L108 72 Q108 112 60 134 Q12 112 12 72 L12 22 Z" fill="none" stroke="#C9A227" stroke-width="2.5"/>
+        <polygon points="60,44 86,56 60,68 34,56" fill="#C9A227"/>
+        <rect x="56" y="40" width="8" height="5" rx="1" fill="#C9A227"/>
+        <polygon points="60,14 62.4,21 70,21 64,25.5 66.3,33 60,28.5 53.7,33 56,25.5 50,21 57.6,21" fill="white" stroke="#C9A227" stroke-width="0.8"/>
+        <path d="M55,118 Q44,108 34,95 Q26,84 23,72" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+        <path d="M52,115 Q46,110 44,104 Q48,105 52,110 Z" fill="white" opacity="0.85"/>
+        <path d="M47,108 Q40,102 38,95 Q43,97 47,103 Z" fill="white" opacity="0.85"/>
+        <path d="M65,118 Q76,108 86,95 Q94,84 97,72" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+        <path d="M68,115 Q74,110 76,104 Q72,105 68,110 Z" fill="white" opacity="0.85"/>
+        <path d="M73,108 Q80,102 82,95 Q77,97 73,103 Z" fill="white" opacity="0.85"/>
+        <path d="M47,122 Q60,127 73,122" stroke="#C9A227" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="60" cy="124" r="3" fill="#C9A227"/>
+      </svg>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="lockup-dyp" style="font-size:36px;color:var(--navy);">DYP</div>
+        <div class="lockup-sep" style="height:40px;"></div>
+        <div class="lockup-words">
+          <span class="lockup-word" style="color:var(--navy);">DOMINICAN</span>
+          <span class="lockup-word" style="color:var(--navy);">YOUNG</span>
+          <span class="lockup-word" style="color:var(--navy);">PROFESSIONALS</span>
+        </div>
+      </div>
+    </div>
+    <div class="logo-label" style="color:var(--navy);">Primary — Light Background</div>
+  </div>
+
+  <!-- Dark background -->
+  <div class="logo-tile dark-bg">
+    <div class="logo-lockup">
+      <svg width="60" height="70" viewBox="0 0 120 140" fill="none">
+        <path d="M60 4 L12 22 L12 72 Q12 93 60 71 Z" fill="#0B3C6F"/>
+        <path d="M60 4 L108 22 L108 72 Q108 93 60 71 Z" fill="#C62828"/>
+        <path d="M12 72 Q12 112 60 134 L60 71 Z" fill="#C62828"/>
+        <path d="M108 72 Q108 112 60 134 L60 71 Z" fill="#0B3C6F"/>
+        <rect x="55" y="4" width="10" height="130" fill="white" opacity="0.92"/>
+        <rect x="12" y="66" width="96" height="10" fill="white" opacity="0.92"/>
+        <path d="M60 4 L108 22 L108 72 Q108 112 60 134 Q12 112 12 72 L12 22 Z" fill="none" stroke="#C9A227" stroke-width="2.5"/>
+        <polygon points="60,44 86,56 60,68 34,56" fill="#C9A227"/>
+        <rect x="56" y="40" width="8" height="5" rx="1" fill="#C9A227"/>
+        <polygon points="60,14 62.4,21 70,21 64,25.5 66.3,33 60,28.5 53.7,33 56,25.5 50,21 57.6,21" fill="white" stroke="#C9A227" stroke-width="0.8"/>
+        <path d="M55,118 Q44,108 34,95 Q26,84 23,72" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+        <path d="M52,115 Q46,110 44,104 Q48,105 52,110 Z" fill="white" opacity="0.85"/>
+        <path d="M47,108 Q40,102 38,95 Q43,97 47,103 Z" fill="white" opacity="0.85"/>
+        <path d="M65,118 Q76,108 86,95 Q94,84 97,72" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+        <path d="M68,115 Q74,110 76,104 Q72,105 68,110 Z" fill="white" opacity="0.85"/>
+        <path d="M73,108 Q80,102 82,95 Q77,97 73,103 Z" fill="white" opacity="0.85"/>
+        <path d="M47,122 Q60,127 73,122" stroke="#C9A227" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="60" cy="124" r="3" fill="#C9A227"/>
+      </svg>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div class="lockup-dyp" style="font-size:36px;color:white;">DYP</div>
+        <div class="lockup-sep" style="height:40px;background:white;"></div>
+        <div class="lockup-words">
+          <span class="lockup-word" style="color:rgba(255,255,255,0.5);">DOMINICAN</span>
+          <span class="lockup-word" style="color:rgba(255,255,255,0.5);">YOUNG</span>
+          <span class="lockup-word" style="color:rgba(255,255,255,0.5);">PROFESSIONALS</span>
+        </div>
+      </div>
+    </div>
+    <div class="logo-label">Primary — Dark Background</div>
+  </div>
+
+  <!-- Shield only - large -->
+  <div class="logo-tile navy" style="grid-column:span 1;">
+    <svg width="90" height="106" viewBox="0 0 120 140" fill="none">
+      <path d="M60 4 L12 22 L12 72 Q12 93 60 71 Z" fill="#0B3C6F"/>
+      <path d="M60 4 L108 22 L108 72 Q108 93 60 71 Z" fill="#C62828"/>
+      <path d="M12 72 Q12 112 60 134 L60 71 Z" fill="#C62828"/>
+      <path d="M108 72 Q108 112 60 134 L60 71 Z" fill="#0B3C6F"/>
+      <rect x="55" y="4" width="10" height="130" fill="white" opacity="0.92"/>
+      <rect x="12" y="66" width="96" height="10" fill="white" opacity="0.92"/>
+      <path d="M60 4 L108 22 L108 72 Q108 112 60 134 Q12 112 12 72 L12 22 Z" fill="none" stroke="#C9A227" stroke-width="2.5"/>
+      <polygon points="60,44 86,56 60,68 34,56" fill="#C9A227"/>
+      <rect x="56" y="40" width="8" height="5" rx="1" fill="#C9A227"/>
+      <polygon points="60,14 62.4,21 70,21 64,25.5 66.3,33 60,28.5 53.7,33 56,25.5 50,21 57.6,21" fill="white" stroke="#C9A227" stroke-width="0.8"/>
+      <path d="M55,118 Q44,108 34,95 Q26,84 23,72" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+      <path d="M52,115 Q46,110 44,104 Q48,105 52,110 Z" fill="white" opacity="0.85"/>
+      <path d="M47,108 Q40,102 38,95 Q43,97 47,103 Z" fill="white" opacity="0.85"/>
+      <path d="M65,118 Q76,108 86,95 Q94,84 97,72" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+      <path d="M68,115 Q74,110 76,104 Q72,105 68,110 Z" fill="white" opacity="0.85"/>
+      <path d="M73,108 Q80,102 82,95 Q77,97 73,103 Z" fill="white" opacity="0.85"/>
+      <path d="M47,122 Q60,127 73,122" stroke="#C9A227" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <circle cx="60" cy="124" r="3" fill="#C9A227"/>
+    </svg>
+    <div class="logo-label">Shield Only — Icon Use</div>
+  </div>
+
+  <!-- Gold -->
+  <div class="logo-tile gold-bg">
+    <svg width="70" height="82" viewBox="0 0 120 140" fill="none">
+      <path d="M60 4 L12 22 L12 72 Q12 93 60 71 Z" fill="rgba(7,31,58,0.8)"/>
+      <path d="M60 4 L108 22 L108 72 Q108 93 60 71 Z" fill="rgba(7,31,58,0.6)"/>
+      <path d="M12 72 Q12 112 60 134 L60 71 Z" fill="rgba(7,31,58,0.6)"/>
+      <path d="M108 72 Q108 112 60 134 L60 71 Z" fill="rgba(7,31,58,0.8)"/>
+      <rect x="55" y="4" width="10" height="130" fill="white" opacity="0.6"/>
+      <rect x="12" y="66" width="96" height="10" fill="white" opacity="0.6"/>
+      <path d="M60 4 L108 22 L108 72 Q108 112 60 134 Q12 112 12 72 L12 22 Z" fill="none" stroke="rgba(7,31,58,0.4)" stroke-width="2.5"/>
+      <polygon points="60,44 86,56 60,68 34,56" fill="rgba(7,31,58,0.7)"/>
+      <polygon points="60,14 62.4,21 70,21 64,25.5 66.3,33 60,28.5 53.7,33 56,25.5 50,21 57.6,21" fill="white" opacity="0.7"/>
+    </svg>
+    <div class="logo-label" style="color:rgba(7,31,58,0.5);">Gold Background</div>
+  </div>
+</div>
+
+<!-- Shield anatomy -->
+<section style="background:var(--light);padding-top:0;">
+  <div style="background:var(--white);padding:56px;margin-top:2px;">
+    <div style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:32px;">Shield Anatomy</div>
+    <div style="display:grid;grid-template-columns:auto 1fr;gap:60px;align-items:center;">
+      <svg width="140" height="164" viewBox="0 0 120 140" fill="none">
+        <path d="M60 4 L12 22 L12 72 Q12 93 60 71 Z" fill="#0B3C6F"/>
+        <path d="M60 4 L108 22 L108 72 Q108 93 60 71 Z" fill="#C62828"/>
+        <path d="M12 72 Q12 112 60 134 L60 71 Z" fill="#C62828"/>
+        <path d="M108 72 Q108 112 60 134 L60 71 Z" fill="#0B3C6F"/>
+        <rect x="55" y="4" width="10" height="130" fill="white" opacity="0.92"/>
+        <rect x="12" y="66" width="96" height="10" fill="white" opacity="0.92"/>
+        <path d="M60 4 L108 22 L108 72 Q108 112 60 134 Q12 112 12 72 L12 22 Z" fill="none" stroke="#C9A227" stroke-width="2.5"/>
+        <polygon points="60,44 86,56 60,68 34,56" fill="#C9A227"/>
+        <rect x="56" y="40" width="8" height="5" rx="1" fill="#C9A227"/>
+        <polygon points="60,14 62.4,21 70,21 64,25.5 66.3,33 60,28.5 53.7,33 56,25.5 50,21 57.6,21" fill="white" stroke="#C9A227" stroke-width="0.8"/>
+        <path d="M55,118 Q44,108 34,95 Q26,84 23,72" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+        <path d="M52,115 Q46,110 44,104 Q48,105 52,110 Z" fill="white" opacity="0.85"/>
+        <path d="M47,108 Q40,102 38,95 Q43,97 47,103 Z" fill="white" opacity="0.85"/>
+        <path d="M40,100 Q34,93 33,86 Q38,89 41,95 Z" fill="white" opacity="0.8"/>
+        <path d="M65,118 Q76,108 86,95 Q94,84 97,72" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round" opacity="0.7"/>
+        <path d="M68,115 Q74,110 76,104 Q72,105 68,110 Z" fill="white" opacity="0.85"/>
+        <path d="M73,108 Q80,102 82,95 Q77,97 73,103 Z" fill="white" opacity="0.85"/>
+        <path d="M80,100 Q86,93 87,86 Q82,89 79,95 Z" fill="white" opacity="0.8"/>
+        <path d="M47,122 Q60,127 73,122" stroke="#C9A227" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="60" cy="124" r="3" fill="#C9A227"/>
+      </svg>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="display:flex;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1px solid var(--light);">
+          <div style="width:16px;height:16px;background:var(--gold);border-radius:2px;flex-shrink:0;margin-top:2px;"></div>
+          <div><strong style="font-size:13px;color:var(--navy);">Gold Border & Mortarboard</strong><br><span style="font-size:12px;color:var(--gray);">Excellence, achievement, and professional aspiration</span></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1px solid var(--light);">
+          <div style="width:16px;height:16px;background:var(--navy);border-radius:2px;flex-shrink:0;margin-top:2px;"></div>
+          <div><strong style="font-size:13px;color:var(--navy);">Blue Quadrants</strong><br><span style="font-size:12px;color:var(--gray);">Liberty and sovereignty — Dominican flag heritage</span></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1px solid var(--light);">
+          <div style="width:16px;height:16px;background:var(--red);border-radius:2px;flex-shrink:0;margin-top:2px;"></div>
+          <div><strong style="font-size:13px;color:var(--navy);">Red Quadrants</strong><br><span style="font-size:12px;color:var(--gray);">Courage, sacrifice, and the blood of our ancestors</span></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1px solid var(--light);">
+          <div style="width:16px;height:16px;background:white;border:1px solid var(--light);border-radius:2px;flex-shrink:0;margin-top:2px;"></div>
+          <div><strong style="font-size:13px;color:var(--navy);">White Cross</strong><br><span style="font-size:12px;color:var(--gray);">Peace, unity, and the cross of the Dominican Republic</span></div>
+        </div>
+        <div style="display:flex;align-items:flex-start;gap:16px;padding:16px 0;">
+          <div style="width:16px;height:16px;background:white;border:1px solid var(--light);border-radius:2px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:10px;">★</div>
+          <div><strong style="font-size:13px;color:var(--navy);">Star & Laurel</strong><br><span style="font-size:12px;color:var(--gray);">Aspirational leadership and the honor of distinction</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- COLORS -->
+<div id="colors">
+<section>
+  <div class="section-tag">03 — Color Palette</div>
+  <h2 class="section-heading">Our <em>Colors</em>.</h2>
+  <p class="section-intro">Four colors. Each with intention. Together they communicate the gravity of our mission and the warmth of our community.</p>
+  <div class="colors-grid">
+    <div class="color-card">
+      <div class="color-swatch" style="background:#0B3C6F;"></div>
+      <div class="color-info">
+        <div class="color-name">DYP Institutional Blue</div>
+        <div class="color-role">Primary · Dominant</div>
+        <div class="color-values">
+          <div class="color-val"><span>HEX</span>#0B3C6F</div>
+          <div class="color-val"><span>RGB</span>11, 60, 111</div>
+          <div class="color-val"><span>CMYK</span>90, 46, 0, 56</div>
+          <div class="color-val"><span>USE</span>Backgrounds, text, authority</div>
+        </div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#C62828;"></div>
+      <div class="color-info">
+        <div class="color-name">Dominican Heritage Red</div>
+        <div class="color-role">Secondary · Energy</div>
+        <div class="color-values">
+          <div class="color-val"><span>HEX</span>#C62828</div>
+          <div class="color-val"><span>RGB</span>198, 40, 40</div>
+          <div class="color-val"><span>CMYK</span>0, 80, 80, 22</div>
+          <div class="color-val"><span>USE</span>Accents, CTAs, urgency</div>
+        </div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#C9A227;"></div>
+      <div class="color-info">
+        <div class="color-name">Leadership Gold</div>
+        <div class="color-role">Accent · Excellence</div>
+        <div class="color-values">
+          <div class="color-val"><span>HEX</span>#C9A227</div>
+          <div class="color-val"><span>RGB</span>201, 162, 39</div>
+          <div class="color-val"><span>CMYK</span>0, 19, 81, 21</div>
+          <div class="color-val"><span>USE</span>Highlights, awards, premium</div>
+        </div>
+      </div>
+    </div>
+    <div class="color-card">
+      <div class="color-swatch" style="background:#FFFFFF;border:1px solid #e5e0d5;"></div>
+      <div class="color-info">
+        <div class="color-name">Civic White</div>
+        <div class="color-role">Neutral · Clarity</div>
+        <div class="color-values">
+          <div class="color-val"><span>HEX</span>#FFFFFF</div>
+          <div class="color-val"><span>RGB</span>255, 255, 255</div>
+          <div class="color-val"><span>CMYK</span>0, 0, 0, 0</div>
+          <div class="color-val"><span>USE</span>Backgrounds, text on dark</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Color combos -->
+  <div style="margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:2px;">
+    <div style="background:var(--navy);padding:28px 24px;display:flex;flex-direction:column;gap:6px;">
+      <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--white);">Navy on White</div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--gold);">PRIMARY COMBO</div>
+    </div>
+    <div style="background:var(--navy-dark);padding:28px 24px;display:flex;flex-direction:column;gap:6px;">
+      <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--gold);">Gold on Dark</div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;color:rgba(255,255,255,0.3);">FEATURED COMBO</div>
+    </div>
+    <div style="background:var(--white);padding:28px 24px;border:1px solid var(--light);display:flex;flex-direction:column;gap:6px;">
+      <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--red);">Red on White</div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;color:var(--gray);">ACTION COMBO</div>
+    </div>
+    <div style="background:var(--gold);padding:28px 24px;display:flex;flex-direction:column;gap:6px;">
+      <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--navy-dark);">Navy on Gold</div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:1.5px;color:rgba(7,31,58,0.4);">PREMIUM COMBO</div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- TYPOGRAPHY -->
+<div id="typography" style="background:var(--light);">
+<section>
+  <div class="section-tag">04 — Typography</div>
+  <h2 class="section-heading">The <em>Voice</em> in print.</h2>
+  <p class="section-intro">Three typefaces. A hierarchy built for authority, elegance, and readability across all platforms.</p>
+</section>
+<div class="type-specimens" style="margin:0 60px 100px;padding-bottom:0;">
+  <div class="type-row">
+    <div class="type-meta">
+      <div class="type-family">Playfair Display</div>
+      <div class="type-role">Display · Headlines</div>
+      <div class="type-usage">For titles, section headers, institutional documents, and any moment requiring authority and gravitas.</div>
+    </div>
+    <div class="type-sample-1">Dominican<br><em>Leadership.</em></div>
+  </div>
+  <div class="type-row">
+    <div class="type-meta">
+      <div class="type-family">Cormorant Garamond</div>
+      <div class="type-role">Editorial · Quotes</div>
+      <div class="type-usage">For pull quotes, mission statements, elegant captions, and moments of cultural depth.</div>
+    </div>
+    <div class="type-sample-2">"Talent that is<br>changing the world."</div>
+  </div>
+  <div class="type-row">
+    <div class="type-meta">
+      <div class="type-family">Montserrat</div>
+      <div class="type-role">Body · Interface</div>
+      <div class="type-usage">For all body copy, navigation, buttons, labels, and digital interfaces. Always readable.</div>
+    </div>
+    <div class="type-sample-3">Dominican Young Professionals connects, empowers, and represents the Dominican professional community across the United States and the world. We build leaders. We build institutions. We build the future.</div>
+  </div>
+</div>
+
+<div class="type-scale" style="margin:0 60px 100px;">
+  <div style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Type Scale</div>
+  <div class="scale-row">
+    <div class="scale-label">Display</div>
+    <div class="scale-sample" style="font-family:'Playfair Display',serif;font-size:52px;font-weight:900;line-height:1;">DYP</div>
+  </div>
+  <div class="scale-row">
+    <div class="scale-label">H1</div>
+    <div class="scale-sample" style="font-family:'Playfair Display',serif;font-size:36px;font-weight:700;line-height:1.1;">Dominican Professionals</div>
+  </div>
+  <div class="scale-row">
+    <div class="scale-label">H2</div>
+    <div class="scale-sample" style="font-family:'Playfair Display',serif;font-size:24px;font-weight:700;">Power Breakfast Series</div>
+  </div>
+  <div class="scale-row">
+    <div class="scale-label">Body</div>
+    <div class="scale-sample" style="font-size:14px;color:var(--gray);line-height:1.8;">Empowering the Dominican diaspora through leadership and community.</div>
+  </div>
+  <div class="scale-row">
+    <div class="scale-label">Caption</div>
+    <div class="scale-sample" style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);">New York · Santo Domingo · Global</div>
+  </div>
+</div>
+</div>
+
+<!-- VOICE -->
+<div id="voice">
+<section>
+  <div class="section-tag">05 — Voice & Tone</div>
+  <h2 class="section-heading">How DYP <em>speaks</em>.</h2>
+  <p class="section-intro">Our voice is the voice of a generation that earned its seat at every table. Confident without arrogance. Warm without losing authority.</p>
+  <div class="voice-grid">
+    <div class="voice-card">
+      <span class="voice-icon">🦁</span>
+      <div class="voice-title">Authoritative</div>
+      <div class="voice-desc">We speak with the confidence of leaders. Every word is deliberate. We don't ask for permission — we announce our presence.</div>
+      <ul class="voice-examples">
+        <li>"DYP represents Dominican professionals before governments and institutions."</li>
+        <li>"We build the structures our community deserves."</li>
+      </ul>
+    </div>
+    <div class="voice-card dark-card">
+      <span class="voice-icon">🤝</span>
+      <div class="voice-title">Warm & Inclusive</div>
+      <div class="voice-desc">Our authority never comes at the cost of belonging. DYP is a home. Every member should feel that.</div>
+      <ul class="voice-examples">
+        <li>"Every Dominican professional deserves a seat at the table."</li>
+        <li>"Join a community that sees you, supports you, and elevates you."</li>
+      </ul>
+    </div>
+    <div class="voice-card">
+      <span class="voice-icon">🌎</span>
+      <div class="voice-title">Global Vision</div>
+      <div class="voice-desc">We speak for 2+ million Dominicans abroad. Our language reflects that scale — local roots, international ambition.</div>
+      <ul class="voice-examples">
+        <li>"From Washington Heights to the world."</li>
+        <li>"Dominican talent is everywhere. DYP connects it."</li>
+      </ul>
+    </div>
+    <div class="voice-card">
+      <span class="voice-icon">🇩🇴</span>
+      <div class="voice-title">Bilingual Pride</div>
+      <div class="voice-desc">We speak Spanish and English with equal fluency and equal pride. Neither is a translation — both are original.</div>
+      <ul class="voice-examples">
+        <li>"Liderazgo que transforma comunidades."</li>
+        <li>"Leadership that transforms communities."</li>
+      </ul>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- USAGE DO / DON'T -->
+<div id="usage" style="background:var(--light);">
+<section>
+  <div class="section-tag">06 — Usage Guidelines</div>
+  <h2 class="section-heading">Do's &amp; <em>Don'ts</em>.</h2>
+  <p class="section-intro">The DYP brand is an institutional asset. Protect it with the same care we give our community.</p>
+  <div class="rules-grid">
+    <div class="rules-col">
+      <div class="rules-heading do">✓ &nbsp; Always Do</div>
+      <div class="rule-item do"><span class="rule-icon">✓</span>Use the official shield on all institutional communications</div>
+      <div class="rule-item do"><span class="rule-icon">✓</span>Keep the gold border intact — never remove it from the shield</div>
+      <div class="rule-item do"><span class="rule-icon">✓</span>Use Playfair Display for all display headlines</div>
+      <div class="rule-item do"><span class="rule-icon">✓</span>Maintain sufficient contrast — minimum 4.5:1 ratio</div>
+      <div class="rule-item do"><span class="rule-icon">✓</span>Use bilingual copy whenever the audience is mixed</div>
+      <div class="rule-item do"><span class="rule-icon">✓</span>Write "Dominican Young Professionals" in full on first use</div>
+    </div>
+    <div class="rules-col">
+      <div class="rules-heading dont">✕ &nbsp; Never Do</div>
+      <div class="rule-item dont"><span class="rule-icon">✕</span>Stretch, rotate, or distort the shield</div>
+      <div class="rule-item dont"><span class="rule-icon">✕</span>Place the logo on busy photographic backgrounds</div>
+      <div class="rule-item dont"><span class="rule-icon">✕</span>Use unofficial colors or alter the palette</div>
+      <div class="rule-item dont"><span class="rule-icon">✕</span>Use all-lowercase for "DYP" — it is always capitalized</div>
+      <div class="rule-item dont"><span class="rule-icon">✕</span>Combine the DYP logo with other organization logos without approval</div>
+      <div class="rule-item dont"><span class="rule-icon">✕</span>Use generic fonts like Arial or Times New Roman</div>
+    </div>
+  </div>
+
+  <!-- Clear space rule -->
+  <div style="background:var(--white);padding:56px;margin-top:40px;display:flex;gap:60px;align-items:center;flex-wrap:wrap;">
+    <div>
+      <div style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">Clear Space Rule</div>
+      <p style="font-size:13px;line-height:1.8;color:var(--gray);max-width:360px;">Always maintain a minimum clear space equal to the height of the letter "D" in "DYP" around all sides of the logo. Never crowd it.</p>
+    </div>
+    <div style="position:relative;padding:32px;border:1px dashed rgba(201,162,39,0.4);display:inline-flex;align-items:center;gap:12px;">
+      <div style="position:absolute;top:0;left:0;right:0;bottom:0;pointer-events:none;">
+        <div style="position:absolute;top:4px;left:50%;transform:translateX(-50%);font-size:9px;color:var(--gold);font-weight:700;letter-spacing:1px;">CLEAR SPACE</div>
+      </div>
+      <svg width="40" height="47" viewBox="0 0 120 140" fill="none">
+        <path d="M60 4 L12 22 L12 72 Q12 93 60 71 Z" fill="#0B3C6F"/>
+        <path d="M60 4 L108 22 L108 72 Q108 93 60 71 Z" fill="#C62828"/>
+        <path d="M12 72 Q12 112 60 134 L60 71 Z" fill="#C62828"/>
+        <path d="M108 72 Q108 112 60 134 L60 71 Z" fill="#0B3C6F"/>
+        <rect x="55" y="4" width="10" height="130" fill="white" opacity="0.92"/>
+        <rect x="12" y="66" width="96" height="10" fill="white" opacity="0.92"/>
+        <path d="M60 4 L108 22 L108 72 Q108 112 60 134 Q12 112 12 72 L12 22 Z" fill="none" stroke="#C9A227" stroke-width="2.5"/>
+        <polygon points="60,44 86,56 60,68 34,56" fill="#C9A227"/>
+      </svg>
+      <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--navy);">DYP</div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- APPLICATIONS -->
+<div id="applications">
+<section>
+  <div class="section-tag">07 — Applications</div>
+  <h2 class="section-heading">DYP in the <em>world</em>.</h2>
+  <p class="section-intro">How the brand comes alive across touchpoints — digital, print, and in person.</p>
+</section>
+<div class="apps-grid" style="margin:0;">
+  <div class="app-card">
+    <div class="app-num">01</div>
+    <div class="app-title">Website & Digital</div>
+    <div class="app-desc">The primary digital home. DYP blue background with gold accents. Bilingual navigation. AI Guardian assistant for 24/7 engagement.</div>
+  </div>
+  <div class="app-card light-card">
+    <div class="app-num" style="color:rgba(11,60,111,0.08);">02</div>
+    <div class="app-title">Business Cards</div>
+    <div class="app-desc">Navy front with gold shield and name in Playfair. White back with contact info in Montserrat. Printed on 16pt matte stock.</div>
+  </div>
+  <div class="app-card gold-card">
+    <div class="app-num">03</div>
+    <div class="app-title">Letterhead</div>
+    <div class="app-desc">Navy header bar, shield top-left. Cormorant Garamond body text. Gold rule below header. Used for all official correspondence.</div>
+  </div>
+  <div class="app-card light-card">
+    <div class="app-num">04</div>
+    <div class="app-title">Social Media</div>
+    <div class="app-desc">Profile: Shield on navy. Posts use the 3-color grid system (navy · white · red). Always bilingual captions. @dominicanyp.</div>
+  </div>
+  <div class="app-card">
+    <div class="app-num">05</div>
+    <div class="app-title">Event Signage</div>
+    <div class="app-desc">Large-format banners: Shield centered on navy. Event name in Playfair Display at 72pt+. Tricolor accent bar at base.</div>
+  </div>
+  <div class="app-card" style="background:var(--red);">
+    <div class="app-num" style="color:rgba(255,255,255,0.1);">06</div>
+    <div class="app-title">Certificates & Awards</div>
+    <div class="app-desc">Cream background. Shield at top-center. Recipient name in Playfair Display italic. Gold border. Signatures in blue ink.</div>
+  </div>
+</div>
+</div>
+
+<!-- BACK COVER -->
+<div class="back-cover">
+  <div class="back-cover-bg"></div>
+  <svg width="56" height="66" viewBox="0 0 120 140" fill="none" style="opacity:0.4;margin-bottom:40px;position:relative;z-index:1;">
+    <path d="M60 4 L12 22 L12 72 Q12 93 60 71 Z" fill="#0B3C6F"/>
+    <path d="M60 4 L108 22 L108 72 Q108 93 60 71 Z" fill="#C62828"/>
+    <path d="M12 72 Q12 112 60 134 L60 71 Z" fill="#C62828"/>
+    <path d="M108 72 Q108 112 60 134 L60 71 Z" fill="#0B3C6F"/>
+    <rect x="55" y="4" width="10" height="130" fill="white" opacity="0.92"/>
+    <rect x="12" y="66" width="96" height="10" fill="white" opacity="0.92"/>
+    <path d="M60 4 L108 22 L108 72 Q108 112 60 134 Q12 112 12 72 L12 22 Z" fill="none" stroke="#C9A227" stroke-width="2.5"/>
+    <polygon points="60,44 86,56 60,68 34,56" fill="#C9A227"/>
+  </svg>
+  <div class="back-quote">
+    "Every Dominican professional<br>deserves a seat at the table.<br><em>DYP builds the table.</em>"
+  </div>
+  <div class="back-attr">Dominican Young Professionals &nbsp;·&nbsp; New York &nbsp;·&nbsp; 2025</div>
+  <div style="display:flex;justify-content:center;gap:0;margin-top:60px;width:120px;margin-left:auto;margin-right:auto;position:relative;z-index:1;">
+    <div style="flex:1;height:4px;background:#0B3C6F;"></div>
+    <div style="flex:1;height:4px;background:#ffffff;"></div>
+    <div style="flex:1;height:4px;background:#C62828;"></div>
+  </div>
+</div>
+
+</body>
+</html>

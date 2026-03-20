@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DYP Token — Briefing para Eleazar Bueno</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=Montserrat:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #0B3C6F;
+  --navy-dark: #071f3a;
+  --red: #C62828;
+  --gold: #C9A227;
+  --gold-light: #e8be3a;
+  --white: #FFFFFF;
+  --cream: #F8F6F1;
+  --gray: #6b7280;
+  --crypto: #F7931A;
+  --green: #16a34a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--navy-dark);
+  color: var(--white);
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+/* ── COVER ── */
+.cover {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 10%;
+  position: relative;
+  overflow: hidden;
+  background: var(--navy-dark);
+}
+.cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 60% at 80% 40%, rgba(201,162,39,.12) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 50% at 10% 80%, rgba(11,60,111,.5) 0%, transparent 60%);
+}
+.cover-pattern {
+  position: absolute;
+  inset: 0;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 60px, rgba(255,255,255,.012) 60px, rgba(255,255,255,.012) 61px),
+    repeating-linear-gradient(-45deg, transparent, transparent 60px, rgba(255,255,255,.012) 60px, rgba(255,255,255,.012) 61px);
+}
+.cover-accent { position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: linear-gradient(to bottom, var(--red), var(--gold)); }
+
+.cover-content { position: relative; z-index: 1; max-width: 800px; }
+.cover-eyebrow {
+  display: flex; align-items: center; gap: 12px; margin-bottom: 32px;
+  opacity: 0; animation: fadeUp .7s .2s forwards;
+}
+.cover-line { width: 40px; height: 2px; background: var(--gold); }
+.cover-eyebrow span { font-size: 10px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); }
+
+.cover h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 900;
+  line-height: 1.05;
+  margin-bottom: 24px;
+  opacity: 0; animation: fadeUp .7s .4s forwards;
+}
+.cover h1 em { font-style: italic; color: var(--gold); }
+
+.cover-sub {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255,255,255,.65);
+  max-width: 560px;
+  margin-bottom: 50px;
+  opacity: 0; animation: fadeUp .7s .6s forwards;
+}
+
+.cover-meta {
+  display: flex; gap: 40px; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp .7s .8s forwards;
+}
+.cover-meta-item { display: flex; flex-direction: column; gap: 4px; }
+.cover-meta-label { font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,.35); }
+.cover-meta-value { font-size: 13px; font-weight: 600; color: var(--white); }
+
+.cover-scroll {
+  position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,.3);
+  opacity: 0; animation: fadeUp .7s 1.2s forwards;
+}
+.cover-scroll-dot { width: 4px; height: 4px; background: var(--gold); border-radius: 50%; animation: bounce 1.5s infinite; }
+@keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+
+/* ── LAYOUT ── */
+.page { max-width: 900px; margin: 0 auto; padding: 100px 40px; }
+
+/* ── SECTION HEADER ── */
+.sec-label { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+.sec-line { width: 28px; height: 2px; background: var(--gold); }
+.sec-label span { font-size: 9px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); }
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(26px, 4vw, 42px);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  color: var(--white);
+}
+h2 em { font-style: italic; color: var(--gold); }
+
+/* ── DIVIDER ── */
+.divider { border: none; border-top: 1px solid rgba(255,255,255,.08); margin: 80px 0; }
+
+/* ── INTRO BLOCK ── */
+.intro-text {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255,255,255,.75);
+  line-height: 1.9;
+  max-width: 700px;
+  margin-bottom: 20px;
+}
+.intro-text strong { color: var(--white); font-weight: 600; }
+
+/* ── WHAT WE BUILT CARDS ── */
+.built-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin-top: 50px; }
+.built-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  padding: 36px 32px;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+}
+.built-card::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform .3s;
+}
+.built-card:hover { background: rgba(201,162,39,.06); border-color: rgba(201,162,39,.3); }
+.built-card:hover::after { transform: scaleX(1); }
+.built-icon { font-size: 32px; margin-bottom: 16px; display: block; }
+.built-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px; font-weight: 700;
+  color: var(--white); margin-bottom: 10px;
+}
+.built-text { font-size: 13px; color: rgba(255,255,255,.55); line-height: 1.8; font-weight: 300; }
+
+/* ── TOKEN HERO BLOCK ── */
+.token-hero {
+  background: rgba(201,162,39,.07);
+  border: 1px solid rgba(201,162,39,.3);
+  padding: 60px 50px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 60px;
+}
+.token-hero::before {
+  content: 'DYP';
+  position: absolute;
+  right: -20px; bottom: -40px;
+  font-family: 'Playfair Display', serif;
+  font-size: 200px; font-weight: 900;
+  color: rgba(201,162,39,.05);
+  line-height: 1;
+  pointer-events: none;
+}
+.token-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--gold); color: var(--navy-dark);
+  padding: 6px 16px;
+  font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.token-hero h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(22px, 3vw, 34px);
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+.token-hero p {
+  font-size: 15px; font-weight: 300;
+  color: rgba(255,255,255,.7);
+  line-height: 1.9;
+  max-width: 640px;
+  margin-bottom: 16px;
+}
+
+/* ── UTILITY LIST ── */
+.utility-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 50px; }
+.utility-card {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.07);
+  padding: 32px 26px;
+  text-align: center;
+}
+.utility-num {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px; font-weight: 700;
+  color: var(--gold); letter-spacing: 2px;
+  margin-bottom: 14px; display: block;
+}
+.utility-title { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+.utility-text { font-size: 12px; color: rgba(255,255,255,.45); line-height: 1.7; }
+
+/* ── CRYPTO ACCEPTED ── */
+.crypto-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; margin-top: 40px; }
+.crypto-chip {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  padding: 28px 20px;
+  text-align: center;
+  transition: all .25s;
+}
+.crypto-chip:hover { background: rgba(247,147,26,.07); border-color: var(--crypto); }
+.crypto-chip-symbol { font-size: 30px; display: block; margin-bottom: 10px; }
+.crypto-chip-name { font-size: 12px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+.crypto-chip-desc { font-size: 10px; color: rgba(255,255,255,.35); }
+
+/* ── ROADMAP ── */
+.roadmap { margin-top: 50px; position: relative; }
+.roadmap::before {
+  content: '';
+  position: absolute;
+  left: 22px; top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--gold), rgba(201,162,39,.1));
+}
+.road-item { display: flex; gap: 30px; margin-bottom: 40px; position: relative; }
+.road-dot {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--navy-dark);
+  border: 2px solid var(--gold);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; flex-shrink: 0;
+  position: relative; z-index: 1;
+}
+.road-dot.done { background: var(--gold); }
+.road-dot.done span { filter: brightness(0); }
+.road-body { padding-top: 8px; }
+.road-phase {
+  font-size: 9px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 6px;
+}
+.road-title { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+.road-text { font-size: 13px; color: rgba(255,255,255,.55); line-height: 1.8; }
+.road-tag {
+  display: inline-block;
+  background: rgba(22,163,74,.15); color: #4ade80;
+  border: 1px solid rgba(22,163,74,.3);
+  font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+  padding: 3px 10px; margin-top: 10px;
+}
+.road-tag.pending { background: rgba(201,162,39,.1); color: var(--gold); border-color: rgba(201,162,39,.3); }
+
+/* ── ACTION BLOCK ── */
+.action-block {
+  background: var(--navy);
+  border-top: 4px solid var(--gold);
+  padding: 60px 50px;
+  margin-top: 60px;
+}
+.action-block h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px; font-weight: 700;
+  color: var(--white); margin-bottom: 24px;
+}
+.action-list { list-style: none; display: flex; flex-direction: column; gap: 14px; margin-bottom: 36px; }
+.action-list li {
+  display: flex; align-items: flex-start; gap: 14px;
+  font-size: 14px; color: rgba(255,255,255,.75); font-weight: 300;
+}
+.action-list li::before {
+  content: '→';
+  color: var(--gold); font-weight: 700; flex-shrink: 0;
+  margin-top: 1px;
+}
+.action-list li strong { color: var(--white); font-weight: 600; }
+
+/* ── GLOSSARY ── */
+.glossary { margin-top: 50px; }
+.gloss-item {
+  display: grid; grid-template-columns: 160px 1fr;
+  gap: 20px; padding: 20px 0;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.gloss-term {
+  font-family: 'Space Mono', monospace;
+  font-size: 11px; font-weight: 700;
+  color: var(--gold); letter-spacing: 1px;
+  padding-top: 2px;
+}
+.gloss-def { font-size: 13px; color: rgba(255,255,255,.65); line-height: 1.8; }
+
+/* ── FOOTER ── */
+.doc-footer {
+  border-top: 1px solid rgba(255,255,255,.08);
+  padding: 40px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.doc-footer p { font-size: 11px; color: rgba(255,255,255,.25); letter-spacing: 1px; }
+
+/* ── CALLOUT ── */
+.callout {
+  background: rgba(198,40,40,.08);
+  border-left: 3px solid var(--red);
+  padding: 20px 24px;
+  margin: 28px 0;
+  font-size: 13px;
+  color: rgba(255,255,255,.7);
+  line-height: 1.8;
+}
+.callout strong { color: var(--white); }
+
+.callout.tip {
+  background: rgba(201,162,39,.07);
+  border-color: var(--gold);
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from { opacity:0; transform:translateY(20px) } to { opacity:1; transform:translateY(0) } }
+
+.reveal {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media(max-width:680px){
+  .cover { padding: 60px 24px; }
+  .page { padding: 60px 24px; }
+  .built-grid, .utility-grid, .crypto-row { grid-template-columns: 1fr; }
+  .token-hero { padding: 40px 28px; }
+  .action-block { padding: 40px 28px; }
+  .gloss-item { grid-template-columns: 1fr; gap: 6px; }
+  .cover-meta { flex-direction: column; gap: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════
+     COVER
+════════════════════════════════════ -->
+<section class="cover">
+  <div class="cover-pattern"></div>
+  <div class="cover-accent"></div>
+  <div class="cover-content">
+    <div class="cover-eyebrow">
+      <div class="cover-line"></div>
+      <span>🇩🇴 Dominican Young Professionals — Internal Briefing</span>
+    </div>
+    <h1>DYP Token &<br><em>Tokenización</em><br>de la Diáspora</h1>
+    <p class="cover-sub">Todo lo que necesitas saber sobre la estrategia Web3 de DYP — qué construimos en el sitio, qué es el DYP Token, y cuáles son los próximos pasos.</p>
+    <div class="cover-meta">
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Preparado para</span>
+        <span class="cover-meta-value">Eleazar Bueno, Co-Founder</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Fecha</span>
+        <span class="cover-meta-value">Marzo 2026</span>
+      </div>
+      <div class="cover-meta-item">
+        <span class="cover-meta-label">Versión</span>
+        <span class="cover-meta-value">Sitio Web v1.0</span>
+      </div>
+    </div>
+  </div>
+  <div class="cover-scroll">
+    <span>Scroll para leer</span>
+    <div class="cover-scroll-dot"></div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+     SECCIÓN 1 — QUÉ PUSIMOS EN EL SITIO
+════════════════════════════════════ -->
+<div class="page">
+  <div class="sec-label reveal"><div class="sec-line"></div><span>Sección 01</span></div>
+  <h2 class="reveal">Lo que <em>construimos</em><br>en el sitio web</h2>
+  <p class="intro-text reveal">En el sitio <strong>dyprd.org</strong> ya existe una sección completa de <strong>Web3 &amp; Crypto</strong>. No es solo decorativa — tiene funcionalidad real y sienta las bases de la estrategia de tokenización de DYP.</p>
+
+  <div class="built-grid">
+    <div class="built-card reveal">
+      <span class="built-icon">₿</span>
+      <div class="built-title">Donaciones en Crypto</div>
+      <p class="built-text">El modal de donaciones ya tiene una pestaña de cripto activa. Los donantes pueden seleccionar Bitcoin, Ethereum, USDC o USDT y reciben la dirección del wallet de DYP para hacer la transferencia directamente.</p>
+    </div>
+    <div class="built-card reveal">
+      <span class="built-icon">🏅</span>
+      <div class="built-title">DYP Token — Coming Soon</div>
+      <p class="built-text">En la sección Web3 del sitio hay una tarjeta especial para el DYP Token marcada como "Coming Soon". Ya está visible para los visitantes y genera expectativa sobre el lanzamiento.</p>
+    </div>
+    <div class="built-card reveal">
+      <span class="built-icon">🔗</span>
+      <div class="built-title">Banner de Tokenización</div>
+      <p class="built-text">Hay un banner explicativo en la sección Web3 que describe qué es la tokenización DYP, qué podrán hacer los miembros con el token, y posiciona a DYP como pionero en la diáspora dominicana en Web3.</p>
+    </div>
+    <div class="built-card reveal">
+      <span class="built-icon">🌐</span>
+      <div class="built-title">Sección Web3 Bilingüe</div>
+      <p class="built-text">Todo el contenido de la sección Web3 está disponible en inglés y español, con toggle de idioma. El sitio ya está preparado para una audiencia global de la diáspora dominicana.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ════════════════════════════════════
+     SECCIÓN 2 — QUÉ ES EL DYP TOKEN
+════════════════════════════════════ -->
+<div class="page">
+  <div class="sec-label reveal"><div class="sec-line"></div><span>Sección 02</span></div>
+  <h2 class="reveal">¿Qué es el<br><em>DYP Token?</em></h2>
+  <p class="intro-text reveal">El DYP Token es una <strong>criptomoneda propia de la organización</strong> — un token de membresía y gobernanza que permite a los miembros de DYP participar activamente en las decisiones de la organización, acceder a beneficios exclusivos y ser recompensados por contribuir a la comunidad.</p>
+  <p class="intro-text reveal">En términos simples: <strong>es como darle a cada miembro dominicano una "acción" en el futuro de DYP</strong> — pero en la blockchain.</p>
+
+  <div class="token-hero reveal">
+    <div class="token-badge">🏅 DYP Token</div>
+    <h3>Propiedad comunitaria, reinventada para la era digital</h3>
+    <p>El token no es solo para comprar o vender. Es el mecanismo central que conecta a los miembros de DYP con la organización de una forma nunca vista en el mundo de las organizaciones de la diáspora dominicana.</p>
+    <p>Un miembro en Nueva York, otro en Madrid y otro en Santiago de los Caballeros tendrán el mismo poder de voto en las decisiones de DYP — gracias al token.</p>
+  </div>
+
+  <div class="callout tip reveal">
+    <strong>¿Por qué en blockchain?</strong> Porque la blockchain garantiza transparencia total — cualquier miembro puede verificar el resultado de una votación, ver cómo se distribuyen los tokens, y confiar en que las reglas no pueden ser cambiadas por una sola persona. Es democracia verificable.
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ════════════════════════════════════
+     SECCIÓN 3 — PARA QUÉ SIRVE EL TOKEN
+════════════════════════════════════ -->
+<div class="page">
+  <div class="sec-label reveal"><div class="sec-line"></div><span>Sección 03</span></div>
+  <h2 class="reveal">¿Para qué <em>sirve</em><br>el token?</h2>
+  <p class="intro-text reveal">El DYP Token tiene <strong>4 funciones principales</strong> — así quedó descrito en el sitio web y es la visión que le comunicamos a los visitantes hoy.</p>
+
+  <div class="utility-grid">
+    <div class="utility-card reveal">
+      <span class="utility-num">01 — GOBERNANZA</span>
+      <div class="utility-title">Votar</div>
+      <p class="utility-text">Los holders del token votan en decisiones importantes de DYP — programas, alianzas, uso de fondos, eventos. Una comunidad, una voz.</p>
+    </div>
+    <div class="utility-card reveal">
+      <span class="utility-num">02 — ACCESO</span>
+      <div class="utility-title">Programas Exclusivos</div>
+      <p class="utility-text">Acceso a mentoría premium, eventos VIP, programas de networking y oportunidades laborales reservadas solo para holders del token.</p>
+    </div>
+    <div class="utility-card reveal">
+      <span class="utility-num">03 — RECOMPENSAS</span>
+      <div class="utility-title">Ganar por Contribuir</div>
+      <p class="utility-text">Los miembros que organicen eventos, hagan mentoring, traigan nuevos miembros o contribuyan a la comunidad reciben tokens como reconocimiento.</p>
+    </div>
+    <div class="utility-card reveal">
+      <span class="utility-num">04 — IDENTIDAD</span>
+      <div class="utility-title">Stake en la Diáspora</div>
+      <p class="utility-text">El token representa el compromiso de cada miembro con el futuro de la comunidad dominicana global. Es pertenencia, codificada en blockchain.</p>
+    </div>
+    <div class="utility-card reveal">
+      <span class="utility-num">05 — DONACIONES</span>
+      <div class="utility-title">Crypto Aceptado Hoy</div>
+      <p class="utility-text">Ya recibimos Bitcoin, Ethereum, USDC y USDT. Los donantes en crypto son frecuentemente los más comprometidos con tecnología e innovación.</p>
+    </div>
+    <div class="utility-card reveal">
+      <span class="utility-num">06 — FUTURO</span>
+      <div class="utility-title">Remesas & Fintech</div>
+      <p class="utility-text">Posible integración con soluciones de remesas para la comunidad dominicana — usando el token como puente entre la diáspora y República Dominicana.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ════════════════════════════════════
+     SECCIÓN 4 — CRYPTO QUE ACEPTAMOS
+════════════════════════════════════ -->
+<div class="page">
+  <div class="sec-label reveal"><div class="sec-line"></div><span>Sección 04</span></div>
+  <h2 class="reveal">Criptomonedas que<br><em>aceptamos hoy</em></h2>
+  <p class="intro-text reveal">Ya están integradas en el modal de donaciones del sitio. Cualquier persona puede donar en cualquiera de estas monedas enviando a la dirección de wallet de DYP.</p>
+
+  <div class="crypto-row">
+    <div class="crypto-chip reveal">
+      <span class="crypto-chip-symbol">₿</span>
+      <div class="crypto-chip-name">Bitcoin (BTC)</div>
+      <p class="crypto-chip-desc">La moneda digital original. La más reconocida del mundo.</p>
+    </div>
+    <div class="crypto-chip reveal">
+      <span class="crypto-chip-symbol">Ξ</span>
+      <div class="crypto-chip-name">Ethereum (ETH)</div>
+      <p class="crypto-chip-desc">La blockchain donde vive la mayoría de los tokens y contratos inteligentes.</p>
+    </div>
+    <div class="crypto-chip reveal">
+      <span class="crypto-chip-symbol">◎</span>
+      <div class="crypto-chip-name">USDC</div>
+      <p class="crypto-chip-desc">Stablecoin pegada al dólar. Ideal para donaciones sin volatilidad.</p>
+    </div>
+    <div class="crypto-chip reveal">
+      <span class="crypto-chip-symbol">₮</span>
+      <div class="crypto-chip-name">USDT (Tether)</div>
+      <p class="crypto-chip-desc">La stablecoin más usada en el mundo. Valor estable en dólares.</p>
+    </div>
+  </div>
+
+  <div class="callout reveal">
+    <strong>Importante:</strong> Para que las donaciones en crypto funcionen, DYP necesita tener wallets activos para cada una de estas monedas y las direcciones deben estar actualizadas en el sitio. Esto es un paso pendiente antes del lanzamiento oficial.
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ════════════════════════════════════
+     SECCIÓN 5 — ROADMAP
+════════════════════════════════════ -->
+<div class="page">
+  <div class="sec-label reveal"><div class="sec-line"></div><span>Sección 05</span></div>
+  <h2 class="reveal">Roadmap del<br><em>DYP Token</em></h2>
+  <p class="intro-text reveal">Esto es lo que hay que hacer para pasar de "Coming Soon" a un token real y funcional. Está organizado en fases realistas.</p>
+
+  <div class="roadmap">
+    <div class="road-item reveal">
+      <div class="road-dot done"><span>✓</span></div>
+      <div class="road-body">
+        <div class="road-phase">Fase 1 — Completada</div>
+        <div class="road-title">Posicionamiento Web3 en el Sitio</div>
+        <p class="road-text">Sección Web3 live en dyprd.org, donaciones en crypto integradas en el modal, DYP Token anunciado como "Coming Soon", banner de tokenización explicando la visión.</p>
+        <span class="road-tag">✓ Live en dyprd.org</span>
+      </div>
+    </div>
+
+    <div class="road-item reveal">
+      <div class="road-dot"><span>2</span></div>
+      <div class="road-body">
+        <div class="road-phase">Fase 2 — Próximos pasos</div>
+        <div class="road-title">Configurar Wallets y Recibir Donaciones Reales</div>
+        <p class="road-text">Crear wallets oficiales de DYP para BTC, ETH, USDC y USDT. Actualizar las direcciones en el sitio. Testear el flujo completo de donación. Documentar cómo se reportan para propósitos fiscales de la nonprofit.</p>
+        <span class="road-tag pending">Pendiente</span>
+      </div>
+    </div>
+
+    <div class="road-item reveal">
+      <div class="road-dot"><span>3</span></div>
+      <div class="road-body">
+        <div class="road-phase">Fase 3 — Mediano plazo</div>
+        <div class="road-title">Diseñar la Tokenomics del DYP Token</div>
+        <p class="road-text">Decidir: ¿Cuántos tokens existen? ¿Cómo se distribuyen? ¿En qué blockchain vive (Ethereum, Solana, Polygon)? ¿Cómo se ganan? ¿Se pueden vender? Definir el whitepaper del token.</p>
+        <span class="road-tag pending">Pendiente</span>
+      </div>
+    </div>
+
+    <div class="road-item reveal">
+      <div class="road-dot"><span>4</span></div>
+      <div class="road-body">
+        <div class="road-phase">Fase 4 — Desarrollo</div>
+        <div class="road-title">Smart Contract y Lanzamiento del Token</div>
+        <p class="road-text">Desarrollar o contratar el smart contract del token. Auditoría de seguridad. Lanzamiento en testnet. Distribución a miembros fundadores. Integración del sistema de gobernanza.</p>
+        <span class="road-tag pending">Pendiente</span>
+      </div>
+    </div>
+
+    <div class="road-item reveal">
+      <div class="road-dot"><span>5</span></div>
+      <div class="road-body">
+        <div class="road-phase">Fase 5 — Visión</div>
+        <div class="road-title">Ecosistema DYP Token Completo</div>
+        <p class="road-text">Marketplace de beneficios con tokens. Sistema de votación en la app. Integración con billeteras digitales populares en la comunidad dominicana. Posible puente de remesas con RD.</p>
+        <span class="road-tag pending">Visión futura</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ════════════════════════════════════
+     SECCIÓN 6 — PRÓXIMOS PASOS
+════════════════════════════════════ -->
+<div class="page">
+  <div class="action-block reveal">
+    <h3>⚡ Próximas acciones concretas para Eleazar</h3>
+    <ul class="action-list">
+      <li><strong>Crear los wallets de DYP</strong> — Se recomienda usar un hardware wallet (Ledger) para seguridad. Necesitas una wallet para BTC y otra para ETH/USDC/USDT.</li>
+      <li><strong>Actualizar las direcciones en el sitio</strong> — Una vez que tengas los wallets, dime las direcciones y las agrego al modal de donaciones en minutos.</li>
+      <li><strong>Consultar con un CPA especializado en crypto</strong> — Las donaciones en crypto a una nonprofit tienen implicaciones fiscales específicas en EE.UU. Hay que documentarlas correctamente desde el primer día.</li>
+      <li><strong>Decidir la blockchain del DYP Token</strong> — La recomendación es <strong>Ethereum</strong> (más reconocida) o <strong>Polygon</strong> (más barata en fees). Esta decisión define todo el desarrollo siguiente.</li>
+      <li><strong>Contratar un asesor de tokenomics</strong> — El diseño del token (cuántos existen, cómo se distribuyen, cómo se gobiernan) es una decisión estratégica y técnica que requiere expertise especializado.</li>
+      <li><strong>Comunicar la visión a los miembros fundadores</strong> — Los primeros miembros de DYP deben entender y emocionarse con la visión del token antes del lanzamiento. Son los primeros embajadores.</li>
+    </ul>
+
+    <div class="callout tip">
+      <strong>Tip estratégico:</strong> No necesitas lanzar el token para beneficiarte de la narrativa Web3 hoy. El sitio ya posiciona a DYP como una organización innovadora y tecnológica. Eso ya diferencia a DYP de cualquier otra organización de la diáspora dominicana. El token puede venir cuando estén listos.
+    </div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- ════════════════════════════════════
+     GLOSARIO
+════════════════════════════════════ -->
+<div class="page">
+  <div class="sec-label reveal"><div class="sec-line"></div><span>Glosario</span></div>
+  <h2 class="reveal">Términos <em>clave</em><br>que debes conocer</h2>
+
+  <div class="glossary">
+    <div class="gloss-item reveal">
+      <div class="gloss-term">Token</div>
+      <div class="gloss-def">Una unidad digital de valor creada en una blockchain. Puede representar membresía, derechos de voto, acceso a servicios, o simplemente valor monetario.</div>
+    </div>
+    <div class="gloss-item reveal">
+      <div class="gloss-term">Blockchain</div>
+      <div class="gloss-def">Una base de datos distribuida e inmutable donde se registran transacciones. Nadie la controla — todos la verifican. Es la infraestructura donde vive el token.</div>
+    </div>
+    <div class="gloss-item reveal">
+      <div class="gloss-term">Smart Contract</div>
+      <div class="gloss-def">Un programa que vive en la blockchain y ejecuta reglas automáticamente. Por ejemplo: "cuando alguien organice un evento, el contrato le envía 10 tokens DYP automáticamente."</div>
+    </div>
+    <div class="gloss-item reveal">
+      <div class="gloss-term">Tokenomics</div>
+      <div class="gloss-def">El diseño económico del token — cuántos existen (supply), cómo se distribuyen, cómo se ganan, cómo se queman, y qué incentivos crea para los usuarios.</div>
+    </div>
+    <div class="gloss-item reveal">
+      <div class="gloss-term">Stablecoin</div>
+      <div class="gloss-def">Una criptomoneda cuyo valor está pegado al dólar u otra moneda fiat. USDC y USDT son stablecoins — ideales para donaciones porque no tienen volatilidad de precio.</div>
+    </div>
+    <div class="gloss-item reveal">
+      <div class="gloss-term">Wallet (Billetera)</div>
+      <div class="gloss-def">Una aplicación o dispositivo que guarda tus criptomonedas. La dirección del wallet es como un número de cuenta bancaria — es donde se envían los fondos.</div>
+    </div>
+    <div class="gloss-item reveal">
+      <div class="gloss-term">Gobernanza</div>
+      <div class="gloss-def">El uso del token para votar en decisiones de la organización. Los holders con más tokens tienen más poder de voto — similar a acciones en una empresa.</div>
+    </div>
+    <div class="gloss-item reveal">
+      <div class="gloss-term">Web3</div>
+      <div class="gloss-def">La próxima versión de internet — donde los usuarios son dueños de sus datos e identidad digital, usando blockchain como infraestructura. DYP se posiciona en esta ola.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════
+     FOOTER
+════════════════════════════════════ -->
+<div class="doc-footer">
+  <p>🇩🇴 Dominican Young Professionals — DYP · dyprd.org · Documento Interno Confidencial · Marzo 2026</p>
+</div>
+
+<script>
+// Scroll reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting) {
+      e.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
