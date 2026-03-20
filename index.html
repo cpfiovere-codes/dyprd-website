@@ -733,7 +733,7 @@ body.lang-en span.es { display: none !important; }
 .pillar-card:hover .pillar-num{color:rgba(201,162,39,.15)!important;}
 .pillar-icon{transition:transform .3s;}.pillar-card:hover .pillar-icon{transform:scale(1.15);}
 .program-card{transition:all .3s;}.program-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(11,60,111,.12);}
-.mission-card{transition:all .3s;}.mission-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(11,60,111,.1);}
+.mission-card{transition:all .3s;cursor:default;}.mission-card:hover{transform:translateY(-8px);box-shadow:0 16px 50px rgba(11,60,111,.18);border-color:var(--gold)!important;}
 .crypto-card{transition:all .3s;}.crypto-card:hover{transform:translateY(-4px);box-shadow:0 8px 30px rgba(201,162,39,.15);border-color:var(--gold)!important;}
 .support-card{transition:all .3s;}.support-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(11,60,111,.12);}
 .btn-primary{transition:all .3s;}.btn-primary:hover{transform:translateY(-3px);box-shadow:0 8px 25px rgba(201,162,39,.4);}
@@ -797,6 +797,13 @@ body.lang-en span.es { display: none !important; }
 
 /* Payment panel inputs */
 .pay-row input{transition:all .2s;}.pay-row input:focus{border-color:var(--gold)!important;box-shadow:0 0 0 3px rgba(201,162,39,.12);}
+
+/* Mission card icon grows on hover */
+.mission-card-icon{transition:all .3s;}.mission-card:hover .mission-card-icon{transform:scale(1.2);}
+.mission-card-label{transition:all .3s;}.mission-card:hover .mission-card-label{color:var(--gold)!important;}
+
+/* About quote card stronger hover */
+.about-card{transition:all .4s;}.about-card:hover{transform:translateY(-6px);box-shadow:0 16px 50px rgba(11,60,111,.25);}
 </style>
 </head>
 <body class="lang-en">
@@ -1653,6 +1660,14 @@ body.lang-en span.es { display: none !important; }
 /* ══════════════════════════════════════════
    DYP — All JS via addEventListener (no onclick)
 ══════════════════════════════════════════ */
+
+// Scroll to top on page load/refresh
+window.addEventListener('load', () => {
+  window.scrollTo(0, 0);
+  if (window.location.hash) {
+    history.replaceState(null, '', window.location.pathname);
+  }
+});
 
 function sanitize(str){
   const d=document.createElement('div');

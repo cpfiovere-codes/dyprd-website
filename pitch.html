@@ -974,6 +974,9 @@ a[href="index.html"]{transition:all .2s;}a[href="index.html"]:hover{color:var(--
 </footer>
 
 <script>
+// Scroll to top on page load/refresh
+window.addEventListener('load', () => { window.scrollTo(0, 0); });
+
 const WEBHOOK = window.DYP_WEBHOOK || 'https://script.google.com/macros/s/AKfycbzQ43kKgqUMWnRaTJ46AX_dvDy-UhMENs9tdxFGq41d5Fdtgr4_9fjmG3KDq8MkcLuUkg/exec';
 
 function setLang(lang){
