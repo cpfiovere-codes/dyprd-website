@@ -1035,9 +1035,7 @@ function addTyping(){const msgs=document.getElementById('aiMessages');const div=
 function removeTyping(){const t=document.getElementById('typing-indicator');if(t)t.remove();}
 function getFallbackReply(msg){const m=msg.toLowerCase();const isEs=/[áéíóúñ¿¡]/.test(msg)||/\b(como|qué|quien|hola|gracias|quiero|puedo)\b/.test(m);if(/pitch|idea|startup|submit|someter/.test(m))return isEs?'DYP Pitch conecta tu idea con mentores, aliados estratégicos e inversores de nuestra red. No necesitas un deck — solo tu idea. ¿Listo para someter tu proyecto?':'DYP Pitch connects your idea with mentors, strategic allies, and investors from our network. No deck needed — just your idea. Ready to submit?';if(/mentor|mentoria/.test(m))return isEs?'A través de DYP Pitch, te conectamos con profesionales experimentados que te guían en tu camino emprendedor. Mentoría personalizada para tu industria.':'Through DYP Pitch, we connect you with experienced professionals who guide your entrepreneurial journey. Personalized mentorship for your industry.';if(/fund|financ|inver|invest/.test(m))return isEs?'DYP Pitch te pone frente a inversores activos de la red DYP que buscan proyectos dominicanos para apoyar. Sin intermediarios.':'DYP Pitch puts you in front of active DYP investors looking for Dominican projects to support. No middlemen.';if(/hola|hello|hi|hey/.test(m))return isEs?'¡Hola! Soy el asistente AI de DYP Pitch — el Shark Tank dominicano. ¿Tienes una idea o startup? Te ayudo a entender cómo funciona.':'Hello! I\'m the DYP Pitch AI assistant — the Dominican Shark Tank. Have an idea or startup? I\'ll help you understand how it works.';return isEs?'DYP Pitch es donde los emprendedores dominicanos conocen la red que necesitan. Mentoría, alianzas y financiamiento. ¿Qué te gustaría saber?':'DYP Pitch is where Dominican entrepreneurs meet the network they need. Mentorship, alliances, and funding. What would you like to know?';}
 async function sendAI(){const input=document.getElementById('aiInput');const raw=input.value.trim();if(!raw)return;const msg=sanitizeInput(raw);input.value='';document.getElementById('quickBtns').style.display='none';chatHistory.push({role:'user',content:msg});addMsg('user',msg);addTyping();try{const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':window.ANTHROPIC_KEY||'','anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:500,system:'You are the DYP Pitch AI assistant. Help visitors learn about submitting startup ideas to the DYP network for mentorship, alliances, and funding. Be warm, bilingual, concise.',messages:chatHistory})});const data=await res.json();removeTyping();let reply=(data.content&&data.content[0]&&data.content[0].text)?data.content[0].text:getFallbackReply(msg);chatHistory.push({role:'assistant',content:reply});if(chatHistory.length>20)chatHistory=chatHistory.slice(-20);addMsg('bot',reply);}catch(e){removeTyping();const reply=getFallbackReply(msg);chatHistory.push({role:'assistant',content:reply});addMsg('bot',reply);}}
-document.querySelectorAll('[data-action="toggle-chat"]').forEach(btn=>{btn.addEventListener('click',toggleChat);});
-document.querySelectorAll('[data-action="send-ai"]').forEach(btn=>{btn.addEventListener('click',sendAI);});
-document.querySelectorAll('[data-action="quick-ask"]').forEach(btn=>{btn.addEventListener('click',()=>{document.getElementById('aiInput').value=btn.textContent.trim();sendAI();});});
+
 </script>
 
 <!-- AI CHATBOT WIDGET -->
@@ -1077,5 +1075,12 @@ document.querySelectorAll('[data-action="quick-ask"]').forEach(btn=>{btn.addEven
     <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A227" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
   </button>
 </div>
+<script>
+// Wire chatbot events AFTER HTML is loaded
+document.querySelectorAll('[data-action="toggle-chat"]').forEach(btn=>{btn.addEventListener('click',toggleChat);});
+document.querySelectorAll('[data-action="send-ai"]').forEach(btn=>{btn.addEventListener('click',sendAI);});
+document.querySelectorAll('[data-action="quick-ask"]').forEach(btn=>{btn.addEventListener('click',()=>{document.getElementById('aiInput').value=btn.textContent.trim();sendAI();});});
+document.getElementById('aiInput')?.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();sendAI();}});
+</script>
 </body>
 </html>
