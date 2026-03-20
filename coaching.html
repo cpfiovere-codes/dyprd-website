@@ -473,6 +473,7 @@ body.lang-en span.es { display: none !important; }
 
 @media(max-width:900px){
   .course-section{padding:60px 20px;}
+  .course-section [style*="grid-template-columns:1fr 1fr"]{display:flex!important;flex-direction:column!important;}
   .course-top{grid-template-columns:1fr;gap:40px;}
   .weeks-grid{grid-template-columns:1fr;}
   .course-for{grid-template-columns:1fr;gap:32px;padding:40px 24px;}
@@ -480,6 +481,7 @@ body.lang-en span.es { display: none !important; }
   .instructor-avatar{margin:0 auto;}
   .course-cta-banner{padding:48px 24px;}
   .course-apply-wrap{padding:32px 20px;}
+  .course-apply-wrap [style*="grid-template-columns:1fr 1fr"]{display:flex!important;flex-direction:column!important;}
   .consult-banner{flex-direction:column;gap:12px;}
 }
 @media(max-width:480px){
@@ -748,8 +750,8 @@ gtag('config', 'GA_MEASUREMENT_ID');
     <!-- Top: intro + price -->
     <div class="course-top">
       <div>
-        <div class="course-badge">🎯 DYP Coaching — Primer Curso</div>
-        <div class="section-label"><div class="section-label-line"></div><span>DYP Coaching Program</span></div>
+        <div class="course-badge"><span class="en">🎯 DYP Coaching — First Course</span><span class="es">🎯 DYP Coaching — Primer Curso</span></div>
+        <div class="section-label"><div class="section-label-line"></div><span><span class="en">DYP Coaching Program</span><span class="es">Programa DYP Coaching</span></span></div>
         <h2 class="en">Your business on <em>autopilot</em><br>with AI.</h2>
         <h2 class="es">Tu negocio en <em>piloto automático</em><br>con AI.</h2>
 
@@ -827,28 +829,28 @@ gtag('config', 'GA_MEASUREMENT_ID');
     <div class="course-weeks-title"><span class="en">The program in <em>4 weeks</em></span><span class="es">El programa en <em>4 semanas</em></span></div>
     <div class="weeks-grid">
       <div class="week-card reveal">
-        <span class="week-num">Week 01</span>
+        <span class="week-num"><span class="en">Week 01</span><span class="es">Semana 01</span></span>
         <div class="week-title"><span class="en">AI Mindset & Your Business Map</span><span class="es">Mentalidad AI & Mapa de Tu Negocio</span></div>
         <p class="week-text en">What AI really is, how to talk to it, and how to identify exactly which parts of your business to automate first for maximum impact.</p>
         <p class="week-text es">Qué es realmente la AI, cómo hablarle, y cómo identificar exactamente qué partes de tu negocio automatizar primero para el máximo impacto.</p>
         <div class="week-outcome"><span class="en">You leave with your personalized automation plan</span><span class="es">Sales con tu plan de automatización personalizado</span></div>
       </div>
       <div class="week-card reveal">
-        <span class="week-num">Week 02</span>
+        <span class="week-num"><span class="en">Week 02</span><span class="es">Semana 02</span></span>
         <div class="week-title"><span class="en">Automate Content, Communication & Sales</span><span class="es">Automatiza Contenido, Comunicación & Ventas</span></div>
         <p class="week-text en">Emails, social media, client responses, follow-ups, proposals — everything that steals your time daily, automated and running.</p>
         <p class="week-text es">Emails, redes sociales, respuestas a clientes, follow-ups, propuestas — todo lo que te roba tiempo cada día, automatizado y corriendo.</p>
         <div class="week-outcome"><span class="en">You leave with your communication system live</span><span class="es">Sales con tu sistema de comunicación activo</span></div>
       </div>
       <div class="week-card reveal">
-        <span class="week-num">Week 03</span>
+        <span class="week-num"><span class="en">Week 03</span><span class="es">Semana 03</span></span>
         <div class="week-title"><span class="en">Automate Your Operations</span><span class="es">Automatiza Tus Operaciones</span></div>
         <p class="week-text en">Workflows, client tracking, reports, admin tasks. This is where most students say "I should have done this years ago."</p>
         <p class="week-text es">Flujos de trabajo, seguimiento de clientes, reportes, tareas administrativas. Aquí es donde la mayoría dice "¿por qué no hice esto antes?"</p>
         <div class="week-outcome"><span class="en">You leave with operations on autopilot</span><span class="es">Sales con tus operaciones en piloto automático</span></div>
       </div>
       <div class="week-card reveal">
-        <span class="week-num">Week 04</span>
+        <span class="week-num"><span class="en">Week 04</span><span class="es">Semana 04</span></span>
         <div class="week-title"><span class="en">Build & Launch Your AI Agent</span><span class="es">Construye & Lanza Tu AI Agent</span></div>
         <p class="week-text en">The moment everything clicks — build your own AI Agent that works for your business 24/7, handles inquiries, qualifies leads, and reports back to you.</p>
         <p class="week-text es">El momento en que todo encaja — construye tu propio AI Agent que trabaja para tu negocio 24/7, maneja consultas, califica leads y te reporta.</p>
@@ -905,7 +907,7 @@ gtag('config', 'GA_MEASUREMENT_ID');
       </div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;">
         <div class="form-field">
-          <input type="tel" id="cWhatsapp" placeholder=" " style="background:white;border-color:rgba(11,60,111,.2);color:var(--navy-dark);" required>
+          <input type="tel" id="cWhatsapp" placeholder=" " style="background:white;border-color:rgba(11,60,111,.2);color:var(--navy-dark);" autocomplete="tel" required>
           <label style="color:var(--gray);">WhatsApp *</label>
         </div>
         <div class="form-field">
@@ -1081,7 +1083,7 @@ async function sendAI(){const input=document.getElementById('aiInput');const raw
 // Wire chatbot events AFTER HTML is loaded
 document.querySelectorAll('[data-action="toggle-chat"]').forEach(btn=>{btn.addEventListener('click',toggleChat);});
 document.querySelectorAll('[data-action="send-ai"]').forEach(btn=>{btn.addEventListener('click',sendAI);});
-document.querySelectorAll('[data-action="quick-ask"]').forEach(btn=>{btn.addEventListener('click',()=>{document.getElementById('aiInput').value=btn.textContent.trim();sendAI();});});
+document.querySelectorAll('[data-action="quick-ask"]').forEach(btn=>{btn.addEventListener('click',()=>{const lang=document.body.classList.contains('lang-es')?'.es':'.en';const t=btn.querySelector(lang);document.getElementById('aiInput').value=t?t.textContent.trim():btn.textContent.trim();sendAI();});});
 document.getElementById('aiInput')?.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();sendAI();}});
 </script>
 </body>

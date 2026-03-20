@@ -835,11 +835,11 @@ gtag('config', 'GA_MEASUREMENT_ID');
       <!-- Name + Email -->
       <div class="pitch-form-grid">
         <div class="pitch-field">
-          <input type="text" id="pName" placeholder=" " required>
+          <input type="text" id="pName" placeholder=" " autocomplete="name" required>
           <label><span class="en">Full Name *</span><span class="es">Nombre Completo *</span></label>
         </div>
         <div class="pitch-field">
-          <input type="email" id="pEmail" placeholder=" " required>
+          <input type="email" id="pEmail" placeholder=" " autocomplete="email" required>
           <label>Email *</label>
         </div>
       </div>
@@ -847,11 +847,11 @@ gtag('config', 'GA_MEASUREMENT_ID');
       <!-- WhatsApp + Country -->
       <div class="pitch-form-grid">
         <div class="pitch-field">
-          <input type="tel" id="pWhatsapp" placeholder=" " required>
+          <input type="tel" id="pWhatsapp" placeholder=" " autocomplete="tel" required>
           <label>WhatsApp *</label>
         </div>
         <div class="pitch-field">
-          <input type="text" id="pCountry" placeholder=" " required>
+          <input type="text" id="pCountry" placeholder=" " autocomplete="country-name" required>
           <label><span class="en">Country *</span><span class="es">País *</span></label>
         </div>
       </div>
@@ -1090,7 +1090,7 @@ async function sendAI(){const input=document.getElementById('aiInput');const raw
 // Wire chatbot events AFTER HTML is loaded
 document.querySelectorAll('[data-action="toggle-chat"]').forEach(btn=>{btn.addEventListener('click',toggleChat);});
 document.querySelectorAll('[data-action="send-ai"]').forEach(btn=>{btn.addEventListener('click',sendAI);});
-document.querySelectorAll('[data-action="quick-ask"]').forEach(btn=>{btn.addEventListener('click',()=>{document.getElementById('aiInput').value=btn.textContent.trim();sendAI();});});
+document.querySelectorAll('[data-action="quick-ask"]').forEach(btn=>{btn.addEventListener('click',()=>{const lang=document.body.classList.contains('lang-es')?'.es':'.en';const t=btn.querySelector(lang);document.getElementById('aiInput').value=t?t.textContent.trim():btn.textContent.trim();sendAI();});});
 document.getElementById('aiInput')?.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();sendAI();}});
 </script>
 </body>

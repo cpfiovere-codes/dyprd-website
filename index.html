@@ -685,6 +685,12 @@ body.lang-en span.es { display: none !important; }
   /* Form grids — stack on mobile */
   .contact-form [style*="grid-template-columns:1fr 1fr"]{display:flex!important;flex-direction:column!important;}
 
+  /* Coaching & Pitch card grids — stack on mobile */
+  #coaching [style*="grid-template-columns:1fr 1fr"]{display:flex!important;flex-direction:column!important;}
+  #pitch [style*="grid-template-columns:1fr 1fr"]{display:flex!important;flex-direction:column!important;}
+  #coaching, #pitch{padding:40px 20px!important;}
+  #services{padding:60px 20px 20px!important;}
+
   /* Tags */
   .tags-grid{gap:6px;}
   .tag-item{font-size:10px;padding:7px 10px;}
@@ -966,7 +972,7 @@ gtag('config', 'GA_MEASUREMENT_ID');
       <div class="about-card-quote">"</div>
       <p class="about-card-text en">The Dominican diaspora is not a community that left — it is a force that expands. DYP is the bridge between two worlds.</p>
       <p class="about-card-text es">La diáspora dominicana no es una comunidad que se fue — es una fuerza que se expande. DYP es el puente entre dos mundos.</p>
-      <span class="about-card-attr">— Eleazar Bueno & Carlos Polonia, Founders</span>
+      <span class="about-card-attr">— Eleazar Bueno & Carlos Polonia, <span class="en">Founders</span><span class="es">Fundadores</span></span>
       <div class="about-corner"></div>
     </div>
   </div>
@@ -1953,7 +1959,8 @@ function handleDonate(){
   /* Quick chat buttons */
   document.querySelectorAll('[data-action="quick-ask"]').forEach(btn=>{
     btn.addEventListener('click',()=>{
-      const txt=btn.querySelector('.en')?.textContent||btn.textContent;
+      const lang=document.body.classList.contains('lang-es')?'.es':'.en';
+      const txt=btn.querySelector(lang)?.textContent||btn.textContent;
       document.getElementById('aiInput').value=txt;
       sendAI();
     });
