@@ -1013,6 +1013,58 @@ const obs = new IntersectionObserver(entries=>{ entries.forEach(e=>{ if(e.isInte
 document.querySelectorAll('.week-card').forEach(el=>{ el.style.opacity='0'; el.style.transform='translateY(20px)'; el.style.transition='opacity .6s ease,transform .6s ease'; obs.observe(el); });
 
 let saved='en'; try{ saved=localStorage.getItem('dyp-lang')||'en'; }catch(e){} setLang(saved);
+
+// ═══ AI CHATBOT ═══
+let chatOpen=false,chatHistory=[];
+function sanitize(t){return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function sanitizeInput(t){return t.replace(/[<>]/g,'').trim().substring(0,500);}
+function toggleChat(){chatOpen=!chatOpen;document.getElementById('aiChat').classList.toggle('open',chatOpen);if(chatOpen)document.getElementById('aiInput').focus();}
+function addMsg(role,text){const msgs=document.getElementById('aiMessages');const div=document.createElement('div');div.className='ai-msg '+role;const av=document.createElement('div');av.className='ai-msg-avatar '+role;av.textContent=role==='bot'?'🛡️':'👤';const bub=document.createElement('div');bub.className='ai-msg-bubble';bub.innerHTML=sanitize(text).replace(/\n/g,'<br>');div.appendChild(av);div.appendChild(bub);msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;}
+function addTyping(){const msgs=document.getElementById('aiMessages');const div=document.createElement('div');div.className='ai-msg bot';div.id='typing-indicator';div.innerHTML='<div class="ai-msg-avatar bot">🛡️</div><div class="ai-typing"><span></span><span></span><span></span></div>';msgs.appendChild(div);msgs.scrollTop=msgs.scrollHeight;}
+function removeTyping(){const t=document.getElementById('typing-indicator');if(t)t.remove();}
+function getFallbackReply(msg){const m=msg.toLowerCase();const isEs=/[áéíóúñ¿¡]/.test(msg)||/\b(como|qué|quien|hola|gracias|quiero|puedo)\b/.test(m);if(/coaching|curso|program|automat/.test(m))return isEs?'Nuestro programa DYP Coaching te enseña a automatizar tu negocio con AI en 4 semanas. Precio introductorio: $997. Incluye consulta gratuita. ¿Te interesa agendar tu consulta?':'Our DYP Coaching program teaches you to automate your business with AI in 4 weeks. Introductory price: $997. Includes free consultation. Want to book yours?';if(/precio|price|cost|cuanto|how much/.test(m))return isEs?'El precio introductorio es $997 (valor regular $1,497). Cupo limitado. Incluye consulta estratégica gratuita, 4 semanas de sesiones en vivo y tu AI Agent funcionando.':'Introductory price is $997 (regular $1,497). Limited enrollment. Includes free strategy consultation, 4 weeks of live sessions, and your AI Agent running.';if(/hola|hello|hi|hey/.test(m))return isEs?'¡Hola! Soy el asistente AI de DYP. Estás en la página de DYP Coaching — nuestro programa para automatizar tu negocio con IA. ¿En qué te ayudo?':'Hello! I\'m DYP\'s AI assistant. You\'re on the DYP Coaching page — our program to automate your business with AI. How can I help?';return isEs?'DYP Coaching es un programa intensivo de 4 semanas donde aprendes a automatizar tu negocio con AI. ¿Quieres saber más sobre el programa, el precio o agendar tu consulta gratuita?':'DYP Coaching is a 4-week intensive where you learn to automate your business with AI. Want to know about the program, pricing, or book your free consultation?';}
+async function sendAI(){const input=document.getElementById('aiInput');const raw=input.value.trim();if(!raw)return;const msg=sanitizeInput(raw);input.value='';document.getElementById('quickBtns').style.display='none';chatHistory.push({role:'user',content:msg});addMsg('user',msg);addTyping();try{const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':window.ANTHROPIC_KEY||'','anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:'claude-haiku-4-5-20251001',max_tokens:500,system:'You are the DYP Coaching AI assistant. Help visitors learn about the 4-week AI automation coaching program ($997 introductory). Be warm, bilingual, concise.',messages:chatHistory})});const data=await res.json();removeTyping();let reply=(data.content&&data.content[0]&&data.content[0].text)?data.content[0].text:getFallbackReply(msg);chatHistory.push({role:'assistant',content:reply});if(chatHistory.length>20)chatHistory=chatHistory.slice(-20);addMsg('bot',reply);}catch(e){removeTyping();const reply=getFallbackReply(msg);chatHistory.push({role:'assistant',content:reply});addMsg('bot',reply);}}
+document.querySelectorAll('[data-action="toggle-chat"]').forEach(btn=>{btn.addEventListener('click',toggleChat);});
+document.querySelectorAll('[data-action="send-ai"]').forEach(btn=>{btn.addEventListener('click',sendAI);});
+document.querySelectorAll('[data-action="quick-ask"]').forEach(btn=>{btn.addEventListener('click',()=>{document.getElementById('aiInput').value=btn.textContent.trim();sendAI();});});
 </script>
+
+<!-- AI CHATBOT WIDGET -->
+<div class="ai-fab">
+  <div class="ai-chat" id="aiChat">
+    <div class="ai-chat-header">
+      <div class="ai-chat-header-info">
+        <div class="ai-avatar-small">🛡️</div>
+        <div>
+          <div class="ai-chat-name">DYP Assistant</div>
+          <div class="ai-chat-status"><span class="en">Online · Here to help</span><span class="es">En línea · Aquí para ayudar</span></div>
+        </div>
+      </div>
+      <button class="ai-chat-close" data-action="toggle-chat">✕</button>
+    </div>
+    <div class="ai-messages" id="aiMessages">
+      <div class="ai-msg bot">
+        <div class="ai-msg-avatar bot">🛡️</div>
+        <div class="ai-msg-bubble en">Hello! I'm the DYP Coaching assistant. Ask me about the program, pricing, or how to book your free consultation.</div>
+        <div class="ai-msg-bubble es">¡Hola! Soy el asistente de DYP Coaching. Pregúntame sobre el programa, el precio o cómo agendar tu consulta gratuita.</div>
+      </div>
+    </div>
+    <div class="ai-quick-btns" id="quickBtns">
+      <button class="ai-quick" data-action="quick-ask"><span class="en">Program details</span><span class="es">Detalles del programa</span></button>
+      <button class="ai-quick" data-action="quick-ask"><span class="en">Pricing</span><span class="es">Precio</span></button>
+      <button class="ai-quick" data-action="quick-ask"><span class="en">Book consultation</span><span class="es">Agendar consulta</span></button>
+    </div>
+    <div class="ai-input-row">
+      <input class="ai-input" id="aiInput" placeholder="Ask anything... / Pregunta algo...">
+      <button class="ai-send" data-action="send-ai">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+  </div>
+  <button class="ai-fab-btn" data-action="toggle-chat" title="DYP AI Assistant">
+    <div class="ai-pulse"></div>
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#C9A227" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+  </button>
+</div>
 </body>
 </html>
