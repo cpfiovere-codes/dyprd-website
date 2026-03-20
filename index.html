@@ -618,11 +618,7 @@ body.lang-en span.es { display: none !important; }
 .mobile-menu{position:fixed;inset:0;background:var(--navy-dark);z-index:9999;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);visibility:hidden;}
 .mobile-menu.open{transform:translateX(0);visibility:visible;}
 .mobile-menu .mobile-nav-link{color:rgba(255,255,255,.85)!important;display:block!important;visibility:visible!important;font-size:18px!important;padding:16px 0!important;border-bottom:1px solid rgba(255,255,255,.07)!important;}
-.mobile-menu .mobile-nav-link span,.mobile-menu .mobile-nav-donate span{display:inline!important;visibility:visible!important;opacity:1!important;}
-.mobile-menu .mobile-nav-link .en,.mobile-menu .mobile-nav-donate .en{display:inline!important;}
-.mobile-menu .mobile-nav-link .es,.mobile-menu .mobile-nav-donate .es{display:none!important;}
-body.lang-es .mobile-menu .mobile-nav-link .en,body.lang-es .mobile-menu .mobile-nav-donate .en{display:none!important;}
-body.lang-es .mobile-menu .mobile-nav-link .es,body.lang-es .mobile-menu .mobile-nav-donate .es{display:inline!important;}
+.mobile-menu .mobile-nav-donate{visibility:visible!important;}
 .mobile-menu-header{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid rgba(255,255,255,.1);}
 .mobile-menu-close{background:none;border:none;color:rgba(255,255,255,.6);font-size:22px;cursor:pointer;padding:4px 8px;}
 .mobile-menu-nav{flex:1;display:flex;flex-direction:column;padding:32px 24px;gap:4px;overflow-y:auto;}
@@ -917,15 +913,15 @@ gtag('config', 'GA_MEASUREMENT_ID');
     <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
   </div>
   <nav class="mobile-menu-nav">
-    <a href="#mission" class="mobile-nav-link"><span class="en">Mission</span><span class="es">Misión</span></a>
-    <a href="#pillars" class="mobile-nav-link"><span class="en">Pillars</span><span class="es">Pilares</span></a>
-    <a href="#programs" class="mobile-nav-link"><span class="en">Programs</span><span class="es">Programas</span></a>
-    <a href="#founders" class="mobile-nav-link"><span class="en">Founders</span><span class="es">Fundadores</span></a>
-    <a href="#pitch" class="mobile-nav-link"><span class="en">DYP Pitch</span><span class="es">DYP Pitch</span></a>
-    <a href="#coaching" class="mobile-nav-link"><span class="en">DYP Coaching</span><span class="es">DYP Coaching</span></a>
-    <a href="#support" class="mobile-nav-link"><span class="en">Get Involved</span><span class="es">Involúcrate</span></a>
-    <a href="#contact" class="mobile-nav-link mobile-nav-cta"><span class="en">Join DYP</span><span class="es">Únete a DYP</span></a>
-    <button class="mobile-nav-donate" data-action="donate"><span class="en">❤️ Donate</span><span class="es">❤️ Donar</span></button>
+    <a href="#mission" class="mobile-nav-link" data-en="Mission" data-es="Misión">Mission</a>
+    <a href="#pillars" class="mobile-nav-link" data-en="Pillars" data-es="Pilares">Pillars</a>
+    <a href="#programs" class="mobile-nav-link" data-en="Programs" data-es="Programas">Programs</a>
+    <a href="#founders" class="mobile-nav-link" data-en="Founders" data-es="Fundadores">Founders</a>
+    <a href="#pitch" class="mobile-nav-link" data-en="DYP Pitch" data-es="DYP Pitch">DYP Pitch</a>
+    <a href="#coaching" class="mobile-nav-link" data-en="DYP Coaching" data-es="DYP Coaching">DYP Coaching</a>
+    <a href="#support" class="mobile-nav-link" data-en="Get Involved" data-es="Involúcrate">Get Involved</a>
+    <a href="#contact" class="mobile-nav-link mobile-nav-cta" data-en="Join DYP" data-es="Únete a DYP">Join DYP</a>
+    <button class="mobile-nav-donate" data-action="donate" data-en="❤️ Donate" data-es="❤️ Donar">❤️ Donate</button>
   </nav>
   <div class="mobile-menu-footer">
     <button class="lang-btn" data-lang="en" id="mobileLangEn">EN</button>
@@ -1734,6 +1730,10 @@ function setLang(lang){
   });
   document.documentElement.lang=lang;
   try{ localStorage.setItem('dyp-lang',lang); }catch(e){}
+  // Update mobile menu links text based on language
+  document.querySelectorAll('.mobile-nav-link[data-en], .mobile-nav-donate[data-en]').forEach(el=>{
+    el.textContent = el.dataset[lang] || el.dataset.en || el.textContent;
+  });
 }
 
 /* ── DONATE MODAL ── */
